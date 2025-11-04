@@ -9,11 +9,14 @@ add_library(database
         database/data.c
 )
 
+#compiler det i main
 add_executable(untitled main.c)
 
+#linker libraries ind i programmet
 target_link_libraries(untitled
         core
         database
 )
+
 # gør .h filer synlige for alle targets
 target_include_directories(untitled PRIVATE ../include)
