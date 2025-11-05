@@ -1,0 +1,8 @@
+//
+// Created by lunas on 05-11-2025.
+//
+
+#ifndef FITNESSTRACKER_RUN_DATA_H
+#define FITNESSTRACKER_RUN_DATA_H
+
+#endif //FITNESSTRACKER_RUN_DATA_H
