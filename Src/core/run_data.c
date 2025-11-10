@@ -4,6 +4,7 @@
 
 #define TRUE 1
 #define conversionRate 0
+#define MStoKMT 3.6
 
 #include "../include/run_data.h"
 #include <stdio.h>
@@ -12,11 +13,14 @@
 double stepsToDistance(int stepCount);
 double generateDistance();
 void generateElevation(double *elevation);
+double generateTempo(int time, double distance);
 
 // possibly return in from a pointer to a struct
 void runData(int distanceStepBool, int stepCount) {
     double distance;
     double elevation[] = {0, 0};
+    double time = 0;
+
 
     if (distanceStepBool == TRUE) {
         distance = stepsToDistance(stepCount);
@@ -24,7 +28,8 @@ void runData(int distanceStepBool, int stepCount) {
     else {
         distance = generateDistance();
     }
-    generateElevation(elevation);
+    // generateElevation(elevation);
+    generateTempo(time, distance);
 
 }
 
@@ -45,6 +50,17 @@ double generateDistance() {
 
     return distance;
 }
+
+double generateTempo(int time, double distance) {
+    double tempo = 0;
+
+    tempo=distance/time;
+    tempo = tempo*MStoKMT;
+    return tempo;
+}
+
+
+
 /*
 
  function remains if deemed to be needed later
