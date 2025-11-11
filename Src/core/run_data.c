@@ -46,7 +46,7 @@ double calculateRestitution(struct StructDeclaration test) {
 
     // time * zone rate? iterate and add up for all zones
     for (int i = 0; i < 5; i++) {
-        calculateScore(test.time[i], test.zone[i]);
+      score = calculateScore(test.time[i], test.zone[i]);
     }
 
 
