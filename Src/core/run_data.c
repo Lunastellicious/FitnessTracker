@@ -73,7 +73,7 @@ double generateDistance() {
 }
 
 // generates tempo based off a time in seconds and a distance in M
-// (needs to account for distance currently being kM)
+// (needs to account for distance currently being kM and time being minutes or seconds)
 double generateTempo(int time, double distance) {
     double tempo = 0;
 
