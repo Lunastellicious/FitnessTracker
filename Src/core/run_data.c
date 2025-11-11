@@ -65,6 +65,7 @@ double runDuration (int minMinutes, int maxMinutes) {
     return runTime;
 }
 
+//generates 5 runs with different durations (ascending)
 int generateRunDurations()
 {
     for (int i = 0 ; i <= 5 ; i++)
@@ -77,6 +78,7 @@ int generateRunDurations()
     return 0;
 }
 
+//prints run in hour:min:seconds format
 void printRunDuration (double runTime)
 {
     //Converts runTime
@@ -88,7 +90,7 @@ void printRunDuration (double runTime)
     printf("Run duration (H:M:S): %02d:%02d:%02d \n", hours, minutes, seconds);
 }
 
-
+//distributes run duration into zones
 int generateHRData (double totalSeconds)
 {
 
@@ -119,5 +121,4 @@ int generateHRData (double totalSeconds)
     printf("Z3 %.2lf \n", Z3);
     printf("Z4 %.2lf \n", Z4);
     printf("Z4 %.2lf \n", Z5);
-
 }
