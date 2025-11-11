@@ -43,11 +43,6 @@ int generateHRData (double totalSeconds);
 int main (void)
 {
 
-    //printRunDuration(runDuration(30, 50));
-    double time = runDuration(30, 60);
-    generateHRData(time);
-
-    //generateRunDurations();
 
         return 0;
 }
