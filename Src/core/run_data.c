@@ -35,11 +35,15 @@ double runDuration (int minMinutes, int maxMinutes);
 void printRunDuration(double runTime);
 int generateRunDurations();
 int generateHRData (double totalSeconds);
+void generateRuns(int runAMount);
 
 
 //MAIN
 int main (void)
 {
+    srand(time(NULL)); //initializes for current time
+    int runAmount = 5;
+    /* old code commented out to preserve
 
     printRunDuration(runDuration(30, 50));
     generateHRData(runDuration(30, 50));
@@ -47,6 +51,12 @@ int main (void)
     //generateRunDurations();
 
         return 0;
+        */
+
+    generateRuns(runAmount);
+    return 0;
+
+
 }
 
 
@@ -54,7 +64,7 @@ int main (void)
 
 //generates run
 double runDuration (int minMinutes, int maxMinutes) {
-    srand(time(NULL)); //initializes for current time
+    // moved to main to avoid getting same run time every time: srand(time(NULL)); //initializes for current time
 
     int minutes = minMinutes + (rand() % (maxMinutes - minMinutes + 1));
     int seconds = rand() % 60;
@@ -66,12 +76,13 @@ double runDuration (int minMinutes, int maxMinutes) {
 }
 
 //generates 5 runs with different durations (ascending)
+// never called
 int generateRunDurations()
 {
     for (int i = 0 ; i <= 5 ; i++)
     {
         sleep(1);
-        printf("Løb %d - ", i);
+        // printf("Løb %d - ", i); commeneted out as the while loop that ensures ascending time can run quite a few times
         double runTime = runDuration(25, 120);
         printRunDuration(runTime);
     }
@@ -95,7 +106,7 @@ int generateHRData (double totalSeconds)
 {
 
     int totalMinutes = totalSeconds / 60;
-    
+
     //Rand interval
     double Z1_time = (rand() % (20 - 5 + 1) + 5);
     double Z2_time = (rand() % (50 - 5 + 1) + 5);
@@ -122,3 +133,40 @@ int generateHRData (double totalSeconds)
     printf("Z4 %.2lf \n", Z4);
     printf("Z4 %.2lf \n", Z5);
 }
+
+
+// attempt at generating x different runs with ascending run time
+void generateRuns(int runAMount) {
+    double runTimeTemp = 0, runTimeTemp2 = 0;;
+
+    // genertates 5 runs with same run time currently: no idea why
+    for (int i = 0; i < runAMount; i++ ) {
+        do {
+            runTimeTemp=runDuration(30, 50);
+        } while (runTimeTemp2>runTimeTemp);
+
+
+        printRunDuration(runTimeTemp);
+        generateHRData(runTimeTemp);
+        printf("%d hello \n", i);
+        runTimeTemp2=runTimeTemp;
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
