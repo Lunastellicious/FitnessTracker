@@ -27,10 +27,12 @@ double calculateRestitution(struct StructDeclaration test);
 
 int main() {
     double test = 0;
+    double intialize = 1;
 
     for (int i = 0; i < 5; i++) {
-        structVariableName.time[i] = i;
-        structVariableName.zone[i] = i;
+        structVariableName.time[i] = intialize;
+        structVariableName.zone[i] = intialize;
+        intialize++;
     }
 
     test = calculateRestitution(structVariableName);
@@ -44,16 +46,18 @@ double calculateRestitution(struct StructDeclaration test) {
     double restitutionTime;
     double score;
 
+    // printf("%lf\n %lf\n", test.time[3]), test.zone[3];
+
     // time * zone rate? iterate and add up for all zones
     for (int i = 0; i < 5; i++) {
-        calculateScore(test.time[i], test.zone[i]);
+        score = calculateScore(test.time[i], test.zone[i]);
     }
 
 
     // use score to calculate restitution time
 
     restitutionTime = score * scoreToTime;
-
+    // printf("%lf", restitutionTime);
     return restitutionTime;
 }
 
