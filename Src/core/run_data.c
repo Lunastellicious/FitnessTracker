@@ -50,6 +50,9 @@ void generateElevation(double *elevation);
 double generateTempo(int time, double distance);
 void runData(int distanceStepBool, int stepCount);
 
+void kadencePerMinut(int steps[], int minute);
+double kadence(int sumSteps, int minut);
+
 
 //// ---------- MAIN ----------
 
@@ -207,4 +210,16 @@ int generateHRData (double totalSeconds)
     printf("Z3 %.2lf \n", Z3);
     printf("Z4 %.2lf \n", Z4);
     printf("Z4 %.2lf \n", Z5);
+}
+
+
+void kadencePerMinut(int steps[], int minute) {
+    for (int i = 0; i < minute; i++) {
+        printf("Your kadence for the minute: %d er %d steps pr. min\n", i+1, steps[i]);
+    }
+
+}
+// kadence for hele løbet
+double kadence(int sumSteps, int minut) {
+    return (double) sumSteps/minut;
 }
