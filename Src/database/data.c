@@ -3,3 +3,12 @@
 //
 
 #include "data.h"
+// Definition of the Database structure
+// Fake-abase
+struct Database {
+    union{
+        struct { } current;
+        struct { } previous;
+    };
+    int id;
+};
