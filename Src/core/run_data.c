@@ -5,8 +5,6 @@
 #include <windows.h>
 
 
-
-
 // CONSTANTS
 const int ACTIVEBPM_MIN = 115;
 const int ACTIVEBPM_MAX = 195;
