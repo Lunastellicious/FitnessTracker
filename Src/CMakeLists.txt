@@ -1,7 +1,7 @@
 # CORE LIBRARY
 add_library(core
-        core/logic.c
-        core/utils.c
+        Core/logic.c
+        Core/utils.c
         core/run_data.c
 )
 

@@ -1,3 +1,7 @@
+//
+// Created by lunas on 05-11-2025.
+//
+
 #include "../include/run_data.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,6 +19,17 @@ const int ACTIVEBPM_MAX = 195;
 const int conversionRate = 1;
 const double MStoKMT = 3.6;
 
+//TODO: make realistic numbers
+const int zone1Rate = 1;
+const int zone2Rate = 2;
+const int zone3Rate = 3;
+const int zone4Rate = 4;
+const int zone5Rate = 5;
+const int anerobGR4 = zone4Rate * 2;
+const int anerobGR5 = zone5Rate * 2;
+
+const int scoreToTime = 2;
+
 
 //STRUCTS
 typedef struct heartRateZone
@@ -24,6 +39,13 @@ typedef struct heartRateZone
     const char *name;
     const char *description;
 } heartRateZone;
+
+struct StructDeclaration {
+    double time[5];
+    int zone[5];
+};
+
+struct StructDeclaration structVariableName;
 
 
 
@@ -52,6 +74,9 @@ void runData(int distanceStepBool, int stepCount);
 
 void kadencePerMinut(int steps[], int minute);
 double kadence(int sumSteps, int minut);
+
+double calculateScore(double Time, int zone);
+double calculateRestitution(struct StructDeclaration test);
 
 
 //// ---------- MAIN ----------
@@ -175,9 +200,13 @@ void printRunDuration (double runTime)
     int hours = total_seconds / 3600;
     int minutes = (total_seconds % 3600) / 60;
     int seconds = total_seconds % 60;
-
     printf("Run duration (H:M:S): %02d:%02d:%02d \n", hours, minutes, seconds);
 }
+
+
+
+
+
 
 //distributes run duration into zones
 int generateHRData (double totalSeconds)
@@ -212,6 +241,7 @@ int generateHRData (double totalSeconds)
     printf("Z4 %.2lf \n", Z5);
 }
 
+
 /* To be continued...
 void kadencePerMinut(int steps[], int minute) {
     for (int i = 0; i < minute; i++) {
@@ -224,3 +254,48 @@ double kadence(int sumSteps, int minut) {
     return (double) sumSteps/minut;
 }
 */
+
+double calculateRestitution(struct StructDeclaration test) {
+    // recieve input
+    double restitutionTime;
+    double score;
+
+    // time * zone rate? iterate and add up for all zones
+    for (int i = 0; i < 5; i++) {
+        score = calculateScore(test.time[i], test.zone[i]);
+    }
+
+
+    // use score to calculate restitution time
+
+    restitutionTime = score * scoreToTime;
+
+    return restitutionTime;
+}
+
+double calculateScore(double Time, int zone) {
+    double score;
+
+    switch (zone) {
+    case 1:
+        score += Time * zone1Rate;
+        break;
+    case 2:
+        score += Time * zone2Rate;
+        break;
+    case 3:
+        score += Time * zone3Rate;
+        break;
+    case 4:
+        score += Time * anerobGR4;
+        break;
+    case 5:
+        score += Time * anerobGR5;
+        break;
+    default:
+        printf("Invalid zone\n");
+        break;
+    }
+
+    return score;
+}
