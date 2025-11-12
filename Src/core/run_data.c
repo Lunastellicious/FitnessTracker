@@ -1,3 +1,4 @@
+#include "../include/run_data.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
@@ -5,9 +6,14 @@
 #include <windows.h>
 
 
-// CONSTANTS
+//// ---------- CONST ----------
+
 const int ACTIVEBPM_MIN = 115;
 const int ACTIVEBPM_MAX = 195;
+
+#define TRUE 1
+const int conversionRate = 1;
+const double MStoKMT = 3.6;
 
 
 //STRUCTS
@@ -20,6 +26,7 @@ typedef struct heartRateZone
 } heartRateZone;
 
 
+
 //Heart rate zones based on LTHR
 struct heartRateZone Zones[] = {
     {115, 136,  "Zone 1 (W)", "Warm up"},
@@ -30,14 +37,22 @@ struct heartRateZone Zones[] = {
 };
 
 
-// PROTOTYPE FUNCTIONS
+//// ---------- PROTOTYPE FUNCTIONS ----------
+
 double runDuration (int minMinutes, int maxMinutes);
 void printRunDuration(double runTime);
 int generateRunDurations();
 int generateHRData (double totalSeconds);
 
+double stepsToDistance(int stepCount);
+double generateDistance();
+void generateElevation(double *elevation);
+double generateTempo(int time, double distance);
+void runData(int distanceStepBool, int stepCount);
 
-//MAIN
+
+//// ---------- MAIN ----------
+
 int main (void)
 {
 
@@ -46,11 +61,82 @@ int main (void)
 
     //generateRunDurations();
 
-        return 0;
+    return 0;
 }
 
 
-//FUNCTIONS
+//// ---------- FUNCTIONS ----------
+
+
+// runs the other functions
+// possibly return in from a pointer to a struct
+void runData(int distanceStepBool, int stepCount) {
+    double distance;
+    double elevation[] = {0, 0};
+    int time = 50;
+    double test = 0;
+    double test1 = 0;
+
+
+    if (distanceStepBool == TRUE) {
+        distance = stepsToDistance(stepCount);
+    }
+    else {
+        distance = generateDistance();
+    }
+    // generateElevation(elevation);
+    test1 = generateTempo(time, distance);
+    test = distance;
+    printf("distance = %lf tempo = %lf", test, test1);
+
+
+}
+// creates distance from an amount of steps
+double stepsToDistance(int stepCount) {
+    double distance;
+
+    distance = stepCount*conversionRate;
+
+    return distance;
+}
+
+// randomly generates a distance in Km
+double generateDistance() {
+    double distance;
+    int max = 2000;
+    int min = 0;
+
+    distance = rand() % (max - min + 1) + min;
+
+    return distance;
+}
+
+// generates tempo based off a time in seconds and a distance in M
+// (needs to account for distance currently being kM and time being minutes or seconds)
+double generateTempo(int time, double distance) {
+    double tempo = 0;
+
+    tempo=distance/time;
+    tempo = tempo*MStoKMT;
+    return tempo;
+}
+
+
+
+/*
+
+ function remains if deemed to be needed later
+
+void generateElevation(double *elevation) {
+    int max = 20;
+    int min = 0;
+
+    // rand eleveation for route minimum being negative value at [0] and max being positive at [1]
+
+
+}
+*/
+
 
 //generates run
 double runDuration (int minMinutes, int maxMinutes) {
@@ -95,7 +181,7 @@ int generateHRData (double totalSeconds)
 {
 
     int totalMinutes = totalSeconds / 60;
-    
+
     //Rand interval
     double Z1_time = (rand() % (20 - 5 + 1) + 5);
     double Z2_time = (rand() % (50 - 5 + 1) + 5);
