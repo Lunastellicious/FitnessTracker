@@ -51,6 +51,7 @@ void runData(int distanceStepBool, int stepCount) {
     printf("distance = %lf tempo = %lf", test, test1);
 
 
+
 }
 // creates distance from an amount of steps
 double stepsToDistance(int stepCount) {
