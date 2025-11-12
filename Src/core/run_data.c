@@ -41,9 +41,8 @@ int generateHRData (double totalSeconds);
 int main (void)
 {
 
-    //printRunDuration(runDuration(30, 50));
-    double time = runDuration(30, 60);
-    generateHRData(time);
+    printRunDuration(runDuration(30, 50));
+    generateHRData(runDuration(30, 50));
 
     //generateRunDurations();
 
@@ -96,8 +95,7 @@ int generateHRData (double totalSeconds)
 {
 
     int totalMinutes = totalSeconds / 60;
-
-
+    
     //Rand interval
     double Z1_time = (rand() % (20 - 5 + 1) + 5);
     double Z2_time = (rand() % (50 - 5 + 1) + 5);
