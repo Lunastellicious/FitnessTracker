@@ -7,6 +7,7 @@
 #include <stdlib.h>
 
 
+
 // unrealistisc number (vækstrate)
 const int zone1Rate = 1;
 const int zone2Rate = 2;
