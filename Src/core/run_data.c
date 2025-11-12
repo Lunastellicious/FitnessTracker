@@ -212,7 +212,7 @@ int generateHRData (double totalSeconds)
     printf("Z4 %.2lf \n", Z5);
 }
 
-
+/* To be continued...
 void kadencePerMinut(int steps[], int minute) {
     for (int i = 0; i < minute; i++) {
         printf("Your kadence for the minute: %d er %d steps pr. min\n", i+1, steps[i]);
@@ -223,3 +223,4 @@ void kadencePerMinut(int steps[], int minute) {
 double kadence(int sumSteps, int minut) {
     return (double) sumSteps/minut;
 }
+*/
