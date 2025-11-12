@@ -7,12 +7,17 @@
 #include <stdlib.h>
 
 
+// unrealistisc number (vækstrate)
 const int zone1Rate = 1;
 const int zone2Rate = 2;
 const int zone3Rate = 3;
 const int zone4Rate = 4;
 const int zone5Rate = 5;
+const int anerobGR4 = zone4Rate * 2;
+const int anerobGR5 = zone5Rate * 2;
+
 const int scoreToTime = 2;
+
 
 struct StructDeclaration {
     double time[5];
@@ -46,7 +51,7 @@ double calculateRestitution(struct StructDeclaration test) {
 
     // time * zone rate? iterate and add up for all zones
     for (int i = 0; i < 5; i++) {
-      score = calculateScore(test.time[i], test.zone[i]);
+        score = calculateScore(test.time[i], test.zone[i]);
     }
 
 
@@ -71,12 +76,10 @@ double calculateScore(double Time, int zone) {
             score += Time * zone3Rate;
             break;
         case 4:
-            score += Time * zone4Rate;
-            score += Time * zone4Rate;
+            score += Time * anerobGR4;
             break;
         case 5:
-            score += Time * zone5Rate;
-            score += Time * zone5Rate;
+            score += Time * anerobGR5;
             break;
         default:
             printf("Invalid zone\n");
