@@ -1,24 +1,22 @@
-# CORE LIBRARY
+#Add new c files to core
 add_library(core
-        core/logic.c
-        core/utils.c
-        core/run_data.c
+        Core/logic.c
+        Core/utils.c
 )
 
-# DATABASE LIBRARY
+#Add new c files to database
 add_library(database
         database/data.c
 )
 
-#MAIN EXECUTEABLE
-add_executable(FitnessTracker main.c)
-add_executable(run_data core/run_data.c) #tester
+#compiler det i main
+add_executable(untitled main.c)
 
-# LINK LIBRARIES
-target_link_libraries(FitnessTracker
+#linker libraries ind i programmet
+target_link_libraries(untitled
         core
         database
 )
 
 # gør .h filer synlige for alle targets
-target_include_directories(FitnessTracker PRIVATE ../include)
+target_include_directories(untitled PRIVATE ../include)
