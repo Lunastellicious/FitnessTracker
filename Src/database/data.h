@@ -18,12 +18,11 @@ typedef struct {
     };
 } Database;
 
-void set_HRrest(Database *a, int *HRrest);
-void set_HRmax(Database *a, int *HRmax);
-void set_HRaverage(Database *a, int *HRaverage);
-void set_pace(Database *a, int *pace);
-void set_duration(Database *a, int *duration);
-void set_length(Database *a, int *length);
-void set_tempo(Database *a, int *tempo);
-
+void set_HRrest(Database *a, int HRrest);
+void set_HRmax(Database *a, int HRmax);
+void set_HRaverage(Database *a, int HRaverage);
+void set_pace(Database *a, int pace);
+void set_duration(Database *a, int duration);
+void set_length(Database *a, int length);
+void set_tempo(Database *a, int tempo);
 #endif //DATA_H
