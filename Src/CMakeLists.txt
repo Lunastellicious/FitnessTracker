@@ -14,6 +14,7 @@ add_library(database
 add_executable(FitnessTracker main.c)
 add_executable(run_data core/run_data.c) #tester
 
+
 # LINK LIBRARIES
 target_link_libraries(FitnessTracker
         core
