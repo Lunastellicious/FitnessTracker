@@ -16,7 +16,10 @@ const int ACTIVEBPM_MIN = 115;
 const int ACTIVEBPM_MAX = 195;
 
 #define TRUE 1
-const int conversionRate = 1;
+// varies heavily based on an individuals height
+const double conversionStepsPrMeter = 1.3;
+// given in Km/t
+const double averageHumanRunSPeed = 11.1;
 const double MStoKMT = 3.6;
 
 //TODO: make realistic numbers
@@ -40,12 +43,6 @@ typedef struct heartRateZone
     const char *description;
 } heartRateZone;
 
-struct StructDeclaration {
-    double time[5];
-    int zone[5];
-};
-
-struct StructDeclaration structVariableName;
 
 
 
@@ -64,23 +61,23 @@ struct heartRateZone Zones[] = {
 double runDuration (int minMinutes, int maxMinutes);
 void printRunDuration(double runTime);
 int generateRunDurations();
-int generateHRData (double totalSeconds);
+int generateHRData (double totalSeconds, double *zoneTimes);
 
 double stepsToDistance(int stepCount);
-double generateDistance();
-void generateElevation(double *elevation);
+double generateDistance(double runTime);
+// void generateElevation(double *elevation);
 double generateTempo(int time, double distance);
-void runData(int distanceStepBool, int stepCount);
+double distanceToRunTime(double runDistance);
 
 void kadencePerMinut(int steps[], int minute);
 double kadence(int sumSteps, int minut);
 
-double calculateScore(double Time, int zone);
-double calculateRestitution(struct StructDeclaration test);
 
 
 //// ---------- MAIN ----------
 
+/* runData should not have a main as it is not the main executable
+ *
 int main (void)
 {
 
@@ -91,56 +88,71 @@ int main (void)
 
     return 0;
 }
-
+*/
 
 //// ---------- FUNCTIONS ----------
 
 
-// runs the other functions
-// possibly return in from a pointer to a struct
-void runData(int distanceStepBool, int stepCount) {
-    double distance;
-    double elevation[] = {0, 0};
-    int time = 50;
-    double test = 0;
-    double test1 = 0;
+// main function that should be called
+void runData(int min, int max, int stepcount) {
+    //given in seconds
+    double runTime = 0;
+    // given in Km
+    double runDistance = 0;
+    // given in Minutes
+    double zoneTimes[5] = {0,0,0,0,0};
+
+    // values currently not being calculated that will be in the future
+    double restitutionTime = 0;
+    double aerobScore = 0;
+    double anerobScore = 0;
 
 
-    if (distanceStepBool == TRUE) {
-        distance = stepsToDistance(stepCount);
+    if (stepcount == 0) {
+        runTime = runDuration(min, max);
+        runDistance = generateDistance(runTime);
+    } else {
+        runDistance = stepsToDistance(stepcount);
+        runTime = distanceToRunTime(runDistance);
     }
-    else {
-        distance = generateDistance();
-    }
-    // generateElevation(elevation);
-    test1 = generateTempo(time, distance);
-    test = distance;
-    printf("distance = %lf tempo = %lf", test, test1);
+    // printRunDuration(runTime); option to write time of run to console
+    generateHRData(runTime, zoneTimes);
+
+
+
 
 
 }
+
+
+
+
 // creates distance from an amount of steps
 double stepsToDistance(int stepCount) {
     double distance;
 
-    distance = stepCount*conversionRate;
+    distance = stepCount*conversionStepsPrMeter;
 
     return distance;
 }
+// creates a run time from the given distance
+double distanceToRunTime(double runDistance) {
+    int runTime = 0;
 
-// randomly generates a distance in Km
-double generateDistance() {
-    double distance;
-    int max = 2000;
-    int min = 0;
+    runTime = runDistance/(averageHumanRunSPeed/MStoKMT);
 
-    distance = rand() % (max - min + 1) + min;
+    return runTime;
+}
+
+// randomly generates a distance for the run based off the time of the run
+double generateDistance(double runTime) {
+    double distance = (averageHumanRunSPeed/3.6)*runTime;
 
     return distance;
 }
 
 // generates tempo based off a time in seconds and a distance in M
-// (needs to account for distance currently being kM and time being minutes or seconds)
+// needs distance in M
 double generateTempo(int time, double distance) {
     double tempo = 0;
 
@@ -209,7 +221,7 @@ void printRunDuration (double runTime)
 
 
 //distributes run duration into zones
-int generateHRData (double totalSeconds)
+int generateHRData (double totalSeconds, double *zoneTimes)
 {
 
     int totalMinutes = totalSeconds / 60;
@@ -223,9 +235,11 @@ int generateHRData (double totalSeconds)
 
     double distributionSum = Z1_time + Z2_time + Z3_time + Z4_time + Z5_time;
 
-    printf("distribution %.02lf \n " , distributionSum);
+    // should not print to console during normal operations
+    // printf("distribution %.02lf \n " , distributionSum);
 
     //distribution in minutes
+    /*
     double const Z1 = totalMinutes * (Z1_time / distributionSum);
     double const Z2 = totalMinutes * (Z2_time / distributionSum);
 
@@ -233,12 +247,23 @@ int generateHRData (double totalSeconds)
 
     double const Z4 = totalMinutes * (Z4_time / distributionSum);
     double const Z5 = totalMinutes * (Z5_time / distributionSum);
+    */
+        zoneTimes[0] = totalMinutes * (Z1_time / distributionSum);
+        zoneTimes[1] = totalMinutes * (Z2_time / distributionSum);
 
-    printf("Z1 %.2lf \n", Z1);
-    printf("Z2 %.2lf \n", Z2);
-    printf("Z3 %.2lf \n", Z3);
-    printf("Z4 %.2lf \n", Z4);
-    printf("Z4 %.2lf \n", Z5);
+        zoneTimes[2] = totalMinutes * (Z3_time / distributionSum); //lactate threshold
+
+        zoneTimes[3] = totalMinutes * (Z4_time / distributionSum);
+        zoneTimes[4] = totalMinutes * (Z5_time / distributionSum);
+
+    // should not print to console during normal operations
+    /*
+    printf("Z1 %.2lf \n", zoneTimes[0]);
+    printf("Z2 %.2lf \n", zoneTimes[1]);
+    printf("Z3 %.2lf \n", zoneTimes[2]);
+    printf("Z4 %.2lf \n", zoneTimes[3]);
+    printf("Z4 %.2lf \n", zoneTimes[4]);
+    */
 }
 
 
@@ -254,6 +279,18 @@ double kadence(int sumSteps, int minut) {
     return (double) sumSteps/minut;
 }
 */
+
+//// ---------- unused code ----------
+
+/*
+
+ // restituition time function based off anerob and aerob needs changing befdore implementation
+
+struct StructDeclaration {
+    double time[5];
+    int zone[5];
+};
+
 
 double calculateRestitution(struct StructDeclaration test) {
     // recieve input
@@ -299,3 +336,30 @@ double calculateScore(double Time, int zone) {
 
     return score;
 }
+
+ // was used for testing purposes
+void runData(int distanceStepBool, int stepCount) {
+    double distance;
+    double elevation[] = {0, 0};
+    int time = 50;
+    double test = 0;
+    double test1 = 0;
+
+
+    if (distanceStepBool == TRUE) {
+        distance = stepsToDistance(stepCount);
+    }
+    else {
+        distance = generateDistance();
+    }
+    // generateElevation(elevation);
+    test1 = generateTempo(time, distance);
+    test = distance;
+    printf("distance = %lf tempo = %lf", test, test1);
+
+
+}
+
+
+
+*/
