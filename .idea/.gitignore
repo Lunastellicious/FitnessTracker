@@ -7,5 +7,5 @@
 /dataSources/
 /dataSources.local.xml
 #VSC specific
-/build
-/.vscode
+./build
+./.vscode
