@@ -3,19 +3,13 @@
 #define DATA_H
 
 typedef struct {
-    union{
-        struct
-        {
-            int HRrest,
-                HRmax,
-                HRaverage,
-                pace,
-                duration,
-                length,
-                tempo;
-        } current;
-        struct { } previous;
-    };
+    int HRrest,
+        HRmax,
+        HRaverage,
+        pace,
+        duration,
+        length,
+        tempo;
 } Database;
 
 void set_HRrest(Database *a, int HRrest);
