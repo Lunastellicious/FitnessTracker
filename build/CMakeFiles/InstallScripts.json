@@ -1,8 +1,0 @@
-{
-	"InstallScripts" : 
-	[
-		"/home/Ruben/Coding/FitnessTracker/build/cmake_install.cmake",
-		"/home/Ruben/Coding/FitnessTracker/build/Src/cmake_install.cmake"
-	],
-	"Parallel" : false
-}
