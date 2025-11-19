@@ -1,7 +1,7 @@
 # CORE LIBRARY
 add_library(core
-        Core/logic.c
-        Core/utils.c
+        core/logic.c
+        core/utils.c
         core/run_data.c
 )
 
@@ -12,7 +12,6 @@ add_library(database
 
 #MAIN EXECUTEABLE
 add_executable(FitnessTracker main.c)
-add_executable(run_data core/run_data.c) #tester
 
 
 # LINK LIBRARIES

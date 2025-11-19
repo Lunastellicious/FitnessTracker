@@ -1,4 +1,4 @@
-#include "data.h"
+#include "../include/data.h"
 // Creation of struct update functions
 // Fake-abase
 void set_HRrest(Database *a, int HRrest){
@@ -13,11 +13,11 @@ void set_HRaverage(Database *a, int HRaverage){
 void set_pace(Database *a, int pace){
     a->pace = pace;
 }
-void set_duration(Database *a, int duration){
+void set_duration(Database *a, double duration){
     a->duration = duration;
 }
-void set_length(Database *a, int length){
-    a->length = length;
+void set_distance(Database *a, double distance){
+    a->distance = distance;
 }
 void set_tempo(Database *a, int tempo){
     a->tempo = tempo;

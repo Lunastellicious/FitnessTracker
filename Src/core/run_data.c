@@ -3,12 +3,11 @@
 //
 
 #include "../include/run_data.h"
+#include "../include/data.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-#include <windows.h>
-
 
 //// ---------- CONST ----------
 
@@ -94,7 +93,7 @@ int main (void)
 
 
 // main function that should be called
-void runData(int min, int max, int stepcount) {
+void runData(int min, int max, int stepcount, Database *current) {
     //given in seconds
     double runTime = 0;
     // given in Km
@@ -118,6 +117,8 @@ void runData(int min, int max, int stepcount) {
     // printRunDuration(runTime); option to write time of run to console
     generateHRData(runTime, zoneTimes);
 
+    set_distance(current, runDistance);
+    set_duration(current, runTime);
 
 
 
@@ -132,7 +133,6 @@ double stepsToDistance(int stepCount) {
     double distance;
 
     distance = stepCount*conversionStepsPrMeter;
-
     return distance;
 }
 // creates a run time from the given distance
@@ -140,14 +140,13 @@ double distanceToRunTime(double runDistance) {
     int runTime = 0;
 
     runTime = runDistance/(averageHumanRunSPeed/MStoKMT);
-
     return runTime;
 }
 
 // randomly generates a distance for the run based off the time of the run
 double generateDistance(double runTime) {
     double distance = (averageHumanRunSPeed/3.6)*runTime;
-
+    
     return distance;
 }
 

@@ -1,6 +1,8 @@
+#ifndef RUN_DATA_H
+#include "data.h"
+#define RUN_DATA_H
+
+void runData(int min, int max, int stepcount, Database *current);
 
 
-#ifndef FITNESSTRACKER_RUN_DATA_H
-#define FITNESSTRACKER_RUN_DATA_H
-
-#endif //FITNESSTRACKER_RUN_DATA_H
+#endif //RUN_DATA_H

@@ -152,18 +152,18 @@ database/fast:
 .PHONY : database/fast
 
 # Convenience name for target.
-Src/CMakeFiles/untitled.dir/rule:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/untitled.dir/rule
-.PHONY : Src/CMakeFiles/untitled.dir/rule
+Src/CMakeFiles/FitnessTracker.dir/rule:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/FitnessTracker.dir/rule
+.PHONY : Src/CMakeFiles/FitnessTracker.dir/rule
 
 # Convenience name for target.
-untitled: Src/CMakeFiles/untitled.dir/rule
-.PHONY : untitled
+FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/rule
+.PHONY : FitnessTracker
 
 # fast build rule for target.
-untitled/fast:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+FitnessTracker/fast:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/build
+.PHONY : FitnessTracker/fast
 
 core/logic.o: core/logic.c.o
 .PHONY : core/logic.o
@@ -188,6 +188,30 @@ core/logic.s: core/logic.c.s
 core/logic.c.s:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/logic.c.s
 .PHONY : core/logic.c.s
+
+core/run_data.o: core/run_data.c.o
+.PHONY : core/run_data.o
+
+# target to build an object file
+core/run_data.c.o:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/run_data.c.o
+.PHONY : core/run_data.c.o
+
+core/run_data.i: core/run_data.c.i
+.PHONY : core/run_data.i
+
+# target to preprocess a source file
+core/run_data.c.i:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/run_data.c.i
+.PHONY : core/run_data.c.i
+
+core/run_data.s: core/run_data.c.s
+.PHONY : core/run_data.s
+
+# target to generate assembly for a file
+core/run_data.c.s:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/run_data.c.s
+.PHONY : core/run_data.c.s
 
 core/utils.o: core/utils.c.o
 .PHONY : core/utils.o
@@ -242,7 +266,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/main.c.o
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -250,7 +274,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/main.c.i
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -258,7 +282,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/main.c.s
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -270,12 +294,15 @@ help:
 	@echo "... codegen"
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
+	@echo "... FitnessTracker"
 	@echo "... core"
 	@echo "... database"
-	@echo "... untitled"
 	@echo "... core/logic.o"
 	@echo "... core/logic.i"
 	@echo "... core/logic.s"
+	@echo "... core/run_data.o"
+	@echo "... core/run_data.i"
+	@echo "... core/run_data.s"
 	@echo "... core/utils.o"
 	@echo "... core/utils.i"
 	@echo "... core/utils.s"
