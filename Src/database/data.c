@@ -1,6 +1,5 @@
 #include "../include/data.h"
 // Creation of struct update functions
-// Fake-abase
 void set_HRrest(Database *a, int HRrest){
     a->HRrest = HRrest;
 }

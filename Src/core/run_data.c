@@ -117,6 +117,7 @@ void runData(int min, int max, int stepcount, Database *current) {
     // printRunDuration(runTime); option to write time of run to console
     generateHRData(runTime, zoneTimes);
 
+    //sends data to struct
     set_distance(current, runDistance);
     set_duration(current, runTime);
 

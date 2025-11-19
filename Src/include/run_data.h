@@ -2,6 +2,7 @@
 #include "data.h"
 #define RUN_DATA_H
 
+
 void runData(int min, int max, int stepcount, Database *current);
 
 

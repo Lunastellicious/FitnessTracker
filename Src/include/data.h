@@ -1,6 +1,6 @@
 #ifndef DATA_H
 #define DATA_H
-
+//creation of struct used to store run information
 typedef struct {
     int HRrest,
         HRmax,
@@ -11,6 +11,7 @@ typedef struct {
            distance;
 } Database;
 
+//preloads update functions
 void set_HRrest(Database *a, int HRrest);
 void set_HRmax(Database *a, int HRmax);
 void set_HRaverage(Database *a, int HRaverage);
