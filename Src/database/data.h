@@ -1,8 +1,28 @@
-//
-// Created by lunas on 04-11-2025.
-//
 
-#ifndef UNTITLED_DATABASE_H
-#define UNTITLED_DATABASE_H
+#ifndef DATA_H
+#define DATA_H
 
-#endif //UNTITLED_DATABASE_H
+typedef struct {
+    union{
+        struct
+        {
+            int HRrest,
+                HRmax,
+                HRaverage,
+                pace,
+                duration,
+                length,
+                tempo;
+        } current;
+        struct { } previous;
+    };
+} Database;
+
+void set_HRrest(Database *a, int HRrest);
+void set_HRmax(Database *a, int HRmax);
+void set_HRaverage(Database *a, int HRaverage);
+void set_pace(Database *a, int pace);
+void set_duration(Database *a, int duration);
+void set_length(Database *a, int length);
+void set_tempo(Database *a, int tempo);
+#endif //DATA_H
