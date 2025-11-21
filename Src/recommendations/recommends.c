@@ -1,4 +1,4 @@
-#include "recommends.h"
+#include "../include/recommends.h"
 #include <stdio.h>
 
 void recommend(int a, int b, int c, int d, int e, int f){
@@ -12,7 +12,7 @@ void recommend(int a, int b, int c, int d, int e, int f){
 
     int x;
     char y;
-/*  */
+    
     /*
     Some code to find x which is used to find the outcome in switch
     Maybe ther should be multiple switch's and then a complete output would be multiple stichted

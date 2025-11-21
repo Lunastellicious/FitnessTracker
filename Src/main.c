@@ -2,8 +2,6 @@
 #include "./include/data.h"
 #include "./include/run_data.h"
 
-
-
 int main(void)
 {
     Database current;
