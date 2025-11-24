@@ -3,7 +3,6 @@ add_library(core
         core/logic.c
         core/utils.c
         core/Linear_regression.c
-        include/linear_regression.h
 )
 
 #Add new c files to database
@@ -12,13 +11,13 @@ add_library(database
 )
 
 #compiler det i main
-add_executable(untitled main.c)
+add_executable(FitnessTracker main.c)
 
 #linker libraries ind i programmet
-target_link_libraries(untitled
+target_link_libraries(FitnessTracker
         core
         database
 )
 
 # gør .h filer synlige for alle targets
-target_include_directories(untitled PRIVATE ../include)
+target_include_directories(FitnessTracker PRIVATE ../include)
