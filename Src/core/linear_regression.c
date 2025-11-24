@@ -14,6 +14,7 @@ int main ()
 {
 
 }
+// Skal omskrives med egne ord (Dette er næsten en til en med kilden)
 // cost function
 static double cost(double inputs[], double observedOutputs[], int size, double weight, double bias){
     double loss = 0;
