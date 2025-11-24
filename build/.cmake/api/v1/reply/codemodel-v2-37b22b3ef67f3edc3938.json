@@ -72,9 +72,9 @@
 				},
 				{
 					"directoryIndex" : 1,
-					"id" : "untitled::@fffd7673bb2fd0d58c2a",
-					"jsonFile" : "target-untitled-Debug-63258204a0ac4a829cdb.json",
-					"name" : "untitled",
+					"id" : "fitnesstracker::@fffd7673bb2fd0d58c2a",
+					"jsonFile" : "target-fitnesstracker-Debug-3bd672239f076cb5a5a1.json",
+					"name" : "fitnesstracker",
 					"projectIndex" : 0
 				}
 			]

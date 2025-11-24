@@ -152,18 +152,18 @@ database/fast:
 .PHONY : database/fast
 
 # Convenience name for target.
-Src/CMakeFiles/untitled.dir/rule:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/untitled.dir/rule
-.PHONY : Src/CMakeFiles/untitled.dir/rule
+Src/CMakeFiles/fitnesstracker.dir/rule:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/fitnesstracker.dir/rule
+.PHONY : Src/CMakeFiles/fitnesstracker.dir/rule
 
 # Convenience name for target.
-untitled: Src/CMakeFiles/untitled.dir/rule
-.PHONY : untitled
+fitnesstracker: Src/CMakeFiles/fitnesstracker.dir/rule
+.PHONY : fitnesstracker
 
 # fast build rule for target.
-untitled/fast:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+fitnesstracker/fast:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/build
+.PHONY : fitnesstracker/fast
 
 core/logic.o: core/logic.c.o
 .PHONY : core/logic.o
@@ -242,7 +242,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/main.c.o
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/main.c.o
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -250,7 +250,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/main.c.i
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/main.c.i
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -258,7 +258,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/main.c.s
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/main.c.s
 .PHONY : main.c.s
 
 # Help Target
@@ -272,7 +272,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... core"
 	@echo "... database"
-	@echo "... untitled"
+	@echo "... fitnesstracker"
 	@echo "... core/logic.o"
 	@echo "... core/logic.i"
 	@echo "... core/logic.s"

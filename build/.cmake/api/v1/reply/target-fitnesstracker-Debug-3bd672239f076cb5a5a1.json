@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Src/untitled"
+			"path" : "Src/fitnesstracker"
 		}
 	],
 	"backtrace" : 1,
@@ -85,7 +85,7 @@
 			"id" : "database::@fffd7673bb2fd0d58c2a"
 		}
 	],
-	"id" : "untitled::@fffd7673bb2fd0d58c2a",
+	"id" : "fitnesstracker::@fffd7673bb2fd0d58c2a",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -107,8 +107,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "untitled",
-	"nameOnDisk" : "untitled",
+	"name" : "fitnesstracker",
+	"nameOnDisk" : "fitnesstracker",
 	"paths" : 
 	{
 		"build" : "Src",

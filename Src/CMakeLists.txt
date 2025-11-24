@@ -10,13 +10,13 @@ add_library(database
 )
 
 #compiler det i main
-add_executable(untitled main.c)
+add_executable(fitnesstracker main.c)
 
 #linker libraries ind i programmet
-target_link_libraries(untitled
+target_link_libraries(fitnesstracker
         core
         database
 )
 
 # gør .h filer synlige for alle targets
-target_include_directories(untitled PRIVATE ../include)
+target_include_directories(fitnesstracker PRIVATE ../include)

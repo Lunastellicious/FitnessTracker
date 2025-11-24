@@ -150,17 +150,17 @@ database/fast:
 .PHONY : database/fast
 
 #=============================================================================
-# Target rules for targets named untitled
+# Target rules for targets named fitnesstracker
 
 # Build rule for target.
-untitled: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 untitled
-.PHONY : untitled
+fitnesstracker: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fitnesstracker
+.PHONY : fitnesstracker
 
 # fast build rule for target.
-untitled/fast:
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/untitled.dir/build.make Src/CMakeFiles/untitled.dir/build
-.PHONY : untitled/fast
+fitnesstracker/fast:
+	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/build
+.PHONY : fitnesstracker/fast
 
 # Help Target
 help:
@@ -173,7 +173,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... core"
 	@echo "... database"
-	@echo "... untitled"
+	@echo "... fitnesstracker"
 .PHONY : help
 
 

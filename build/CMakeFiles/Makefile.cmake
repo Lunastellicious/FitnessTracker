@@ -51,5 +51,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 set(CMAKE_DEPEND_INFO_FILES
   "Src/CMakeFiles/core.dir/DependInfo.cmake"
   "Src/CMakeFiles/database.dir/DependInfo.cmake"
-  "Src/CMakeFiles/untitled.dir/DependInfo.cmake"
+  "Src/CMakeFiles/fitnesstracker.dir/DependInfo.cmake"
   )
