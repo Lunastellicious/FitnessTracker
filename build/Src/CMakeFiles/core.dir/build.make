@@ -100,35 +100,19 @@ Src/CMakeFiles/core.dir/core/utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/core/utils.c.s"
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/core/utils.c -o CMakeFiles/core.dir/core/utils.c.s
 
-Src/CMakeFiles/core.dir/core/run_data.c.o: Src/CMakeFiles/core.dir/flags.make
-Src/CMakeFiles/core.dir/core/run_data.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/run_data.c
-Src/CMakeFiles/core.dir/core/run_data.c.o: Src/CMakeFiles/core.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object Src/CMakeFiles/core.dir/core/run_data.c.o"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT Src/CMakeFiles/core.dir/core/run_data.c.o -MF CMakeFiles/core.dir/core/run_data.c.o.d -o CMakeFiles/core.dir/core/run_data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/run_data.c
-
-Src/CMakeFiles/core.dir/core/run_data.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/core.dir/core/run_data.c.i"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/Ruben/Coding/FitnessTracker/Src/core/run_data.c > CMakeFiles/core.dir/core/run_data.c.i
-
-Src/CMakeFiles/core.dir/core/run_data.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/core.dir/core/run_data.c.s"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/core/run_data.c -o CMakeFiles/core.dir/core/run_data.c.s
-
 # Object files for target core
 core_OBJECTS = \
 "CMakeFiles/core.dir/core/logic.c.o" \
-"CMakeFiles/core.dir/core/utils.c.o" \
-"CMakeFiles/core.dir/core/run_data.c.o"
+"CMakeFiles/core.dir/core/utils.c.o"
 
 # External object files for target core
 core_EXTERNAL_OBJECTS =
 
 Src/libcore.a: Src/CMakeFiles/core.dir/core/logic.c.o
 Src/libcore.a: Src/CMakeFiles/core.dir/core/utils.c.o
-Src/libcore.a: Src/CMakeFiles/core.dir/core/run_data.c.o
 Src/libcore.a: Src/CMakeFiles/core.dir/build.make
 Src/libcore.a: Src/CMakeFiles/core.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking C static library libcore.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libcore.a"
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && $(CMAKE_COMMAND) -P CMakeFiles/core.dir/cmake_clean_target.cmake
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/core.dir/link.txt --verbose=$(VERBOSE)
 

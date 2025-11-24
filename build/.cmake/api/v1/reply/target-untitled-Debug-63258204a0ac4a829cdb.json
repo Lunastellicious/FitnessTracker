@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Src/FitnessTracker"
+			"path" : "Src/untitled"
 		}
 	],
 	"backtrace" : 1,
@@ -26,19 +26,19 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 14,
+				"line" : 13,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 18,
+				"line" : 16,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 24,
+				"line" : 22,
 				"parent" : 0
 			}
 		]
@@ -85,7 +85,7 @@
 			"id" : "database::@fffd7673bb2fd0d58c2a"
 		}
 	],
-	"id" : "FitnessTracker::@fffd7673bb2fd0d58c2a",
+	"id" : "untitled::@fffd7673bb2fd0d58c2a",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -107,8 +107,8 @@
 		],
 		"language" : "C"
 	},
-	"name" : "FitnessTracker",
-	"nameOnDisk" : "FitnessTracker",
+	"name" : "untitled",
+	"nameOnDisk" : "untitled",
 	"paths" : 
 	{
 		"build" : "Src",
