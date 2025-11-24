@@ -2,6 +2,8 @@
 add_library(core
         core/logic.c
         core/utils.c
+        core/Linear_regression.c
+        include/linear_regression.h
 )
 
 #Add new c files to database
