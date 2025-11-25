@@ -38,7 +38,7 @@ static double weightGrad(double inputs[], double observedOutputs[], int size, do
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++){
         grad += (predictedOutputs[i] - observedOutputs[i]) * inputs[i];
     }
     free(predictedOutputs);
@@ -52,7 +52,7 @@ static double biasGrad(double inputs[], double observedOutputs[], int size, doub
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
 
-    for (int i = 0; i < size; i++) {
+    for (int i = 0; i < size; i++){
         grad += (predictedOutputs[i] - observedOutputs[i]);
     }
     free(predictedOutputs);
