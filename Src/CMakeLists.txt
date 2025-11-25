@@ -9,6 +9,7 @@ add_library(core
 #Add new c files to database
 add_library(database
         database/data.c
+        database/Load_Dataset.c
 )
 
 #compiler det i main
