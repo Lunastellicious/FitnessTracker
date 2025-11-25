@@ -2,8 +2,7 @@
 add_library(core
         core/logic.c
         core/utils.c
-        core/Linear_regression.c
-        include/linear_regression.h
+        core/linear_regression.c
 )
 
 #Add new c files to database
@@ -13,6 +12,8 @@ add_library(database
 
 #compiler det i main
 add_executable(untitled main.c)
+add_executable(untitled linear_regression)
+
 
 #linker libraries ind i programmet
 target_link_libraries(untitled

@@ -19,13 +19,13 @@ typedef struct
 } dataSet;
 
 static double* predict (double inputs[], int size, double weight, double bias);
-void split_dataset(dataSet* data, double train_ratio);
+void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 
 int main ()
 {
     //age data
-    double age_x[] = {};
-    double VO2_age[] = {};
+    double age_x[] = {1, 2, 4, 5, 6, 7, 8, 9, 10};
+    double VO2_age[] = {1, 2, 4, 5, 6, 7, 8, 9, 10};
     dataSet age_data = {
         .x = age_x,
         .VO2max = VO2_age,
@@ -110,14 +110,21 @@ int main ()
     //array med alle datasets
     dataSet dataSets [] = {age_data, weight_data, restingHeartRate_data, maxHeartRate_data, cumulativeHits_data, cumulativeRuns_data, trainingHours_data};
     int num_dataSets = 7;
-    split_dataset(&age_data, 0.8);
+    split_datasets(dataSets, dataSets, 0.8);
 }
 
 //ændre input ved funktionskald
 
 static double* predict (double inputs[], int size, double weight, double bias);
 
-void split_dataset(dataSet* data, double data_ratio) { //splitter datasets op i 2 dele
-    data->train_size = (int)(data->size * data_ratio);
-    data->test_size = data->size - data->train_size;
+
+void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio) { //splitter dataset op i 2 dele
+
+
+    for (int data_size = 0; data_size < (sizeof(dataSets) / sizeof(dataSet)); data_size++)
+    {
+        dataSets[data_size].train_size = (int)(data->size * train_ratio); // 80%
+        dataSets[data_size].test_size = data->size - data->train_size; // 20%
+    }
+
 }
