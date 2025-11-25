@@ -119,8 +119,7 @@ int machineLearning ()
     dataSet dataSets [] = {age_data, weight_data, restingHeartRate_data, maxHeartRate_data, cumulativeHits_data, cumulativeRuns_data, trainingHours_data};
     int num_dataSets = 7;
 
-    //tester split
-    //TODO: free mallocs
+    ////TESTER
     //split_datasets(&dataSets, dataSets, 0.8);
     split_datasettester(&trainingHours_data, 0.8);
 
@@ -136,7 +135,7 @@ int machineLearning ()
         printf("%1.lf %1.lf \n ", trainingHours_data.x_test[i], trainingHours_data.VO2max_test[i]); //test data
     }
 
-    //tester predict
+    ////TESTER
     trainingHours_data.weight = 2.0;
     trainingHours_data.bias = 1;
 
@@ -154,13 +153,10 @@ int machineLearning ()
                2.0 * trainingHours_data.x_train[i] + 1.0);
     }
 
-    free(predictions); //frigøre data igen
+    free(predictions); //frigøre data igen (malloc)
 
 
     return 0;
-
-
-    // Frigør hukommelse når du er færdig!
 }
 
 //// FUNCTIONS
@@ -229,6 +225,3 @@ static double* predict(dataSet* data) {
     }
     return y_predicted;
 }
-
-
-//TODO: predict function
