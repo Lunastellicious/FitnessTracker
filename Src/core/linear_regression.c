@@ -14,22 +14,26 @@ int main ()
 {
 
 }
-// Skal omskrives med egne ord (Dette er næsten en til en med kilden)
+
 // cost function
-static double cost(double inputs[], double observedOutputs[], int size, double weight, double bias){
-    double loss = 0;
-    double sumLoss = 0;
-    double* predictedOutputs = predict(inputs, size, weight, bias);
+// This implementation of the cost function is heavily inspired by a source on linear regression.
+// The code has been adapted and modified to fit the structure and requirements of our project.
+
+static double cost(double xValues[], double observedOutputs[], int size, double weight, double bias){
+    double sumLoss = 0.0;
+    double* predictedOutputs = predict(xValues, size, weight, bias);
 
     for (int i = 0; i < size; i++){
-        loss = (observedOutputs[i] - predictedOutputs[i]) * (observedOutputs[i] - predictedOutputs[i]);
-        sumLoss += loss;
+        double loss = (observedOutputs[i] - predictedOutputs[i]);
+        sumLoss += loss * loss;
     }
     free(predictedOutputs);
-    return sumLoss / (2 * size);
+    return sumLoss / (size * 2);
 }
 
 // Gradients of Weights
+// This implementation of the gradients of weight/slope function is heavily inspired by a source on linear regression.
+// The code has been adapted and modified to fit the structure and requirements of our project.
 static double weightGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
@@ -37,12 +41,13 @@ static double weightGrad(double inputs[], double observedOutputs[], int size, do
     for (int i = 0; i < size; i++) {
         grad += (predictedOutputs[i] - observedOutputs[i]) * inputs[i];
     }
-
     free(predictedOutputs);
     return grad / size;
 }
 
 // Gradients of Bias
+// This implementation of the bias/intercept function is heavily inspired by a source on linear regression.
+// The code has been adapted and modified to fit the structure and requirements of our project.
 static double biasGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
@@ -50,7 +55,7 @@ static double biasGrad(double inputs[], double observedOutputs[], int size, doub
     for (int i = 0; i < size; i++) {
         grad += (predictedOutputs[i] - observedOutputs[i]);
     }
-
     free(predictedOutputs);
     return grad / size;
 }
+
