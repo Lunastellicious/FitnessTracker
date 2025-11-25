@@ -24,10 +24,10 @@ typedef struct
     double* VO2max_test;
 } dataSet;
 
-static double* predict (double inputs[], int size, double weight, double bias);
+
 void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 void split_datasettester(dataSet* data, double train_ratio); //tester til et dataset
-
+static double* predict(dataSet* data);
 
 int machineLearning ()
 {
@@ -115,14 +115,13 @@ int machineLearning ()
         .bias = 0
     };
 
+    //array med alle datasets
     dataSet dataSets [] = {age_data, weight_data, restingHeartRate_data, maxHeartRate_data, cumulativeHits_data, cumulativeRuns_data, trainingHours_data};
     int num_dataSets = 7;
 
-    split_datasets(&dataSets, dataSets, 0.8);
-    printf("training data: \n");
-
-
-    /*
+    //tester split
+    //TODO: free mallocs
+    //split_datasets(&dataSets, dataSets, 0.8);
     split_datasettester(&trainingHours_data, 0.8);
 
     printf("training data: \n");
@@ -136,9 +135,29 @@ int machineLearning ()
     {
         printf("%1.lf %1.lf \n ", trainingHours_data.x_test[i], trainingHours_data.VO2max_test[i]); //test data
     }
-    */
 
-    //array med alle datasets
+    //tester predict
+    trainingHours_data.weight = 2.0;
+    trainingHours_data.bias = 1;
+
+    double* predictions = predict(&trainingHours_data);
+
+    // Prints
+    printf("Testing predict function:\n");
+    printf("Formula: y = %.1f * x + %.1f\n\n",
+           trainingHours_data.weight, trainingHours_data.bias);
+
+    for (int i = 0; i < trainingHours_data.train_size; i++) {
+        printf("X = %.1lf -> Predicted Y = %.1lf (Expected: %.1f)\n",
+               trainingHours_data.x_train[i],
+               predictions[i],
+               2.0 * trainingHours_data.x_train[i] + 1.0);
+    }
+
+    free(predictions); //frigøre data igen
+
+
+    return 0;
 
 
     // Frigør hukommelse når du er færdig!
@@ -147,7 +166,7 @@ int machineLearning ()
 //// FUNCTIONS
 
 void split_datasettester(dataSet* data, double train_ratio) {
-    // Beregner størrelser - brug data->size
+    // Beregner størrelser
     data->train_size = (int)(data->size * train_ratio);
     data->test_size = data->size - data->train_size;
 
@@ -159,13 +178,13 @@ void split_datasettester(dataSet* data, double train_ratio) {
     data->x_test = (double*)malloc(data->test_size * sizeof(double));
     data->VO2max_test = (double*)malloc(data->test_size * sizeof(double));
 
-    // Kopiere data til training data (80%) - brug x_TRAIN
+    // Kopiere data til training data (80%)
     for (int i = 0; i < data->train_size; i++) {
         data->x_train[i] = data->x[i];
         data->VO2max_train[i] = data->VO2max[i];
     }
 
-    // Kopiere data til test data (20%) - start fra train_size
+    // Kopiere data til test data (20%)
     for (int i = 0; i < data->test_size; i++) {
         data->x_test[i] = data->x[data->train_size + i];
         data->VO2max_test[i] = data->VO2max[data->train_size + i];
@@ -177,7 +196,7 @@ void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio)
     //splitter datasets op i 2 dele
     for (int data_size = 0; data_size < (sizeof(dataSets) / sizeof(dataSet)); data_size++)
     {
-        // Beregner størrelser - brug data->size
+        // Beregner størrelser
         data->train_size = (int)(data->size * train_ratio);
         data->test_size = data->size - data->train_size;
 
@@ -189,19 +208,26 @@ void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio)
         data->x_test = (double*)malloc(data->test_size * sizeof(double));
         data->VO2max_test = (double*)malloc(data->test_size * sizeof(double));
 
-        // Kopiere data til training data (80%) - brug x_TRAIN
+        // Kopiere data til training data (80%)
         for (int i = 0; i < data->train_size; i++) {
             data->x_train[i] = data->x[i];
             data->VO2max_train[i] = data->VO2max[i];
         }
 
-        // Kopiere data til test data (20%) - start fra train_size
+        // Kopiere data til test data (20%)
         for (int i = 0; i < data->test_size; i++) {
             data->x_test[i] = data->x[data->train_size + i];
             data->VO2max_test[i] = data->VO2max[data->train_size + i];
         }
-
     }
+}
+
+static double* predict(dataSet* data) {
+    double* y_predicted = (double*)malloc(data->train_size * sizeof(double));
+    for (int i = 0; i < data->train_size; i++) {
+        y_predicted[i] = data->weight * data->x_train[i] + data->bias;
+    }
+    return y_predicted;
 }
 
 
