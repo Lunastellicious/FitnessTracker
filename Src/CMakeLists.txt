@@ -12,7 +12,7 @@ add_library(database
 
 #compiler det i main
 add_executable(untitled main.c)
-add_executable(untitled linear_regression)
+
 
 
 #linker libraries ind i programmet
