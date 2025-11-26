@@ -11,7 +11,12 @@ add_library(database
 )
 
 #compiler det i main
-add_executable(untitled main.c)
+add_executable(untitled main.c
+        core/linear_regression.c
+        core/logic.c
+        core/utils.c
+        database/data.c
+)
 
 
 
@@ -22,4 +27,4 @@ target_link_libraries(untitled
 )
 
 # gør .h filer synlige for alle targets
-target_include_directories(untitled PRIVATE ../include)
+target_include_directories(untitled PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
