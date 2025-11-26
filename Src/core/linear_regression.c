@@ -6,12 +6,6 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static double cost(double inputs[], double observedOutputs[], int size, double weight, double bias);
-static double weightGrad(double inputs[], double observedOutputs[], int size, double weight, double bias);
-static double biasGrad(double inputs[], double observedOutputs[], int size, double weight, double bias);
-#include <stdlib.h>
-#include <stdio.h>
-
 typedef struct
 {
     double* x; //input data (datasets)
@@ -34,6 +28,9 @@ typedef struct
 void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 void split_datasettester(dataSet* data, double train_ratio); //tester til et dataset
 static double* predict(dataSet* data);
+static double cost(dataSet* data);
+static double weightGrad(dataSet* data);
+static double biasGrad(dataSet* data);
 
 int machineLearning ()
 {
@@ -42,7 +39,7 @@ int machineLearning ()
 
 // cost function
 // This implementation of the cost function is heavily inspired by a source on linear regression.
-static double cost(double xValues[], double observedOutputs[], int size, double weight, double bias){
+static double cost(dataSet* data){
     double sumLoss = 0.0;
     double* predictedOutputs = predict(xValues, size, weight, bias);
 
@@ -56,9 +53,9 @@ static double cost(double xValues[], double observedOutputs[], int size, double 
 
 // Gradients of Weights
 // This implementation of the gradients of weight/slope function is heavily inspired by a source on linear regression.
-static double weightGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
+static double weightGrad(dataSet* data) {
     double grad = 0;
-    double* predictedOutputs = predict(inputs, size, weight, bias);
+    double* predictedOutputs = predict(data);
 
     for (int i = 0; i < size; i++){
         grad += (predictedOutputs[i] - observedOutputs[i]) * inputs[i];
@@ -69,7 +66,7 @@ static double weightGrad(double inputs[], double observedOutputs[], int size, do
 
 // Gradients of Bias
 // This implementation of the gradients of bias/intercept function is heavily inspired by a source on linear regression.
-static double biasGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
+static double biasGrad(dataSet* data) {
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
 
