@@ -15,7 +15,7 @@ int main ()
 
 }
 
-// cost function
+// cost functions
 // This implementation of the cost function is heavily inspired by a source on linear regression.
 static double cost(dataSet* data){
     double sumLoss = 0.0;
