@@ -29,55 +29,12 @@ void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 void split_datasettester(dataSet* data, double train_ratio); //tester til et dataset
 static double* predict(dataSet* data);
 static double cost(dataSet* data);
-static double weightGrad(dataSet* data);
-static double biasGrad(dataSet* data);
+static double weight_grad(dataSet* data);
+static double bias_grad(dataSet* data);
+
 
 int machineLearning ()
 {
-
-}
-
-// cost function
-// This implementation of the cost function is heavily inspired by a source on linear regression.
-static double cost(dataSet* data){
-    double sumLoss = 0.0;
-    double* predictedOutputs = predict(xValues, size, weight, bias);
-
-    for (int i = 0; i < size; i++){
-        double loss = (observedOutputs[i] - predictedOutputs[i]);
-        sumLoss += loss * loss;
-    }
-    free(predictedOutputs);
-    return sumLoss / (size * 2);
-}
-
-// Gradients of Weights
-// This implementation of the gradients of weight/slope function is heavily inspired by a source on linear regression.
-static double weightGrad(dataSet* data) {
-    double grad = 0;
-    double* predictedOutputs = predict(data);
-
-    for (int i = 0; i < size; i++){
-        grad += (predictedOutputs[i] - observedOutputs[i]) * inputs[i];
-    }
-    free(predictedOutputs);
-    return grad / size;
-}
-
-// Gradients of Bias
-// This implementation of the gradients of bias/intercept function is heavily inspired by a source on linear regression.
-static double biasGrad(dataSet* data) {
-    double grad = 0;
-    double* predictedOutputs = predict(inputs, size, weight, bias);
-
-    for (int i = 0; i < size; i++){
-        grad += (predictedOutputs[i] - observedOutputs[i]);
-    }
-    free(predictedOutputs);
-    return grad / size;
-}
-
-
     //age data
     double age_x[] = {};
     double VO2_age[] = {};
@@ -271,4 +228,42 @@ static double* predict(dataSet* data) {
         y_predicted[i] = data->weight * data->x_train[i] + data->bias;
     }
     return y_predicted;
+}
+
+static double cost(dataSet* data){
+    double lossValue = 0;
+    double sumLoss = 0;
+    double* yPredicted = predict(data);
+
+    for (int i = 0; i < data->size; i++){
+        lossValue = (data->x[i] - yPredicted[i]) * (data->x[i] - yPredicted[i]);
+        sumLoss += lossValue;
+    }
+
+    free(yPredicted);
+    return sumLoss / (2 * data->size);
+}
+
+static double weightGrad(dataSet* data){
+    double grad = 0;
+    double* yPredicted = predict(data);
+
+    for(int i; i < data->size; i++){
+        grad += (yPredicted[i] - data->x[i]) * data->VO2max[i];
+    }
+
+    free(yPredicted);
+    return grad / data->size;
+}
+
+static double biasGrad(dataSet* data){
+    double grad = 0;
+    double* yPredicted = predict(data);
+
+    for(int i; i < data->size; i++){
+        grad += (yPredicted[i] - data->x[i]);
+    }
+
+    free(yPredicted);
+    return grad / data->size;
 }
