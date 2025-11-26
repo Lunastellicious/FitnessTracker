@@ -17,8 +17,6 @@ int main ()
 
 // cost function
 // This implementation of the cost function is heavily inspired by a source on linear regression.
-// The code has been adapted and modified to fit the structure and requirements of our project.
-
 static double cost(double xValues[], double observedOutputs[], int size, double weight, double bias){
     double sumLoss = 0.0;
     double* predictedOutputs = predict(xValues, size, weight, bias);
@@ -33,7 +31,6 @@ static double cost(double xValues[], double observedOutputs[], int size, double 
 
 // Gradients of Weights
 // This implementation of the gradients of weight/slope function is heavily inspired by a source on linear regression.
-// The code has been adapted and modified to fit the structure and requirements of our project.
 static double weightGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
@@ -46,8 +43,7 @@ static double weightGrad(double inputs[], double observedOutputs[], int size, do
 }
 
 // Gradients of Bias
-// This implementation of the bias/intercept function is heavily inspired by a source on linear regression.
-// The code has been adapted and modified to fit the structure and requirements of our project.
+// This implementation of the gradients of bias/intercept function is heavily inspired by a source on linear regression.
 static double biasGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
     double grad = 0;
     double* predictedOutputs = predict(inputs, size, weight, bias);
