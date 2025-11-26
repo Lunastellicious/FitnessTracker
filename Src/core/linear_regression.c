@@ -28,6 +28,9 @@ typedef struct
 void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 void split_datasettester(dataSet* data, double train_ratio); //tester til et dataset
 static double* predict(dataSet* data);
+static double cost(dataSet* data);
+static double weight_grad(dataSet* data);
+static double bias_grad(dataSet* data);
 
 int machineLearning ()
 {
@@ -133,7 +136,7 @@ int machineLearning ()
     for (int i = 0; i < trainingHours_data.test_size; i++)
     {
         printf("%1.lf %1.lf \n ", trainingHours_data.x_test[i], trainingHours_data.VO2max_test[i]); //test data
-    }
+    }///TESTER
 
     ////TESTER
     trainingHours_data.weight = 2.0;
@@ -225,3 +228,42 @@ static double* predict(dataSet* data) {
     }
     return y_predicted;
 }
+
+static double cost(dataSet* data){
+    double lossValue = 0;
+    double sumLoss = 0;
+    double* yPredicted = predict(data);
+
+    for (int i = 0; i < data->size; i++){
+        lossValue = (data->x[i] - yPredicted[i]) * (data->x[i] - yPredicted[i]);
+        sumLoss += lossValue;
+    }
+    
+    free(yPredicted);
+    return sumLoss / (2 * data->size);
+}
+
+static double weightGrad(dataSet* data){
+    double grad = 0;
+    double* yPredicted = predict(data);
+
+    for(int i; i < data->size; i++){
+        grad += (yPredicted[i] - data->x[i]) * data->VO2max[i];
+    }
+
+    free(yPredicted);
+    return grad / data->size;
+}
+
+static double biasGrad(dataSet* data){
+    double grad = 0;
+    double* yPredicted = predict(data);
+
+    for(int i; i < data->size; i++){
+        grad += (yPredicted[i] - data->x[i]);
+    }
+
+    free(yPredicted);
+    return grad / data->size;
+}
+
