@@ -17,41 +17,41 @@ int main ()
 
 // cost function
 // This implementation of the cost function is heavily inspired by a source on linear regression.
-static double cost(double xValues[], double observedOutputs[], int size, double weight, double bias){
+static double cost(dataSet* data){
     double sumLoss = 0.0;
-    double* predictedOutputs = predict(xValues, size, weight, bias);
+    double* predictedOutputs = predict(dataSet* data);
 
-    for (int i = 0; i < size; i++){
-        double loss = (observedOutputs[i] - predictedOutputs[i]);
+    for (int i = 0; i < data->train_size; i++){
+        double loss = (data->VO2max_train[i] - predictedOutputs[i]);
         sumLoss += loss * loss;
     }
     free(predictedOutputs);
-    return sumLoss / (size * 2);
+    return sumLoss / ((data->train_size) * 2);
 }
 
 // Gradients of Weights
 // This implementation of the gradients of weight/slope function is heavily inspired by a source on linear regression.
-static double weightGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
+static double weightGrad(dataSet* data) {
     double grad = 0;
-    double* predictedOutputs = predict(inputs, size, weight, bias);
+    double* predictedOutputs = predict(dataSet* data);
 
-    for (int i = 0; i < size; i++){
-        grad += (predictedOutputs[i] - observedOutputs[i]) * inputs[i];
+    for (int i = 0; i < data->train_size; i++){
+        grad += (predictedOutputs[i] - data->VO2max_train[i]) * data->x_train[i];
     }
     free(predictedOutputs);
-    return grad / size;
+    return grad / data->train_size;
 }
 
 // Gradients of Bias
 // This implementation of the gradients of bias/intercept function is heavily inspired by a source on linear regression.
-static double biasGrad(double inputs[], double observedOutputs[], int size, double weight, double bias) {
+static double biasGrad(dataSet* data) {
     double grad = 0;
-    double* predictedOutputs = predict(inputs, size, weight, bias);
+    double* predictedOutputs = predict(dataSet* data);
 
-    for (int i = 0; i < size; i++){
-        grad += (predictedOutputs[i] - observedOutputs[i]);
+    for (int i = 0; i < data->train_size; i++){
+        grad += predictedOutputs[i] - data->VO2max_train[i];
     }
     free(predictedOutputs);
-    return grad / size;
+    return grad / data->train_size;
 }
 
