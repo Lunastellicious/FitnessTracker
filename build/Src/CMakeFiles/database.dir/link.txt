@@ -1,2 +1,2 @@
-/usr/bin/ar qc libdatabase.a CMakeFiles/database.dir/database/data.c.o
+/usr/bin/ar qc libdatabase.a CMakeFiles/database.dir/database/data.c.o CMakeFiles/database.dir/database/Load_Dataset.c.o
 /usr/bin/ranlib libdatabase.a

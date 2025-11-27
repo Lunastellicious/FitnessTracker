@@ -86,17 +86,33 @@ Src/CMakeFiles/database.dir/database/data.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/database.dir/database/data.c.s"
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/database/data.c -o CMakeFiles/database.dir/database/data.c.s
 
+Src/CMakeFiles/database.dir/database/Load_Dataset.c.o: Src/CMakeFiles/database.dir/flags.make
+Src/CMakeFiles/database.dir/database/Load_Dataset.c.o: /home/Ruben/Coding/FitnessTracker/Src/database/Load_Dataset.c
+Src/CMakeFiles/database.dir/database/Load_Dataset.c.o: Src/CMakeFiles/database.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object Src/CMakeFiles/database.dir/database/Load_Dataset.c.o"
+	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT Src/CMakeFiles/database.dir/database/Load_Dataset.c.o -MF CMakeFiles/database.dir/database/Load_Dataset.c.o.d -o CMakeFiles/database.dir/database/Load_Dataset.c.o -c /home/Ruben/Coding/FitnessTracker/Src/database/Load_Dataset.c
+
+Src/CMakeFiles/database.dir/database/Load_Dataset.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/database.dir/database/Load_Dataset.c.i"
+	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/Ruben/Coding/FitnessTracker/Src/database/Load_Dataset.c > CMakeFiles/database.dir/database/Load_Dataset.c.i
+
+Src/CMakeFiles/database.dir/database/Load_Dataset.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/database.dir/database/Load_Dataset.c.s"
+	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/database/Load_Dataset.c -o CMakeFiles/database.dir/database/Load_Dataset.c.s
+
 # Object files for target database
 database_OBJECTS = \
-"CMakeFiles/database.dir/database/data.c.o"
+"CMakeFiles/database.dir/database/data.c.o" \
+"CMakeFiles/database.dir/database/Load_Dataset.c.o"
 
 # External object files for target database
 database_EXTERNAL_OBJECTS =
 
 Src/libdatabase.a: Src/CMakeFiles/database.dir/database/data.c.o
+Src/libdatabase.a: Src/CMakeFiles/database.dir/database/Load_Dataset.c.o
 Src/libdatabase.a: Src/CMakeFiles/database.dir/build.make
 Src/libdatabase.a: Src/CMakeFiles/database.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking C static library libdatabase.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C static library libdatabase.a"
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && $(CMAKE_COMMAND) -P CMakeFiles/database.dir/cmake_clean_target.cmake
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/database.dir/link.txt --verbose=$(VERBOSE)
 

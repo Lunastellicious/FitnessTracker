@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/database.dir/database/Load_Dataset.c.o"
+  "CMakeFiles/database.dir/database/Load_Dataset.c.o.d"
   "CMakeFiles/database.dir/database/data.c.o"
   "CMakeFiles/database.dir/database/data.c.o.d"
   "libdatabase.a"
