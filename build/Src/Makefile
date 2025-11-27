@@ -246,6 +246,30 @@ core/utils.c.s:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/utils.c.s
 .PHONY : core/utils.c.s
 
+database/Load_Dataset.o: database/Load_Dataset.c.o
+.PHONY : database/Load_Dataset.o
+
+# target to build an object file
+database/Load_Dataset.c.o:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/database/Load_Dataset.c.o
+.PHONY : database/Load_Dataset.c.o
+
+database/Load_Dataset.i: database/Load_Dataset.c.i
+.PHONY : database/Load_Dataset.i
+
+# target to preprocess a source file
+database/Load_Dataset.c.i:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/database/Load_Dataset.c.i
+.PHONY : database/Load_Dataset.c.i
+
+database/Load_Dataset.s: database/Load_Dataset.c.s
+.PHONY : database/Load_Dataset.s
+
+# target to generate assembly for a file
+database/Load_Dataset.c.s:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/database/Load_Dataset.c.s
+.PHONY : database/Load_Dataset.c.s
+
 database/data.o: database/data.c.o
 .PHONY : database/data.o
 
@@ -318,6 +342,9 @@ help:
 	@echo "... core/utils.o"
 	@echo "... core/utils.i"
 	@echo "... core/utils.s"
+	@echo "... database/Load_Dataset.o"
+	@echo "... database/Load_Dataset.i"
+	@echo "... database/Load_Dataset.s"
 	@echo "... database/data.o"
 	@echo "... database/data.i"
 	@echo "... database/data.s"

@@ -1,4 +1,4 @@
-Src/CMakeFiles/FitnessTracker.dir/main.c.o: \
+Src/CMakeFiles/fitnesstracker.dir/main.c.o: \
  /home/Ruben/Coding/FitnessTracker/Src/main.c /usr/include/stdc-predef.h \
  /usr/include/stdio.h /usr/include/bits/libc-header-start.h \
  /usr/include/features.h /usr/include/features-time64.h \
@@ -15,11 +15,6 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o: \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h \
-<<<<<<< HEAD
- /home/Ruben/Coding/FitnessTracker/Src/./database/data.h \
- /home/Ruben/Coding/FitnessTracker/Src/./include/linear_regression.h
-=======
  /home/Ruben/Coding/FitnessTracker/Src/./include/data.h \
  /home/Ruben/Coding/FitnessTracker/Src/./include/run_data.h \
  /home/Ruben/Coding/FitnessTracker/Src/./include/data.h
->>>>>>> origin/Database-real-nocap

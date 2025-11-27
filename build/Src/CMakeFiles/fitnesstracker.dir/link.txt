@@ -1,0 +1,1 @@
+/usr/bin/cc -g -Wl,--dependency-file=CMakeFiles/fitnesstracker.dir/link.d CMakeFiles/fitnesstracker.dir/main.c.o -o fitnesstracker  libcore.a libdatabase.a
