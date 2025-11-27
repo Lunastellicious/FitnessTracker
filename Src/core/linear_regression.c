@@ -29,8 +29,9 @@ void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 void split_datasettester(dataSet* data, double train_ratio); //tester til et dataset
 static double* predict(dataSet* data);
 static double cost(dataSet* data);
-static double weight_grad(dataSet* data);
-static double bias_grad(dataSet* data);
+static double weightGrad(dataSet* data);
+static double biasGrad(dataSet* data);
+void test(dataSet* date);
 
 
 int machineLearning ()
@@ -123,6 +124,45 @@ int machineLearning ()
     dataSet dataSets [] = {age_data, weight_data, restingHeartRate_data, maxHeartRate_data, cumulativeHits_data, cumulativeRuns_data, trainingHours_data};
     int num_dataSets = 7;
 
+    //splitter dataset (WIP)
+    for(int k; k < num_dataSets - 1; k++){
+        split_datasets(&dataSets[k], dataSets, 0.8);
+    }
+    split_datasettester(&trainingHours_data, 0.8);
+    
+    /*
+    //Regression
+    int epoch = 100000;
+    double learningRate = 0.0001;
+    int size = sizeof(age_data.x) / sizeof(age_data.x[0]);
+    double loss = 0;
+    double gradW = 0;
+    double gradB = 0;
+    
+    for (int i = 1; i <= epoch; i++ ){
+        loss = cost(&age_data);
+        gradW = weightGrad(&age_data);
+        gradB = biasGrad(&age_data);
+        
+        age_data.weight = age_data.weight - learningRate * gradW;
+        age_data.bias = age_data.bias - learningRate * gradB;
+        
+        printf("Epoch %d ---- Loss: %lf \n", i, loss);
+        printf("Weight: %lf, Bias: %lf, GradW: %lf, GradB: %lf\n\n", age_data.weight, age_data.bias, gradW, gradB);
+    }
+    
+    printf("Model Loss: %lf\n", loss);
+    printf("Optimum Weight: %lf\n", age_data.weight);
+    printf("Optimum Bias: %lf\n\n", age_data.bias);   
+    */
+
+    
+    for(int i = 0; i < num_dataSets - 1; i++){
+        test(&dataSets[i]);
+        printf("Loop Number: %d\n", i);
+    }
+    
+    /*
     ////TESTER
     //split_datasets(&dataSets, dataSets, 0.8);
     split_datasettester(&trainingHours_data, 0.8);
@@ -158,8 +198,7 @@ int machineLearning ()
     }
 
     free(predictions); //frigøre data igen (malloc)
-
-
+    */
     return 0;
 }
 
@@ -266,4 +305,14 @@ static double biasGrad(dataSet* data){
 
     free(yPredicted);
     return grad / data->size;
+}
+
+void test(dataSet* data){
+    double* predictions = predict(data);
+
+    for (int i; i < data->size; i++){
+        printf("Inputs: %lf,\nPredictions: %lf\n\n", data->x[i], data->VO2max[i]);
+    }
+
+    free(predictions);
 }
