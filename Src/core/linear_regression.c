@@ -158,7 +158,7 @@ int machineLearning ()
 
     
     for(int i = 0; i < num_dataSets - 1; i++){
-        test(&dataSets[i]);
+        test(&dataSets[6]);
         printf("Loop Number: %d\n", i);
     }
     
