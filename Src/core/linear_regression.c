@@ -130,7 +130,7 @@ int machineLearning ()
     }
 
     printf("test data: \n");
-    for (int i = 0; i < trainingHours_data.test_size; i++)
+    for (int i = 0; i < age_data.test_size; i++)
     {
         printf("%1.lf %1.lf \n ", trainingHours_data.x_test[i], trainingHours_data.VO2max_test[i]); //test data
     }///TESTER
@@ -139,18 +139,18 @@ int machineLearning ()
     trainingHours_data.weight = 2.0;
     trainingHours_data.bias = 1;
 
-    double* predictions = predict(&trainingHours_data);
+    double* predictions = predict(&age_data);
 
     // Prints
     printf("Testing predict function:\n");
     printf("Formula: y = %.1f * x + %.1f\n\n",
-           trainingHours_data.weight, trainingHours_data.bias);
+           age_data.weight, age_data.bias);
 
     for (int i = 0; i < trainingHours_data.train_size; i++) {
         printf("X = %.1lf -> Predicted Y = %.1lf (Expected: %.1f)\n",
-               trainingHours_data.x_train[i],
+              age_data.x_train[i],
                predictions[i],
-               2.0 * trainingHours_data.x_train[i] + 1.0);
+               2.0 * age_data.x_train[i] + 1.0);
     }
 
     free(predictions); //frigøre data igen (malloc)
