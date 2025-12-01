@@ -67,11 +67,11 @@ Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o: /home/Ruben/Coding/FitnessTrac
   /usr/include/stdc-predef.h
 
 Src/CMakeFiles/FitnessTracker.dir/database/data.c.o: /home/Ruben/Coding/FitnessTracker/Src/database/data.c \
-  /home/Ruben/Coding/FitnessTracker/Src/database/data.h \
+  /home/Ruben/Coding/FitnessTracker/Src/include/data.h \
   /usr/include/stdc-predef.h
 
 Src/CMakeFiles/FitnessTracker.dir/main.c.o: /home/Ruben/Coding/FitnessTracker/Src/main.c \
-  /home/Ruben/Coding/FitnessTracker/Src/database/data.h \
+  /home/Ruben/Coding/FitnessTracker/Src/include/data.h \
   /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
@@ -144,8 +144,6 @@ Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o:
 /usr/lib/Scrt1.o:
 
 /home/Ruben/Coding/FitnessTracker/Src/main.c:
-
-/home/Ruben/Coding/FitnessTracker/Src/database/data.h:
 
 /usr/lib/ld-linux-x86-64.so.2:
 
@@ -272,6 +270,8 @@ Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o:
 /usr/include/gnu/stubs.h:
 
 /home/Ruben/Coding/FitnessTracker/Src/core/utils.c:
+
+/home/Ruben/Coding/FitnessTracker/Src/include/data.h:
 
 /usr/include/bits/types/timer_t.h:
 

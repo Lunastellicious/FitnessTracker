@@ -18,7 +18,7 @@ typedef struct {
     int trainingHoursPerWeek[1000];
 } dataSet;
 
-void test(dataSet test);
+void test2(dataSet test);
 void loadDataSet();
 
 int main(void) {

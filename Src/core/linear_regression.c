@@ -6,43 +6,53 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-typedef struct
-{
-    double* x; //input data (datasets)
-    double* VO2max; //output data  (VO2max)
-    int size; //number of datapoints
-    char* name; //description (input data)
-    double weight; //trained weight (hældningskoefficient)
-    double bias; //trained bias (skæring med y-aksen)
-
-    //training/test split
-    int train_size; //80%
-    double* x_train;
-    double* VO2max_train;
-    int test_size; //20%
-    double* x_test;
-    double* VO2max_test;
-} dataSet;
-
-
 void split_datasets(dataSet* data, dataSet* dataSets, double train_ratio);
 void split_datasettester(dataSet* data, double train_ratio); //tester til et dataset
 static double* predict(dataSet* data);
 static double cost(dataSet* data);
 static double weightGrad(dataSet* data);
 static double biasGrad(dataSet* data);
-void test(dataSet* date);
-
+void testRegression(dataSet* date);
+void testLoad(dataLoad test);
 
 int machineLearning ()
 {
+    dataLoad dataSet1;
+    FILE *fData;
+    //open a file in read mode
+    fData = fopen("sports_training_dataset.csv","r");
+
+    if (fData == NULL) {
+        printf("failed to load");
+        exit(EXIT_FAILURE);
+    }
+
+    fscanf(fData, "%*[^\n]\n");
+
+    for (int i = 0; i<1000; i++ ) {
+
+        fscanf(fData, "%*[^,],");
+        fscanf(fData, "%d,%d,%d,%d,%d,%lf,%d,%d,%d",
+           &dataSet1.age[i],
+           &dataSet1.heightCm[i],
+           &dataSet1.weightKg[i],
+           &dataSet1.restingHeartRate[i],
+           &dataSet1.maxHeartRate[i],
+           &dataSet1.Vo2Max[i],
+           &dataSet1.cumulativeHits[i],
+           &dataSet1.cumulativeRuns[i],
+           &dataSet1.trainingHoursPerWeek[i]);
+        fscanf(fData, "%*[^\n]\n");
+
+    }
+    fclose(fData);
+
+
     //age data
-    double age_x[] = {};
-    double VO2_age[] = {};
     dataSet age_data = {
-        .x = age_x,
-        .VO2max = VO2_age,
-        .size = 1000,
+        .x = dataSet1.age,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(age_data.x),
         .name = "age vs. V02max",
         .weight = 0,
         .bias = 0
@@ -52,69 +62,59 @@ int machineLearning ()
     double weight_x[] = {};
     double VO2_weight[] = {};
     dataSet weight_data = {
-        .x = weight_x,
-        .VO2max = VO2_weight,
-        .size = 1000,
+        .x = dataSet1.weightKg,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(weight_data.x),
         .name = "weight vs. V02max",
         .weight = 0,
         .bias = 0
     };
 
     //resting heart rate
-    double restingHeartRate_x[] = {};
-    double VO2_restingHeartRate[] = {};
     dataSet restingHeartRate_data = {
-        .x = restingHeartRate_x,
-        .VO2max = VO2_restingHeartRate,
-        .size = 1000,
+        .x = dataSet1.restingHeartRate,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(restingHeartRate_data.x),
         .name = "resting heart rate vs. V02max",
         .weight = 0,
         .bias = 0
     };
 
     //max heart rate
-    double maxHeartRate_x[] = {};
-    double VO2_maxHeartRate[] = {};
     dataSet maxHeartRate_data = {
-        .x = maxHeartRate_x,
-        .VO2max = VO2_maxHeartRate,
-        .size = 1000,
+        .x = dataSet1.maxHeartRate,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(maxHeartRate_data.x),
         .name = "max heart rate vs. V02max",
         .weight = 0,
         .bias = 0
     };
 
     //Cumulative hits TODO: definition
-    double cumulativeHits_x[] = {};
-    double VO2_cumulativeHits[] = {};
     dataSet cumulativeHits_data = {
-        .x = cumulativeHits_x,
-        .VO2max = VO2_cumulativeHits,
-        .size = 1000,
+        .x = dataSet1.cumulativeHits,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(cumulativeHits_data.x),
         .name = "cumulative hits vs. V02max",
         .weight = 0,
         .bias = 0
     };
 
     //Cumulative Runs TODO: definition
-    double cumulativeRuns_x[] = {};
-    double VO2_cumulativeRuns[] = {};
     dataSet cumulativeRuns_data = {
-        .x = cumulativeRuns_x,
-        .VO2max = VO2_cumulativeRuns,
-        .size = 1000,
+        .x = dataSet1.cumulativeRuns,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(cumulativeRuns_data.x),
         .name = "cumulative runs vs. V02max",
         .weight = 0,
         .bias = 0
     };
 
     //training hours
-    double trainingHours_x[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-    double VO2_trainingHours[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
     dataSet trainingHours_data = {
-        .x = trainingHours_x,
-        .VO2max = VO2_trainingHours,
-        .size = 10,
+        .x = dataSet1.trainingHoursPerWeek,
+        .VO2max = dataSet1.Vo2Max,
+        .size = sizeof(trainingHours_data.x),
         .name = "training hours vs. V02max",
         .weight = 0,
         .bias = 0
@@ -158,7 +158,7 @@ int machineLearning ()
 
     
     for(int i = 0; i < num_dataSets - 1; i++){
-        test(&dataSets[i]);
+        testRegression(&dataSets[i]);
         printf("Loop Number: %d\n", i);
     }
     
@@ -307,7 +307,7 @@ static double biasGrad(dataSet* data){
     return grad / data->size;
 }
 
-void test(dataSet* data){
+void testRegression(dataSet* data){
     double* predictions = predict(data);
 
     for (int i; i < data->size; i++){
@@ -315,4 +315,20 @@ void test(dataSet* data){
     }
 
     free(predictions);
+}
+
+void testLoad(dataLoad test) {
+    for (int i = 0; i < 1000; i++) {
+        printf("%d %d %d %d %d %lf %d %d %d \n",
+            test.age[i],
+            test.heightCm[i],
+            test.weightKg[i],
+            test.restingHeartRate[i],
+            test.maxHeartRate[i],
+            test.Vo2Max[i],
+            test.cumulativeHits[i],
+            test.cumulativeRuns[i],
+            test.trainingHoursPerWeek[i]);
+
+        }
 }

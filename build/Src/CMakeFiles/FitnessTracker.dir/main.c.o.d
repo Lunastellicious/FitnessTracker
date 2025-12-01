@@ -15,5 +15,5 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o: \
  /usr/include/bits/types/cookie_io_functions_t.h \
  /usr/include/bits/stdio_lim.h /usr/include/bits/floatn.h \
  /usr/include/bits/floatn-common.h \
- /home/Ruben/Coding/FitnessTracker/Src/./database/data.h \
+ /home/Ruben/Coding/FitnessTracker/Src/./include/data.h \
  /home/Ruben/Coding/FitnessTracker/Src/./include/linear_regression.h
