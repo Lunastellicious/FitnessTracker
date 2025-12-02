@@ -60,6 +60,7 @@ int read_csv(const char* filename, dataLoad* a, int* count, int x_col_index, int
 //Calculate LinearRegression
 regressionResult calculate_regression(dataLoad* a, int count){
     regressionResult result;
+    if(count > 200) count -= 200;
     double sum_x = 0, sum_y = 0, sum_xy = 0, sum_x2 = 0;
 
     // Calculate sums
@@ -75,26 +76,28 @@ regressionResult calculate_regression(dataLoad* a, int count){
     result.slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
     result.intercept = (sum_y - result.slope * sum_x) / n;
 
-    // Calculate R-squared
-    double y_mean = sum_y / n;
+    /// Calculate R-squared
     double ss_tot = 0, ss_res = 0;
     
     for (int i = 0; i < count; i++) {
         double y_pred = result.slope * a[i].x + result.intercept;
-        ss_tot += (a[i].y - y_mean) * (a[i].y - y_mean);
         ss_res += (a[i].y - y_pred) * (a[i].y - y_pred);
     }
     
-    result.r_squared = 1 - (ss_res / ss_tot);
-
+    result.r_squared = ss_res / (n * 2 * 0.8);
     return result;
 }
 
 //function to predict y given x
+/*
 double predict(double x, regressionResult* result){
     return result->slope * x + result->intercept;
 }
-
+*/
+//function to predict y given x
+double predict(dataLoad* x, regressionResult* result){
+    return result->slope * x->x + result->intercept;
+}
 //call
 int regression(){
     dataLoad data[MAX_DATA_POINTS];
@@ -150,11 +153,32 @@ int regression(){
     printf("Equation: y = %.6fx + %.6f\n\n", result.slope, result.intercept);
 
     // Example prediction
+    int access;
+    double predicted_y[200];
+    printf("Ready to test? Type 1:\n");
+    scanf("%d", &access);
+    if (access == 1){
+        for(int i = 800; i < 1000; i++){
+            predicted_y[i-800] = predict(&data[i], &result);
+        }
+        // Display first few data points
+        printf("First 5 data points:\n");
+        printf("%-15s %-15s\n", "Y_actual", "Y_predicted");
+        printf("------------------------------\n");
+        for (int i = 800; i < (count < 805 ? count : 805); i++) {
+        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-800]);
+        }
+        printf("\n");
+
+    }
+
+    /*
+    // Example prediction
     double test_x;
     printf("Enter an X value for prediction: ");
     scanf("%lf", &test_x);
     double predicted_y = predict(test_x, &result);
     printf("For x = %.4f, predicted y = %.6f\n", test_x, predicted_y);
-
+    */
     return 0;
 }
