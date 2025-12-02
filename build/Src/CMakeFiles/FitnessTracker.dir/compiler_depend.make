@@ -28,11 +28,13 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: /home/Ruben/Coding
   /usr/include/bits/types/__FILE.h \
   /usr/include/bits/types/__fpos64_t.h \
   /usr/include/bits/types/__fpos_t.h \
+  /usr/include/bits/types/__locale_t.h \
   /usr/include/bits/types/__mbstate_t.h \
   /usr/include/bits/types/__sigset_t.h \
   /usr/include/bits/types/clock_t.h \
   /usr/include/bits/types/clockid_t.h \
   /usr/include/bits/types/cookie_io_functions_t.h \
+  /usr/include/bits/types/locale_t.h \
   /usr/include/bits/types/sigset_t.h \
   /usr/include/bits/types/struct_FILE.h \
   /usr/include/bits/types/struct_timespec.h \
@@ -52,6 +54,8 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: /home/Ruben/Coding
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
+  /usr/include/string.h \
+  /usr/include/strings.h \
   /usr/include/sys/cdefs.h \
   /usr/include/sys/select.h \
   /usr/include/sys/types.h \
@@ -151,17 +155,21 @@ Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o:
 
 /home/Ruben/Coding/FitnessTracker/Src/include/utils.h:
 
+/home/Ruben/Coding/FitnessTracker/Src/core/utils.c:
+
+/home/Ruben/Coding/FitnessTracker/Src/include/logic.h:
+
+/home/Ruben/Coding/FitnessTracker/Src/core/logic.c:
+
 /usr/include/bits/types/FILE.h:
+
+/usr/include/bits/types/__locale_t.h:
 
 /usr/lib/libc_nonshared.a:
 
 /usr/include/bits/types.h:
 
 /usr/include/sys/cdefs.h:
-
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
-
-/usr/include/bits/time64.h:
 
 /usr/include/bits/byteswap.h:
 
@@ -189,15 +197,17 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 
 /usr/include/bits/libc-header-start.h:
 
-/usr/include/bits/types/__sigset_t.h:
+/usr/include/strings.h:
+
+/usr/include/alloca.h:
 
 /usr/include/bits/timesize.h:
 
 /usr/include/bits/endian.h:
 
-/usr/include/bits/waitflags.h:
+/usr/include/bits/types/__sigset_t.h:
 
-/usr/include/alloca.h:
+/usr/include/bits/waitflags.h:
 
 /usr/include/bits/endianness.h:
 
@@ -239,6 +249,14 @@ Src/CMakeFiles/FitnessTracker.dir/database/data.c.o:
 
 /usr/include/bits/typesizes.h:
 
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+
+/usr/include/bits/time64.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/types/locale_t.h:
+
 /usr/include/bits/types/struct_FILE.h:
 
 /usr/include/sys/select.h:
@@ -269,18 +287,12 @@ Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o:
 
 /usr/include/gnu/stubs.h:
 
-/home/Ruben/Coding/FitnessTracker/Src/core/utils.c:
-
 /home/Ruben/Coding/FitnessTracker/Src/include/data.h:
 
 /usr/include/bits/types/timer_t.h:
 
 /usr/include/stdio.h:
 
-/home/Ruben/Coding/FitnessTracker/Src/include/logic.h:
-
 /usr/include/sys/types.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/core/logic.c:

@@ -6,7 +6,7 @@ int main(void)
 {
     printf("Hello, World!\n");
 
-    machineLearning();
+    regression();
 
     return 0;
 
