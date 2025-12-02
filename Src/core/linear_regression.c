@@ -105,10 +105,10 @@ int regression(){
     printf("===========================\n\n");
 
     // Get column indices from user (0-indexed)
-    printf("Enter the column index for X variable (0-8): ");
+    printf("Enter the column index for X variable (1-8): ");
     scanf("%d", &x_col_index);
     
-    printf("Enter the column index for Y variable (0-8): ");
+    printf("Enter the column index for Y variable (1-8): ");
     scanf("%d", &y_col_index);
 
     // Validate column indices
