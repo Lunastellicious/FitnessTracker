@@ -151,6 +151,8 @@ int regression(){
     printf("Equation: y = %.6fx + %.6f\n\n", result.slope, result.intercept);
 
     // Example prediction
+    // Should not be printed out til console, but 'test' should just test if the regression is good
+    // enough and then if not give an error code or something
     int access;
     double *predicted_y = malloc(200*(sizeof(double)));
     printf("Ready to test? Type 1:\n");
