@@ -150,7 +150,6 @@ database/fast:
 .PHONY : database/fast
 
 #=============================================================================
-<<<<<<< HEAD
 # Target rules for targets named FitnessTracker
 
 # Build rule for target.
@@ -162,19 +161,6 @@ FitnessTracker: cmake_check_build_system
 FitnessTracker/fast:
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/build
 .PHONY : FitnessTracker/fast
-=======
-# Target rules for targets named fitnesstracker
-
-# Build rule for target.
-fitnesstracker: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 fitnesstracker
-.PHONY : fitnesstracker
-
-# fast build rule for target.
-fitnesstracker/fast:
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/build
-.PHONY : fitnesstracker/fast
->>>>>>> Database-real-nocap
 
 # Help Target
 help:
@@ -188,10 +174,6 @@ help:
 	@echo "... FitnessTracker"
 	@echo "... core"
 	@echo "... database"
-<<<<<<< HEAD
-=======
-	@echo "... fitnesstracker"
->>>>>>> Database-real-nocap
 .PHONY : help
 
 

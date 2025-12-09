@@ -152,7 +152,6 @@ database/fast:
 .PHONY : database/fast
 
 # Convenience name for target.
-<<<<<<< HEAD
 Src/CMakeFiles/FitnessTracker.dir/rule:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/FitnessTracker.dir/rule
 .PHONY : Src/CMakeFiles/FitnessTracker.dir/rule
@@ -192,20 +191,6 @@ core/linear_regression.c.s:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/linear_regression.c.s
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.s
 .PHONY : core/linear_regression.c.s
-=======
-Src/CMakeFiles/fitnesstracker.dir/rule:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/fitnesstracker.dir/rule
-.PHONY : Src/CMakeFiles/fitnesstracker.dir/rule
-
-# Convenience name for target.
-fitnesstracker: Src/CMakeFiles/fitnesstracker.dir/rule
-.PHONY : fitnesstracker
-
-# fast build rule for target.
-fitnesstracker/fast:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/build
-.PHONY : fitnesstracker/fast
->>>>>>> Database-real-nocap
 
 core/logic.o: core/logic.c.o
 .PHONY : core/logic.o
@@ -293,11 +278,7 @@ main.o: main.c.o
 
 # target to build an object file
 main.c.o:
-<<<<<<< HEAD
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.o
-=======
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/main.c.o
->>>>>>> Database-real-nocap
 .PHONY : main.c.o
 
 main.i: main.c.i
@@ -305,11 +286,7 @@ main.i: main.c.i
 
 # target to preprocess a source file
 main.c.i:
-<<<<<<< HEAD
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.i
-=======
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/main.c.i
->>>>>>> Database-real-nocap
 .PHONY : main.c.i
 
 main.s: main.c.s
@@ -317,11 +294,7 @@ main.s: main.c.s
 
 # target to generate assembly for a file
 main.c.s:
-<<<<<<< HEAD
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.s
-=======
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/fitnesstracker.dir/build.make Src/CMakeFiles/fitnesstracker.dir/main.c.s
->>>>>>> Database-real-nocap
 .PHONY : main.c.s
 
 # Help Target
@@ -336,13 +309,9 @@ help:
 	@echo "... FitnessTracker"
 	@echo "... core"
 	@echo "... database"
-<<<<<<< HEAD
 	@echo "... core/linear_regression.o"
 	@echo "... core/linear_regression.i"
 	@echo "... core/linear_regression.s"
-=======
-	@echo "... fitnesstracker"
->>>>>>> Database-real-nocap
 	@echo "... core/logic.o"
 	@echo "... core/logic.i"
 	@echo "... core/logic.s"
