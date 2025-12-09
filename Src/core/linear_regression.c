@@ -152,7 +152,7 @@ int regression(){
 
     // Example prediction
     int access;
-    double predicted_y[200];
+    double *predicted_y = malloc(200*(sizeof(double)));
     printf("Ready to test? Type 1:\n");
     scanf("%d", &access);
     if (access == 1){
@@ -169,5 +169,6 @@ int regression(){
         printf("\n");
 
     }
+    free(predicted_y);
     return 0;
 }
