@@ -92,7 +92,8 @@ int main (void)
 
 //// ---------- FUNCTIONS ----------
 
-
+// TODO: make more functions to generate any numbers that are in the dataset made by
+// TODO: luna but not currently generated here
 // main function that should be called
 void runData(int min, int max, int stepcount) {
     //given in seconds
