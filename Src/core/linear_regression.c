@@ -164,7 +164,7 @@ int regression(){
         printf("%-15s %-15s\n", "Y_actual", "Y_predicted");
         printf("------------------------------\n");
         for (int i = 800; i < (count < 805 ? count : 805); i++) {
-        printf("%-15.4f %-15.x4f\n", data[i].y, predicted_y[i-800]);
+        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-800]);
         }
         printf("\n");
 
