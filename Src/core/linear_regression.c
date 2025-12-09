@@ -5,12 +5,13 @@
 
 #define MAX_LINE_LENGTH 1024
 #define MAX_DATA_POINTS 1000
-#define MAX_COLUMNS 9
+#define MAX_COLUMNS 10
 
 //scv parsing
 int parse_scv_line(char* line, double* columns, int max_cols){
     char* token;
     int col = 0;
+    line[strcspn(line, "\r\n")] = 0;
 
     token = strtok(line, ",");
     while( token != NULL && col < max_cols){
@@ -18,16 +19,14 @@ int parse_scv_line(char* line, double* columns, int max_cols){
         col++;
         token = strtok(NULL, ",");
     }
-
     return col;
 }
-
 
 //read csv file
 int read_csv(const char* filename, dataLoad* a, int* count, int x_col_index, int y_col_index){
     FILE* file = fopen(filename, "r");
     if(!file){
-        printf("File failed to actualize");
+        printf("File failed to read");
         return 0;
     }
 
@@ -78,26 +77,23 @@ regressionResult calculate_regression(dataLoad* a, int count){
 
     /// Calculate R-squared
     double ss_tot = 0, ss_res = 0;
+    double mean_y = sum_y / n;
     
     for (int i = 0; i < count; i++) {
         double y_pred = result.slope * a[i].x + result.intercept;
         ss_res += (a[i].y - y_pred) * (a[i].y - y_pred);
+        ss_tot += (a[i].y - mean_y) * (a[i].y - mean_y);
     }
     
-    result.r_squared = ss_res / (n * 2 * 0.8);
+    result.r_squared = 1 - (ss_res / ss_tot);
     return result;
 }
 
 //function to predict y given x
-/*
-double predict(double x, regressionResult* result){
-    return result->slope * x + result->intercept;
-}
-*/
-//function to predict y given x
 double predict(dataLoad* x, regressionResult* result){
     return result->slope * x->x + result->intercept;
 }
+
 //call
 int regression(){
     dataLoad data[MAX_DATA_POINTS];
@@ -108,11 +104,14 @@ int regression(){
     printf("===========================\n\n");
 
     // Get column indices from user (0-indexed)
-    printf("Enter the column index for X variable (1-8): ");
+    printf("Y is set to column 6 for VO2max\nEnter the column index for X variable (1-9): ");
     scanf("%d", &x_col_index);
+    y_col_index = 6;
     
+    /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
     scanf("%d", &y_col_index);
+    */
 
     // Validate column indices
     if (x_col_index < 0 || x_col_index >= MAX_COLUMNS || 
@@ -120,7 +119,6 @@ int regression(){
         printf("Error: Column indices must be between 0 and %d\n", MAX_COLUMNS - 1);
         return 1;
     }
-
     printf("\n");
 
     // Read CSV file
@@ -166,19 +164,10 @@ int regression(){
         printf("%-15s %-15s\n", "Y_actual", "Y_predicted");
         printf("------------------------------\n");
         for (int i = 800; i < (count < 805 ? count : 805); i++) {
-        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-800]);
+        printf("%-15.4f %-15.x4f\n", data[i].y, predicted_y[i-800]);
         }
         printf("\n");
 
     }
-
-    /*
-    // Example prediction
-    double test_x;
-    printf("Enter an X value for prediction: ");
-    scanf("%lf", &test_x);
-    double predicted_y = predict(test_x, &result);
-    printf("For x = %.4f, predicted y = %.6f\n", test_x, predicted_y);
-    */
     return 0;
 }
