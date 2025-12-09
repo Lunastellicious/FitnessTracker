@@ -1,17 +1,8 @@
-FitnessTracker: \
+run_data: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/Scrt1.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/crti.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
-  CMakeFiles/FitnessTracker.dir/main.c.o \
-<<<<<<< HEAD
-  CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o \
-  CMakeFiles/FitnessTracker.dir/core/logic.c.o \
-  CMakeFiles/FitnessTracker.dir/core/utils.c.o \
-  CMakeFiles/FitnessTracker.dir/database/data.c.o \
-=======
->>>>>>> Database-real-nocap
-  libcore.a \
-  libdatabase.a \
+  CMakeFiles/run_data.dir/core/run_data.c.o \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
@@ -40,22 +31,7 @@ FitnessTracker: \
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
-CMakeFiles/FitnessTracker.dir/main.c.o:
-
-<<<<<<< HEAD
-CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o:
-
-CMakeFiles/FitnessTracker.dir/core/logic.c.o:
-
-CMakeFiles/FitnessTracker.dir/core/utils.c.o:
-
-CMakeFiles/FitnessTracker.dir/database/data.c.o:
-
-=======
->>>>>>> Database-real-nocap
-libcore.a:
-
-libdatabase.a:
+CMakeFiles/run_data.dir/core/run_data.c.o:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
 
