@@ -2,25 +2,25 @@
 #include <stdio.h>
 #include "../include/linear_regression.h"
 #include <math.h>
-
-// TODO: write out output statements to gather based off the relevant data
-// TODO: print the appropriate collection of output statements to the console
-// TODO: try to format the console output in a not super ugly way
+#include <stdlib.h>
+#include "../include/data.h"
 
 
 
 
 
-void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate, int* vo2MaxPos, int* runSPeed, int* runLength);
 
 
+void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate);
+void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a);
 int evaluateRun(double vo2Max);
-//void print(int scenario, double distance, double time, double heartRate, double vo2Max);
+
+
 
 
 
 // distance values to be given in KM
-void recommend(double distance, double vo2Max, double heartRate, double time, regressionResult a ) {
+void recommend(double distance, double vo2Max, double heartRate, double time, regressionResult a) {
 
     int runSPeed = 0;
     int vo2MaxPos = 0;
@@ -30,13 +30,8 @@ void recommend(double distance, double vo2Max, double heartRate, double time, re
     runValue = evaluateRun(vo2Max);
 
     // TODO: call metrics to improve and call print
-    /*
-    if (runValue == 4){
-        print(runValue, distance, time, heartRate, vo2Max);
-    } else {
-        metricsToImprove(vo2Max, a, distance, time, heartRate, &vo2MaxPos, &runSPeed, &runLength);
-
-    }*/
+    metricsToImprove(vo2Max, a, distance, time, heartRate);
+    print(runValue, distance, time, heartRate, vo2Max, a);
 
 }
 
@@ -60,7 +55,7 @@ int evaluateRun(double vo2Max) {
     }
 
 // distance values to be given in KM
-void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate, int* vo2MaxPos, int* runSPeed, int* runLength) {
+void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate) {
     // determine what user needs to be told about various metrics
 
 
@@ -69,34 +64,30 @@ void metricsToImprove(double vo2Max, regressionResult a, double distance, double
 
     // determine whether user ran fast enough
     if (speed < 9.1 ) {
-        *runSPeed = 1;
+        metrics.runSPeed = 1;
     } else if (speed < 13.1) {
-        *runSPeed = 2;
+        metrics.runSPeed = 2;
     }
-    // TODO fix me so i am assigned the proper number
-    // determine whether user ran far enough
-    if (time*11.1 < distance+time) {
-        *runLength = 0;
-    } else if (time*11.1 > distance+time) {
-        *runLength = 1;
-    } else if (time*11.1 > distance-time) {
-        *runLength = 0;
-    } else if (time*11.1 < distance-time) {
-        *runLength = 2;
+
+    // determine whether user ran far enough 1 means above expected 2 means below expected
+    if (11.1*time > (11.1*time)+2*time) {
+        metrics.runLength = 1;
+    } else if (11.1*time < (11.1*time)-2*time) {
+        metrics.runLength = 2;
     }
 
    // determine where vo2Max is relative to the average
     if (a.slope * heartRate + a.intercept > vo2Max) {
-        *vo2MaxPos = 2;
+        metrics.vo2MaxPos = 2;
     } else if (a.slope * heartRate + a.intercept <= vo2Max) {
-        *vo2MaxPos = 1;
+        metrics.vo2MaxPos = 1;
     }
 
 }
 
 
 
-void print(int runValue, double distance, double time, double heartRate, double vo2Max) {
+void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a) {
     // TODO finish writing out the text output
     printf("************************************************************\n");
     printf("**                   Data on Your run:                    **\n");
@@ -129,11 +120,43 @@ void print(int runValue, double distance, double time, double heartRate, double 
     if ( runValue == 4) {
         return;
     }
+    printf("\n\n");
 
+    switch (metrics.runSPeed) {
+        case 1:
+            printf("info: you ran at speed of %.2lf which is below the expected. suggest running faster on your next run: ideal speed between 9.1 km/h and 13.1 km/h \n", distance/time);
+            break;
+        case 2:
+            printf("info: you ran at speed of %.2lf which is above the expected. suggest running slower on your next run: ideal speed between 9.1 km/h and 13.1 km/h \n", distance/time);
+            break;
+        default:
+            printf("print function failed");
+            exit((EXIT_FAILURE));
+    }
 
+    // relevance ?? inherently tied to run speed so might not be that relevant
+    switch (metrics.runLength) {
+        case 1:
+            printf("info: you ran farther than the average person for the recorded run duration: suggest lowering the distance of your run slightly \n ");
+            break;
+        case 2:
+            printf("info: you ran less than the average person for the recorded run duration: suggest increasing the distance of your run slightly \n ");
+        default:
+            printf("print function failed");
+            exit((EXIT_FAILURE));
+    }
 
-
-
+    switch ( (metrics.vo2MaxPos)) {
+        case 1:
+            printf("your vo2Max was found to be below average: average for the recoder heart rate %.2lf your vo2Max %.2lf ", a.slope * heartRate + a.intercept, vo2Max);
+            break;
+        case 2:
+            printf("your vo2Max was found to be above average: average for the recoder heart rate %.2lf your vo2Max %.2lf  which is good sign", a.slope * heartRate + a.intercept, vo2Max);
+            break;
+        default:
+            printf("print function failed");
+            exit((EXIT_FAILURE));
+    }
 
 }
 
