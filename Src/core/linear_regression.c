@@ -4,20 +4,20 @@
 #include "../include/linear_regression.h"
 
 #define MAX_LINE_LENGTH 1024
-#define MAX_DATA_POINTS 1000
-#define MAX_COLUMNS 10
+#define MAX_DATA_POINTS 500
+#define MAX_COLUMNS 20
 
 //scv parsing
-int parse_scv_line(char* line, double* columns, int max_cols){
+int parse_csv_line(char* line, double* columns, int max_cols){
     char* token;
     int col = 0;
-    line[strcspn(line, "\r\n")] = 0;
+    line[strcspn(line, "\r\n")] = 0; // removes trailing newline
 
-    token = strtok(line, ",");
+    token = strtok(line, ","); // tokenizes string
     while( token != NULL && col < max_cols){
-        columns[col] = atof(token);
+        columns[col] = atof(token); // number parsed as (double) and saved in column
         col++;
-        token = strtok(NULL, ",");
+        token = strtok(NULL, ","); // moves to next token
     }
     return col;
 }
@@ -43,7 +43,7 @@ int read_csv(const char* filename, dataLoad* a, int* count, int x_col_index, int
     }
 
     while (fgets(line, MAX_LINE_LENGTH, file) && *count < MAX_DATA_POINTS){
-        int num_cols = parse_scv_line(line, columns, MAX_COLUMNS);
+        int num_cols = parse_csv_line(line, columns, MAX_COLUMNS);
 
         if(num_cols > x_col_index && num_cols > y_col_index){
             a[*count].x = columns[x_col_index];
@@ -59,7 +59,7 @@ int read_csv(const char* filename, dataLoad* a, int* count, int x_col_index, int
 //Calculate LinearRegression
 regressionResult calculate_regression(dataLoad* a, int count){
     regressionResult result;
-    if(count > 200) count -= 200;
+    if(count > 100) count -= 100;
     double sum_x = 0, sum_y = 0, sum_xy = 0, sum_x2 = 0;
 
     // Calculate sums
@@ -86,6 +86,7 @@ regressionResult calculate_regression(dataLoad* a, int count){
     }
     
     result.r_squared = 1 - (ss_res / ss_tot);
+    printf("ss_res: %lf,\nss_tot: %lf\n", ss_res, ss_tot);
     return result;
 }
 
@@ -104,9 +105,9 @@ int regression(){
     printf("===========================\n\n");
 
     // Get column indices from user (0-indexed)
-    printf("Y is set to column 6 for VO2max\nEnter the column index for X variable (1-9): ");
+    printf("Y is set to column 19 for VO2max\nEnter the column index for X variable (3-16) [4 = km/h]: ");
     scanf("%d", &x_col_index);
-    y_col_index = 6;
+    y_col_index = 19;
     
     /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
@@ -114,16 +115,16 @@ int regression(){
     */
 
     // Validate column indices
-    if (x_col_index < 0 || x_col_index >= MAX_COLUMNS || 
-        y_col_index < 0 || y_col_index >= MAX_COLUMNS) {
-        printf("Error: Column indices must be between 0 and %d\n", MAX_COLUMNS - 1);
+    if (x_col_index < 0 || x_col_index > MAX_COLUMNS || 
+        y_col_index < 0 || y_col_index > MAX_COLUMNS) {
+        printf("Error: Column indices must be between 3 and %d\n", MAX_COLUMNS - 1);
         return 1;
     }
     printf("\n");
 
     // Read CSV file
-    printf("Reading CSV file 'sports_training_dataset.csv'...\n");
-    if (!read_csv("../../sports_training_dataset.csv", data, &count, x_col_index, y_col_index)) {
+    printf("Reading CSV file 'Garmin-runs-500.csv'...\n");
+    if (!read_csv("../../Garmin-runs-500.csv", data, &count, x_col_index, y_col_index)) {
         return 1;
     }
 
@@ -154,19 +155,19 @@ int regression(){
     // Should not be printed out til console, but 'test' should just test if the regression is good
     // enough and then if not give an error code or something
     int access;
-    double *predicted_y = malloc(200*(sizeof(double)));
+    double *predicted_y = malloc(100*(sizeof(double)));
     printf("Ready to test? Type 1:\n");
     scanf("%d", &access);
     if (access == 1){
-        for(int i = 800; i < 1000; i++){
-            predicted_y[i-800] = predict(&data[i], &result);
+        for(int i = 400; i < 500; i++){
+            predicted_y[i-400] = predict(&data[i], &result);
         }
         // Display first few data points
         printf("First 5 data points:\n");
         printf("%-15s %-15s\n", "Y_actual", "Y_predicted");
         printf("------------------------------\n");
-        for (int i = 800; i < (count < 805 ? count : 805); i++) {
-        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-800]);
+        for (int i = 400; i < (count < 405 ? count : 405); i++) {
+        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-400]);
         }
         printf("\n");
 
