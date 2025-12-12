@@ -113,6 +113,9 @@ void print(int runValue, double distance, double time, double heartRate, double 
         case 4:
             printf("**              you had an overall perfect run            **\n");
             break;
+        default:
+            printf("print function failed");
+            exit(EXIT_FAILURE);
     }
     printf("**                                                        **\n");
     printf("************************************************************\n");
