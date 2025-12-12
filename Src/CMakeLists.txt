@@ -2,7 +2,7 @@
 add_library(core
         core/logic.c
         core/utils.c
-        core/Linear_regression.c
+        core/linear_regression.c
 )
 
 #Add new c files to database
@@ -11,7 +11,14 @@ add_library(database
 )
 
 #compiler det i main
-add_executable(FitnessTracker main.c)
+add_executable(FitnessTracker main.c
+        core/linear_regression.c
+        core/logic.c
+        core/utils.c
+        database/data.c
+)
+
+
 
 #linker libraries ind i programmet
 target_link_libraries(FitnessTracker
@@ -20,4 +27,4 @@ target_link_libraries(FitnessTracker
 )
 
 # gør .h filer synlige for alle targets
-target_include_directories(FitnessTracker PRIVATE ../include)
+target_include_directories(FitnessTracker PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/include)
