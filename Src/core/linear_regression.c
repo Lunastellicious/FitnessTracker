@@ -35,7 +35,7 @@ int read_csv(const char* filename, dataLoad* a, int* count, int x_col_index, int
     *count = 0;
 
     //Read header line
-    if(fgets(line, MAX_LINE_LENGTH, file) != file){
+    if(fgets(line, MAX_LINE_LENGTH, file) != NULL){
         printf("Header: %s", line);
     } else {
         fclose(file);
