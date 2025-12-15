@@ -1,0 +1,1 @@
+/usr/bin/cc -g -Wl,--dependency-file=CMakeFiles/run_data.dir/link.d CMakeFiles/run_data.dir/core/run_data.c.o -o run_data

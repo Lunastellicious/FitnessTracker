@@ -8,9 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c" "Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o.d"
-  "/home/Ruben/Coding/FitnessTracker/Src/main.c" "Src/CMakeFiles/FitnessTracker.dir/main.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/main.c.o.d"
-  "" "Src/FitnessTracker" "gcc" "Src/CMakeFiles/FitnessTracker.dir/link.d"
+  "/home/Ruben/Coding/FitnessTracker/Src/core/run_data.c" "Src/CMakeFiles/run_data.dir/core/run_data.c.o" "gcc" "Src/CMakeFiles/run_data.dir/core/run_data.c.o.d"
+  "" "Src/run_data" "gcc" "Src/CMakeFiles/run_data.dir/link.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

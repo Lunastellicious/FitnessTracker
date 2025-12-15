@@ -100,70 +100,22 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/FitnessTracker.dir/core/linear_regression.c.s"
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c -o CMakeFiles/FitnessTracker.dir/core/linear_regression.c.s
 
-Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o: Src/CMakeFiles/FitnessTracker.dir/flags.make
-Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/logic.c
-Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o: Src/CMakeFiles/FitnessTracker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o -MF CMakeFiles/FitnessTracker.dir/core/logic.c.o.d -o CMakeFiles/FitnessTracker.dir/core/logic.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/logic.c
-
-Src/CMakeFiles/FitnessTracker.dir/core/logic.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/FitnessTracker.dir/core/logic.c.i"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/Ruben/Coding/FitnessTracker/Src/core/logic.c > CMakeFiles/FitnessTracker.dir/core/logic.c.i
-
-Src/CMakeFiles/FitnessTracker.dir/core/logic.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/FitnessTracker.dir/core/logic.c.s"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/core/logic.c -o CMakeFiles/FitnessTracker.dir/core/logic.c.s
-
-Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o: Src/CMakeFiles/FitnessTracker.dir/flags.make
-Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/utils.c
-Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o: Src/CMakeFiles/FitnessTracker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o -MF CMakeFiles/FitnessTracker.dir/core/utils.c.o.d -o CMakeFiles/FitnessTracker.dir/core/utils.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/utils.c
-
-Src/CMakeFiles/FitnessTracker.dir/core/utils.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/FitnessTracker.dir/core/utils.c.i"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/Ruben/Coding/FitnessTracker/Src/core/utils.c > CMakeFiles/FitnessTracker.dir/core/utils.c.i
-
-Src/CMakeFiles/FitnessTracker.dir/core/utils.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/FitnessTracker.dir/core/utils.c.s"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/core/utils.c -o CMakeFiles/FitnessTracker.dir/core/utils.c.s
-
-Src/CMakeFiles/FitnessTracker.dir/database/data.c.o: Src/CMakeFiles/FitnessTracker.dir/flags.make
-Src/CMakeFiles/FitnessTracker.dir/database/data.c.o: /home/Ruben/Coding/FitnessTracker/Src/database/data.c
-Src/CMakeFiles/FitnessTracker.dir/database/data.c.o: Src/CMakeFiles/FitnessTracker.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object Src/CMakeFiles/FitnessTracker.dir/database/data.c.o"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -MD -MT Src/CMakeFiles/FitnessTracker.dir/database/data.c.o -MF CMakeFiles/FitnessTracker.dir/database/data.c.o.d -o CMakeFiles/FitnessTracker.dir/database/data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/database/data.c
-
-Src/CMakeFiles/FitnessTracker.dir/database/data.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing C source to CMakeFiles/FitnessTracker.dir/database/data.c.i"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/Ruben/Coding/FitnessTracker/Src/database/data.c > CMakeFiles/FitnessTracker.dir/database/data.c.i
-
-Src/CMakeFiles/FitnessTracker.dir/database/data.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling C source to assembly CMakeFiles/FitnessTracker.dir/database/data.c.s"
-	cd /home/Ruben/Coding/FitnessTracker/build/Src && /usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/Ruben/Coding/FitnessTracker/Src/database/data.c -o CMakeFiles/FitnessTracker.dir/database/data.c.s
-
 # Object files for target FitnessTracker
 FitnessTracker_OBJECTS = \
 "CMakeFiles/FitnessTracker.dir/main.c.o" \
-"CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o" \
-"CMakeFiles/FitnessTracker.dir/core/logic.c.o" \
-"CMakeFiles/FitnessTracker.dir/core/utils.c.o" \
-"CMakeFiles/FitnessTracker.dir/database/data.c.o"
+"CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o"
 
 # External object files for target FitnessTracker
 FitnessTracker_EXTERNAL_OBJECTS =
 
 Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/main.c.o
 Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o
-Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o
-Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o
-Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/database/data.c.o
 Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/build.make
 Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/compiler_depend.ts
 Src/FitnessTracker: Src/libcore.a
-Src/FitnessTracker: Src/libdatabase.a
+Src/FitnessTracker: Src/librun_output.a
 Src/FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Linking C executable FitnessTracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking C executable FitnessTracker"
 	cd /home/Ruben/Coding/FitnessTracker/build/Src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FitnessTracker.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
