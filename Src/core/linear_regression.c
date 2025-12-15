@@ -59,7 +59,7 @@ int read_csv(const char* filename, dataLoad* a, int* count, int x_col_index, int
 //Calculate LinearRegression
 regressionResult calculate_regression(dataLoad* a, int count){
     regressionResult result;
-    if(count > 100) count -= 100;
+    if(count > MAX_DATA_POINTS*0.2) count -= count*0.2;
     double sum_x = 0, sum_y = 0, sum_xy = 0, sum_x2 = 0;
 
     // Calculate sums
@@ -75,18 +75,18 @@ regressionResult calculate_regression(dataLoad* a, int count){
     result.slope = (n * sum_xy - sum_x * sum_y) / (n * sum_x2 - sum_x * sum_x);
     result.intercept = (sum_y - result.slope * sum_x) / n;
 
-    /// Calculate R-squared
-    double ss_tot = 0, ss_res = 0;
+    // Calculate R-squared
+    double ss_tot = 0, ss_err = 0;
     double mean_y = sum_y / n;
     
     for (int i = 0; i < count; i++) {
         double y_pred = result.slope * a[i].x + result.intercept;
-        ss_res += (a[i].y - y_pred) * (a[i].y - y_pred);
+        ss_err += (a[i].y - y_pred) * (a[i].y - y_pred);
         ss_tot += (a[i].y - mean_y) * (a[i].y - mean_y);
     }
     
-    result.r_squared = 1 - (ss_res / ss_tot);
-    printf("ss_res: %lf,\nss_tot: %lf\n", ss_res, ss_tot);
+    result.r_squared = 1 - (ss_err / ss_tot);
+    printf("ss_res: %lf,\nss_tot: %lf\n", ss_err, ss_tot);
     return result;
 }
 
@@ -107,7 +107,7 @@ int regression(){
     // Get column indices from user (0-indexed)
     printf("Y is set to column 19 for VO2max\nEnter the column index for X variable (3-16) [4 = km/h]: ");
     scanf("%d", &x_col_index);
-    y_col_index = 19;
+    y_col_index = 18;
     
     /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
@@ -123,8 +123,8 @@ int regression(){
     printf("\n");
 
     // Read CSV file
-    printf("Reading CSV file 'Garmin-runs-500.csv'...\n");
-    if (!read_csv("../../Garmin-runs-500.csv", data, &count, x_col_index, y_col_index)) {
+    printf("Reading CSV file 'Garmin-runs-50_with_VO2max.csv'...\n");
+    if (!read_csv("../../Garmin-runs-50_with_VO2max.csv", data, &count, x_col_index, y_col_index)) {
         return 1;
     }
 
