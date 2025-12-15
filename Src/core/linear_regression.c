@@ -107,7 +107,7 @@ int regression(){
     // Get column indices from user (0-indexed)
     printf("Y is set to column 19 for VO2max\nEnter the column index for X variable (3-16) [4 = km/h]: ");
     scanf("%d", &x_col_index);
-    y_col_index = 19;
+    y_col_index = 18;
     
     /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
@@ -123,8 +123,8 @@ int regression(){
     printf("\n");
 
     // Read CSV file
-    printf("Reading CSV file 'Garmin-runs-500.csv'...\n");
-    if (!read_csv("../../Garmin-runs-500.csv", data, &count, x_col_index, y_col_index)) {
+    printf("Reading CSV file 'Garmin-runs-50_with_VO2max.csv'...\n");
+    if (!read_csv("../../Garmin-runs-50_with_VO2max.csv", data, &count, x_col_index, y_col_index)) {
         return 1;
     }
 
