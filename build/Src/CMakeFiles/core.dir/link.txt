@@ -1,2 +1,2 @@
-/usr/bin/ar qc libcore.a CMakeFiles/core.dir/core/logic.c.o CMakeFiles/core.dir/core/utils.c.o CMakeFiles/core.dir/core/linear_regression.c.o
+/usr/bin/ar qc libcore.a CMakeFiles/core.dir/core/linear_regression.c.o CMakeFiles/core.dir/core/run_data.c.o CMakeFiles/core.dir/core/data.c.o
 /usr/bin/ranlib libcore.a

@@ -4,11 +4,9 @@ FitnessTracker: \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o \
   CMakeFiles/FitnessTracker.dir/main.c.o \
   CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o \
-  CMakeFiles/FitnessTracker.dir/core/logic.c.o \
-  CMakeFiles/FitnessTracker.dir/core/utils.c.o \
-  CMakeFiles/FitnessTracker.dir/database/data.c.o \
+  CMakeFiles/FitnessTracker.dir/core/data.c.o \
   libcore.a \
-  libdatabase.a \
+  librun_output.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/../../../../lib/libgcc_s.so \
@@ -41,15 +39,11 @@ CMakeFiles/FitnessTracker.dir/main.c.o:
 
 CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o:
 
-CMakeFiles/FitnessTracker.dir/core/logic.c.o:
-
-CMakeFiles/FitnessTracker.dir/core/utils.c.o:
-
-CMakeFiles/FitnessTracker.dir/database/data.c.o:
+CMakeFiles/FitnessTracker.dir/core/data.c.o:
 
 libcore.a:
 
-libdatabase.a:
+librun_output.a:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/libgcc.a:
 

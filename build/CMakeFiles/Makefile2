@@ -83,13 +83,13 @@ clean: Src/clean
 
 # Recursive "all" directory target.
 Src/all: Src/CMakeFiles/core.dir/all
-Src/all: Src/CMakeFiles/database.dir/all
+Src/all: Src/CMakeFiles/run_output.dir/all
 Src/all: Src/CMakeFiles/FitnessTracker.dir/all
 .PHONY : Src/all
 
 # Recursive "codegen" directory target.
 Src/codegen: Src/CMakeFiles/core.dir/codegen
-Src/codegen: Src/CMakeFiles/database.dir/codegen
+Src/codegen: Src/CMakeFiles/run_output.dir/codegen
 Src/codegen: Src/CMakeFiles/FitnessTracker.dir/codegen
 .PHONY : Src/codegen
 
@@ -99,7 +99,7 @@ Src/preinstall:
 
 # Recursive "clean" directory target.
 Src/clean: Src/CMakeFiles/core.dir/clean
-Src/clean: Src/CMakeFiles/database.dir/clean
+Src/clean: Src/CMakeFiles/run_output.dir/clean
 Src/clean: Src/CMakeFiles/FitnessTracker.dir/clean
 .PHONY : Src/clean
 
@@ -110,7 +110,7 @@ Src/clean: Src/CMakeFiles/FitnessTracker.dir/clean
 Src/CMakeFiles/core.dir/all:
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/depend
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=7,8,9,10 "Built target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=5,6,7,8 "Built target core"
 .PHONY : Src/CMakeFiles/core.dir/all
 
 # Build rule for subdir invocation for target.
@@ -127,7 +127,7 @@ core: Src/CMakeFiles/core.dir/rule
 # codegen rule for target.
 Src/CMakeFiles/core.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=7,8,9,10 "Finished codegen for target core"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=5,6,7,8 "Finished codegen for target core"
 .PHONY : Src/CMakeFiles/core.dir/codegen
 
 # clean rule for target.
@@ -136,51 +136,51 @@ Src/CMakeFiles/core.dir/clean:
 .PHONY : Src/CMakeFiles/core.dir/clean
 
 #=============================================================================
-# Target rules for target Src/CMakeFiles/database.dir
+# Target rules for target Src/CMakeFiles/run_output.dir
 
 # All Build rule for target.
-Src/CMakeFiles/database.dir/all:
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/depend
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=11,12 "Built target database"
-.PHONY : Src/CMakeFiles/database.dir/all
+Src/CMakeFiles/run_output.dir/all:
+	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/depend
+	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=9,10 "Built target run_output"
+.PHONY : Src/CMakeFiles/run_output.dir/all
 
 # Build rule for subdir invocation for target.
-Src/CMakeFiles/database.dir/rule: cmake_check_build_system
+Src/CMakeFiles/run_output.dir/rule: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ruben/Coding/FitnessTracker/build/CMakeFiles 2
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/database.dir/all
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/run_output.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ruben/Coding/FitnessTracker/build/CMakeFiles 0
-.PHONY : Src/CMakeFiles/database.dir/rule
+.PHONY : Src/CMakeFiles/run_output.dir/rule
 
 # Convenience name for target.
-database: Src/CMakeFiles/database.dir/rule
-.PHONY : database
+run_output: Src/CMakeFiles/run_output.dir/rule
+.PHONY : run_output
 
 # codegen rule for target.
-Src/CMakeFiles/database.dir/codegen:
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=11,12 "Finished codegen for target database"
-.PHONY : Src/CMakeFiles/database.dir/codegen
+Src/CMakeFiles/run_output.dir/codegen:
+	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/codegen
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=9,10 "Finished codegen for target run_output"
+.PHONY : Src/CMakeFiles/run_output.dir/codegen
 
 # clean rule for target.
-Src/CMakeFiles/database.dir/clean:
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/clean
-.PHONY : Src/CMakeFiles/database.dir/clean
+Src/CMakeFiles/run_output.dir/clean:
+	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/clean
+.PHONY : Src/CMakeFiles/run_output.dir/clean
 
 #=============================================================================
 # Target rules for target Src/CMakeFiles/FitnessTracker.dir
 
 # All Build rule for target.
 Src/CMakeFiles/FitnessTracker.dir/all: Src/CMakeFiles/core.dir/all
-Src/CMakeFiles/FitnessTracker.dir/all: Src/CMakeFiles/database.dir/all
+Src/CMakeFiles/FitnessTracker.dir/all: Src/CMakeFiles/run_output.dir/all
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/depend
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Built target FitnessTracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=1,2,3,4 "Built target FitnessTracker"
 .PHONY : Src/CMakeFiles/FitnessTracker.dir/all
 
 # Build rule for subdir invocation for target.
 Src/CMakeFiles/FitnessTracker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ruben/Coding/FitnessTracker/build/CMakeFiles 12
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ruben/Coding/FitnessTracker/build/CMakeFiles 10
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/FitnessTracker.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/Ruben/Coding/FitnessTracker/build/CMakeFiles 0
 .PHONY : Src/CMakeFiles/FitnessTracker.dir/rule
@@ -192,7 +192,7 @@ FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/rule
 # codegen rule for target.
 Src/CMakeFiles/FitnessTracker.dir/codegen:
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/codegen
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=1,2,3,4,5,6 "Finished codegen for target FitnessTracker"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=1,2,3,4 "Finished codegen for target FitnessTracker"
 .PHONY : Src/CMakeFiles/FitnessTracker.dir/codegen
 
 # clean rule for target.

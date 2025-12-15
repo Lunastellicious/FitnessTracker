@@ -5,19 +5,9 @@
 #include <stdlib.h>
 #include "../include/data.h"
 
-
-
-
-
-
-
 void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate);
 void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a);
 int evaluateRun(double vo2Max);
-
-
-
-
 
 // distance values to be given in KM
 void recommend(double distance, double vo2Max, double heartRate, double time, regressionResult a) {

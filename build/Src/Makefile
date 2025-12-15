@@ -138,18 +138,18 @@ core/fast:
 .PHONY : core/fast
 
 # Convenience name for target.
-Src/CMakeFiles/database.dir/rule:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/database.dir/rule
-.PHONY : Src/CMakeFiles/database.dir/rule
+Src/CMakeFiles/run_output.dir/rule:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 Src/CMakeFiles/run_output.dir/rule
+.PHONY : Src/CMakeFiles/run_output.dir/rule
 
 # Convenience name for target.
-database: Src/CMakeFiles/database.dir/rule
-.PHONY : database
+run_output: Src/CMakeFiles/run_output.dir/rule
+.PHONY : run_output
 
 # fast build rule for target.
-database/fast:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/build
-.PHONY : database/fast
+run_output/fast:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/build
+.PHONY : run_output/fast
 
 # Convenience name for target.
 Src/CMakeFiles/FitnessTracker.dir/rule:
@@ -164,6 +164,33 @@ FitnessTracker: Src/CMakeFiles/FitnessTracker.dir/rule
 FitnessTracker/fast:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/build
 .PHONY : FitnessTracker/fast
+
+core/data.o: core/data.c.o
+.PHONY : core/data.o
+
+# target to build an object file
+core/data.c.o:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/data.c.o
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/data.c.o
+.PHONY : core/data.c.o
+
+core/data.i: core/data.c.i
+.PHONY : core/data.i
+
+# target to preprocess a source file
+core/data.c.i:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/data.c.i
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/data.c.i
+.PHONY : core/data.c.i
+
+core/data.s: core/data.c.s
+.PHONY : core/data.s
+
+# target to generate assembly for a file
+core/data.c.s:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/data.c.s
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/data.c.s
+.PHONY : core/data.c.s
 
 core/linear_regression.o: core/linear_regression.c.o
 .PHONY : core/linear_regression.o
@@ -192,86 +219,29 @@ core/linear_regression.c.s:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.s
 .PHONY : core/linear_regression.c.s
 
-core/logic.o: core/logic.c.o
-.PHONY : core/logic.o
+core/run_data.o: core/run_data.c.o
+.PHONY : core/run_data.o
 
 # target to build an object file
-core/logic.c.o:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/logic.c.o
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o
-.PHONY : core/logic.c.o
+core/run_data.c.o:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/run_data.c.o
+.PHONY : core/run_data.c.o
 
-core/logic.i: core/logic.c.i
-.PHONY : core/logic.i
-
-# target to preprocess a source file
-core/logic.c.i:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/logic.c.i
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/logic.c.i
-.PHONY : core/logic.c.i
-
-core/logic.s: core/logic.c.s
-.PHONY : core/logic.s
-
-# target to generate assembly for a file
-core/logic.c.s:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/logic.c.s
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/logic.c.s
-.PHONY : core/logic.c.s
-
-core/utils.o: core/utils.c.o
-.PHONY : core/utils.o
-
-# target to build an object file
-core/utils.c.o:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/utils.c.o
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o
-.PHONY : core/utils.c.o
-
-core/utils.i: core/utils.c.i
-.PHONY : core/utils.i
+core/run_data.i: core/run_data.c.i
+.PHONY : core/run_data.i
 
 # target to preprocess a source file
-core/utils.c.i:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/utils.c.i
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/utils.c.i
-.PHONY : core/utils.c.i
+core/run_data.c.i:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/run_data.c.i
+.PHONY : core/run_data.c.i
 
-core/utils.s: core/utils.c.s
-.PHONY : core/utils.s
-
-# target to generate assembly for a file
-core/utils.c.s:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/utils.c.s
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/utils.c.s
-.PHONY : core/utils.c.s
-
-database/data.o: database/data.c.o
-.PHONY : database/data.o
-
-# target to build an object file
-database/data.c.o:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/database/data.c.o
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/database/data.c.o
-.PHONY : database/data.c.o
-
-database/data.i: database/data.c.i
-.PHONY : database/data.i
-
-# target to preprocess a source file
-database/data.c.i:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/database/data.c.i
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/database/data.c.i
-.PHONY : database/data.c.i
-
-database/data.s: database/data.c.s
-.PHONY : database/data.s
+core/run_data.s: core/run_data.c.s
+.PHONY : core/run_data.s
 
 # target to generate assembly for a file
-database/data.c.s:
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/database/data.c.s
-	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/database/data.c.s
-.PHONY : database/data.c.s
+core/run_data.c.s:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/run_data.c.s
+.PHONY : core/run_data.c.s
 
 main.o: main.c.o
 .PHONY : main.o
@@ -297,6 +267,30 @@ main.c.s:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/main.c.s
 .PHONY : main.c.s
 
+run_output/recommends.o: run_output/recommends.c.o
+.PHONY : run_output/recommends.o
+
+# target to build an object file
+run_output/recommends.c.o:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/run_output/recommends.c.o
+.PHONY : run_output/recommends.c.o
+
+run_output/recommends.i: run_output/recommends.c.i
+.PHONY : run_output/recommends.i
+
+# target to preprocess a source file
+run_output/recommends.c.i:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/run_output/recommends.c.i
+.PHONY : run_output/recommends.c.i
+
+run_output/recommends.s: run_output/recommends.c.s
+.PHONY : run_output/recommends.s
+
+# target to generate assembly for a file
+run_output/recommends.c.s:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/run_output.dir/build.make Src/CMakeFiles/run_output.dir/run_output/recommends.c.s
+.PHONY : run_output/recommends.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -308,22 +302,22 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... FitnessTracker"
 	@echo "... core"
-	@echo "... database"
+	@echo "... run_output"
+	@echo "... core/data.o"
+	@echo "... core/data.i"
+	@echo "... core/data.s"
 	@echo "... core/linear_regression.o"
 	@echo "... core/linear_regression.i"
 	@echo "... core/linear_regression.s"
-	@echo "... core/logic.o"
-	@echo "... core/logic.i"
-	@echo "... core/logic.s"
-	@echo "... core/utils.o"
-	@echo "... core/utils.i"
-	@echo "... core/utils.s"
-	@echo "... database/data.o"
-	@echo "... database/data.i"
-	@echo "... database/data.s"
+	@echo "... core/run_data.o"
+	@echo "... core/run_data.i"
+	@echo "... core/run_data.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... run_output/recommends.o"
+	@echo "... run_output/recommends.i"
+	@echo "... run_output/recommends.s"
 .PHONY : help
 
 

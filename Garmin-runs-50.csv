@@ -1,4 +1,4 @@
-LÃ¸b ID,Dato,Starttid,TrÃ¦ningstype,Distance (km),Varighed,Gns. tempo (min/km),Gns. hastighed (km/t),Gns. puls (bpm),Maks puls (bpm),Kadence (skridt/min),SkridtlÃ¦ngde (m),HÃ¸jdemeter op (m),HÃ¸jdemeter ned (m),Kalorier (kcal),TrÃ¦ningseffekt aerob,TrÃ¦ningseffekt anaerob
+Lab ID,Dato,Starttid,Traeningstype,Distance (km),Varighed,Gns. tempo (min/km),Gns. hastighed (km/t),Gns. puls (bpm),Maks puls (bpm),Kadence (skridt/min),Skridtlaengde (m),Hoejdemeter op (m),Hoejdemeter ned (m),Kalorier (kcal),Traeningseffekt aerob,Traeningseffekt anaerob
 1,2025-04-30,14:38,Let,10.67,00:58:17,5.46,10.98,131,147,182,1.0,85,58,677,1.1,0.3
 2,2025-03-23,17:27,Let,3.32,00:19:50,5.97,10.04,132,140,174,0.96,9,11,211,2.6,1.0
 3,2025-03-05,20:24,Let,7.08,00:45:33,6.44,9.32,129,135,171,0.91,49,43,446,1.1,0.7

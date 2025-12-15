@@ -8,10 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
+  "/home/Ruben/Coding/FitnessTracker/Src/core/data.c" "Src/CMakeFiles/FitnessTracker.dir/core/data.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/core/data.c.o.d"
   "/home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c" "Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o.d"
-  "/home/Ruben/Coding/FitnessTracker/Src/core/logic.c" "Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o.d"
-  "/home/Ruben/Coding/FitnessTracker/Src/core/utils.c" "Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o.d"
-  "/home/Ruben/Coding/FitnessTracker/Src/database/data.c" "Src/CMakeFiles/FitnessTracker.dir/database/data.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/database/data.c.o.d"
   "/home/Ruben/Coding/FitnessTracker/Src/main.c" "Src/CMakeFiles/FitnessTracker.dir/main.c.o" "gcc" "Src/CMakeFiles/FitnessTracker.dir/main.c.o.d"
   "" "Src/FitnessTracker" "gcc" "Src/CMakeFiles/FitnessTracker.dir/link.d"
   )
