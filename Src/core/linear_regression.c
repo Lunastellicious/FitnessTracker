@@ -105,9 +105,10 @@ int regression(){
     printf("===========================\n\n");
 
     // Get column indices from user (0-indexed)
-    printf("Y is set to column 19 for VO2max\nEnter the column index for X variable (3-16) [4 = km/h]: ");
-    scanf("%d", &x_col_index);
-    y_col_index = 18;
+    printf("Y is set to column 18 for VO2max\nX is set to column 7 for km/h");
+    //scanf("%d", &x_col_index);
+    x_col_index = 7; // (km/h)
+    y_col_index = 18; // (VO2max)
     
     /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
@@ -155,19 +156,19 @@ int regression(){
     // Should not be printed out til console, but 'test' should just test if the regression is good
     // enough and then if not give an error code or something
     int access;
-    double *predicted_y = malloc(100*(sizeof(double)));
+    double *predicted_y = malloc(10*(sizeof(double)));
     printf("Ready to test? Type 1:\n");
     scanf("%d", &access);
     if (access == 1){
-        for(int i = 400; i < 500; i++){
-            predicted_y[i-400] = predict(&data[i], &result);
+        for(int i = 40; i < 50; i++){
+            predicted_y[i-40] = predict(&data[i], &result);
         }
         // Display first few data points
         printf("First 5 data points:\n");
         printf("%-15s %-15s\n", "Y_actual", "Y_predicted");
         printf("------------------------------\n");
-        for (int i = 400; i < (count < 405 ? count : 405); i++) {
-        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-400]);
+        for (int i = 40; i < (count < 45 ? count : 45); i++) {
+        printf("%-15.4f %-15.4f\n", data[i].y, predicted_y[i-40]);
         }
         printf("\n");
 
