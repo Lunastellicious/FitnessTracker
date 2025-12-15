@@ -13,7 +13,7 @@ add_library(run_output
 #compiler det i main
 add_executable(FitnessTracker main.c
         core/linear_regression.c
-        include/recommends.h
+        core/data.c
 )
 
 

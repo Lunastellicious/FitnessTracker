@@ -3,7 +3,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "Src/libdatabase.a"
+			"path" : "Src/librun_output.a"
 		}
 	],
 	"backtrace" : 1,
@@ -54,9 +54,9 @@
 			]
 		}
 	],
-	"id" : "database::@fffd7673bb2fd0d58c2a",
-	"name" : "database",
-	"nameOnDisk" : "libdatabase.a",
+	"id" : "run_output::@fffd7673bb2fd0d58c2a",
+	"name" : "run_output",
+	"nameOnDisk" : "librun_output.a",
 	"paths" : 
 	{
 		"build" : "Src",
@@ -77,7 +77,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Src/database/data.c",
+			"path" : "Src/run_output/recommends.c",
 			"sourceGroupIndex" : 0
 		}
 	],

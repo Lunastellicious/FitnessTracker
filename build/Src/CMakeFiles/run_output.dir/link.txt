@@ -1,0 +1,2 @@
+/usr/bin/ar qc librun_output.a CMakeFiles/run_output.dir/run_output/recommends.c.o
+/usr/bin/ranlib librun_output.a
