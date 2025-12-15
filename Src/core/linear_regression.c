@@ -86,7 +86,7 @@ regressionResult calculate_regression(dataLoad* a, int count){
     }
     
     result.r_squared = 1 - (ss_err / ss_tot);
-    printf("ss_res: %lf,\nss_tot: %lf\n", ss_err, ss_tot);
+    printf("ss_err: %lf,\nss_tot: %lf\n", ss_err, ss_tot);
     return result;
 }
 
