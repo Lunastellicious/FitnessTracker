@@ -4,7 +4,7 @@
 #include "../include/linear_regression.h"
 
 #define MAX_LINE_LENGTH 1024
-#define MAX_DATA_POINTS 500
+#define MAX_DATA_POINTS 200
 #define MAX_COLUMNS 20
 
 //scv parsing
@@ -107,8 +107,8 @@ int regression(){
     // Get column indices from user (0-indexed)
     printf("Y is set to column 18 for VO2max\nX is set to column 7 for km/h");
     //scanf("%d", &x_col_index);
-    x_col_index = 7; // (km/h)
-    y_col_index = 18; // (VO2max)
+    x_col_index = 3; // (km/h)
+    y_col_index = 6; // (VO2max)
     
     /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
@@ -124,8 +124,8 @@ int regression(){
     printf("\n");
 
     // Read CSV file
-    printf("Reading CSV file 'Garmin-runs-50_with_VO2max.csv'...\n");
-    if (!read_csv("../../Garmin-runs-50_with_VO2max.csv", data, &count, x_col_index, y_col_index)) {
+    printf("Reading CSV file 'syntetiske_loebedata.csv'...\n");
+    if (!read_csv("../../syntetiske_loebedata.csv", data, &count, x_col_index, y_col_index)) {
         return 1;
     }
 
