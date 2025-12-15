@@ -31,8 +31,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
@@ -49,8 +48,7 @@
 					"targetIndexes" : 
 					[
 						0,
-						1,
-						2
+						1
 					]
 				}
 			],
@@ -59,22 +57,15 @@
 				{
 					"directoryIndex" : 1,
 					"id" : "FitnessTracker::@fffd7673bb2fd0d58c2a",
-					"jsonFile" : "target-FitnessTracker-Debug-25a8086eca87685e0f4a.json",
+					"jsonFile" : "target-FitnessTracker-Debug-369bbc1802fb6617354f.json",
 					"name" : "FitnessTracker",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 1,
 					"id" : "core::@fffd7673bb2fd0d58c2a",
-					"jsonFile" : "target-core-Debug-5ff8f13227442b0ea822.json",
+					"jsonFile" : "target-core-Debug-940b04556047f95b6410.json",
 					"name" : "core",
-					"projectIndex" : 0
-				},
-				{
-					"directoryIndex" : 1,
-					"id" : "database::@fffd7673bb2fd0d58c2a",
-					"jsonFile" : "target-database-Debug-44bef0ba59bf1f1e61a4.json",
-					"name" : "database",
 					"projectIndex" : 0
 				}
 			]

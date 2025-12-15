@@ -1,10 +1,12 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/core.dir/core/data.c.o"
+  "CMakeFiles/core.dir/core/data.c.o.d"
   "CMakeFiles/core.dir/core/linear_regression.c.o"
   "CMakeFiles/core.dir/core/linear_regression.c.o.d"
-  "CMakeFiles/core.dir/core/logic.c.o"
-  "CMakeFiles/core.dir/core/logic.c.o.d"
-  "CMakeFiles/core.dir/core/utils.c.o"
-  "CMakeFiles/core.dir/core/utils.c.o.d"
+  "CMakeFiles/core.dir/core/recommends.c.o"
+  "CMakeFiles/core.dir/core/recommends.c.o.d"
+  "CMakeFiles/core.dir/core/run_data.c.o"
+  "CMakeFiles/core.dir/core/run_data.c.o.d"
   "libcore.a"
   "libcore.pdb"
 )

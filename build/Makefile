@@ -137,19 +137,6 @@ core/fast:
 .PHONY : core/fast
 
 #=============================================================================
-# Target rules for targets named database
-
-# Build rule for target.
-database: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 database
-.PHONY : database
-
-# fast build rule for target.
-database/fast:
-	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/database.dir/build.make Src/CMakeFiles/database.dir/build
-.PHONY : database/fast
-
-#=============================================================================
 # Target rules for targets named FitnessTracker
 
 # Build rule for target.
@@ -173,7 +160,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... FitnessTracker"
 	@echo "... core"
-	@echo "... database"
 .PHONY : help
 
 

@@ -119,6 +119,5 @@ set(CMAKE_MAKEFILE_PRODUCTS
 # Dependency information for all targets:
 set(CMAKE_DEPEND_INFO_FILES
   "Src/CMakeFiles/core.dir/DependInfo.cmake"
-  "Src/CMakeFiles/database.dir/DependInfo.cmake"
   "Src/CMakeFiles/FitnessTracker.dir/DependInfo.cmake"
   )

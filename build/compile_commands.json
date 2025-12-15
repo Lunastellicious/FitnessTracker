@@ -1,27 +1,27 @@
 [
 {
   "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
-  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/logic.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/logic.c",
-  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/logic.c",
-  "output": "Src/CMakeFiles/core.dir/core/logic.c.o"
-},
-{
-  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
-  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/utils.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/utils.c",
-  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/utils.c",
-  "output": "Src/CMakeFiles/core.dir/core/utils.c.o"
-},
-{
-  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
   "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/linear_regression.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c",
   "file": "/home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c",
   "output": "Src/CMakeFiles/core.dir/core/linear_regression.c.o"
 },
 {
   "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
-  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/database.dir/database/data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/database/data.c",
-  "file": "/home/Ruben/Coding/FitnessTracker/Src/database/data.c",
-  "output": "Src/CMakeFiles/database.dir/database/data.c.o"
+  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/data.c",
+  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/data.c",
+  "output": "Src/CMakeFiles/core.dir/core/data.c.o"
+},
+{
+  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
+  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/recommends.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/recommends.c",
+  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/recommends.c",
+  "output": "Src/CMakeFiles/core.dir/core/recommends.c.o"
+},
+{
+  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
+  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/run_data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/run_data.c",
+  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/run_data.c",
+  "output": "Src/CMakeFiles/core.dir/core/run_data.c.o"
 },
 {
   "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
@@ -37,20 +37,8 @@
 },
 {
   "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
-  "command": "/usr/bin/cc  -I/home/Ruben/Coding/FitnessTracker/Src/include -g -std=gnu11 -o CMakeFiles/FitnessTracker.dir/core/logic.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/logic.c",
-  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/logic.c",
-  "output": "Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o"
-},
-{
-  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
-  "command": "/usr/bin/cc  -I/home/Ruben/Coding/FitnessTracker/Src/include -g -std=gnu11 -o CMakeFiles/FitnessTracker.dir/core/utils.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/utils.c",
-  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/utils.c",
-  "output": "Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o"
-},
-{
-  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
-  "command": "/usr/bin/cc  -I/home/Ruben/Coding/FitnessTracker/Src/include -g -std=gnu11 -o CMakeFiles/FitnessTracker.dir/database/data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/database/data.c",
-  "file": "/home/Ruben/Coding/FitnessTracker/Src/database/data.c",
-  "output": "Src/CMakeFiles/FitnessTracker.dir/database/data.c.o"
+  "command": "/usr/bin/cc  -I/home/Ruben/Coding/FitnessTracker/Src/include -g -std=gnu11 -o CMakeFiles/FitnessTracker.dir/core/data.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/data.c",
+  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/data.c",
+  "output": "Src/CMakeFiles/FitnessTracker.dir/core/data.c.o"
 }
 ]

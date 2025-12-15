@@ -62,22 +62,6 @@ Src/CMakeFiles/core.dir/core/linear_regression.c.o: /home/Ruben/Coding/FitnessTr
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
-Src/CMakeFiles/core.dir/core/logic.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/logic.c \
-  /home/Ruben/Coding/FitnessTracker/Src/include/logic.h \
-  /usr/include/stdc-predef.h
-
-Src/CMakeFiles/core.dir/core/utils.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/utils.c \
-  /home/Ruben/Coding/FitnessTracker/Src/include/utils.h \
-  /usr/include/stdc-predef.h
-
-
-/home/Ruben/Coding/FitnessTracker/Src/include/utils.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/core/utils.c:
-
-/home/Ruben/Coding/FitnessTracker/Src/include/logic.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/core/logic.c:
 
 /usr/include/bits/types/FILE.h:
 

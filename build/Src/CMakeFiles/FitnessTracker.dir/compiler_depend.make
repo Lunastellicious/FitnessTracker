@@ -62,18 +62,6 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: /home/Ruben/Coding
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stdarg.h \
   /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h
 
-Src/CMakeFiles/FitnessTracker.dir/core/logic.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/logic.c \
-  /home/Ruben/Coding/FitnessTracker/Src/include/logic.h \
-  /usr/include/stdc-predef.h
-
-Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/utils.c \
-  /home/Ruben/Coding/FitnessTracker/Src/include/utils.h \
-  /usr/include/stdc-predef.h
-
-Src/CMakeFiles/FitnessTracker.dir/database/data.c.o: /home/Ruben/Coding/FitnessTracker/Src/database/data.c \
-  /home/Ruben/Coding/FitnessTracker/Src/include/data.h \
-  /usr/include/stdc-predef.h
-
 Src/CMakeFiles/FitnessTracker.dir/main.c.o: /home/Ruben/Coding/FitnessTracker/Src/main.c \
   /home/Ruben/Coding/FitnessTracker/Src/include/data.h \
   /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h \
@@ -133,6 +121,8 @@ Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o:
 
 /usr/lib/libc.so.6:
 
+/usr/lib/ld-linux-x86-64.so.2:
+
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtbeginS.o:
 
 /usr/lib/libgcc_s.so.1:
@@ -148,18 +138,6 @@ Src/CMakeFiles/FitnessTracker.dir/core/utils.c.o:
 /usr/lib/Scrt1.o:
 
 /home/Ruben/Coding/FitnessTracker/Src/main.c:
-
-/usr/lib/ld-linux-x86-64.so.2:
-
-/home/Ruben/Coding/FitnessTracker/Src/database/data.c:
-
-/home/Ruben/Coding/FitnessTracker/Src/include/utils.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/core/utils.c:
-
-/home/Ruben/Coding/FitnessTracker/Src/include/logic.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/core/logic.c:
 
 /usr/include/bits/types/FILE.h:
 
