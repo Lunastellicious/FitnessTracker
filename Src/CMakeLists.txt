@@ -1,21 +1,19 @@
 #Add new c files to core
 add_library(core
-        core/logic.c
-        core/utils.c
         core/linear_regression.c
+        core/run_data.c
+        core/data.c
 )
 
 #Add new c files to database
-add_library(database
-        database/data.c
+add_library(run_output
+        run_output/recommends.c
 )
 
 #compiler det i main
 add_executable(FitnessTracker main.c
         core/linear_regression.c
-        core/logic.c
-        core/utils.c
-        database/data.c
+        include/recommends.h
 )
 
 
@@ -23,7 +21,7 @@ add_executable(FitnessTracker main.c
 #linker libraries ind i programmet
 target_link_libraries(FitnessTracker
         core
-        database
+        run_output
 )
 
 # gør .h filer synlige for alle targets
