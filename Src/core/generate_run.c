@@ -18,10 +18,10 @@ double runTimeMinutes(int total_seconds);
 double generateDistanceKm(int total_seconds, double speed_kmh);
 double generatePaceMinPerKm(double run_minutes, double distance_km);
 
-// Simple pace helper (min/km) directly from seconds + km
+// pace helper
 double computePace(int total_seconds, double distance_km);
 
-// Training Effect functions (simple linear models)
+// Training Effect functions
 double computeAerobicTE(double pace_min_per_km, int total_seconds);
 double computeAnaerobicTE(double pace_min_per_km, int total_seconds);
 double computeTotalTE(double aerobic_te, double anaerobic_te);
@@ -127,7 +127,6 @@ double computeAerobicTE(double pace, int total_seconds)
     if (te > 5.0) te = 5.0;
     return te;
 }
-
 
 double computeAnaerobicTE(double pace, int total_seconds)
 {
