@@ -2,12 +2,17 @@
 #include "./include/data.h"
 #include "./include/linear_regression.h"
 #include "./include/run_data.h"
+#include "./include/recommends.h"
 
 int main(void)
 {
-    printf("Hello, World!\n");
-
-    regression();
+    Database current;
+    regressionResult result;
+    
+    runData(30, 60, &current);
+    regression(&result);
+    recommend(current.distance, current.VO2max, current.HRmax, current.duration, result);
+    
 
     return 0;
 

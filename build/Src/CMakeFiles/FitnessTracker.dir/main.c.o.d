@@ -18,4 +18,6 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o: \
  /home/Ruben/Coding/FitnessTracker/Src/./include/data.h \
  /home/Ruben/Coding/FitnessTracker/Src/./include/linear_regression.h \
  /home/Ruben/Coding/FitnessTracker/Src/./include/run_data.h \
- /home/Ruben/Coding/FitnessTracker/Src/./include/data.h
+ /home/Ruben/Coding/FitnessTracker/Src/./include/data.h \
+ /home/Ruben/Coding/FitnessTracker/Src/./include/recommends.h \
+ /home/Ruben/Coding/FitnessTracker/Src/./include/linear_regression.h

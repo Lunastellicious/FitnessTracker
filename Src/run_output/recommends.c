@@ -5,13 +5,13 @@
 #include <stdlib.h>
 #include "../include/data.h"
 
-void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate);
-void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a);
+void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate, metrics rec);
+void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a, metrics rec);
 int evaluateRun(double vo2Max);
 
 // distance values to be given in KM
 void recommend(double distance, double vo2Max, double heartRate, double time, regressionResult a) {
-
+    metrics rec;
     int runSPeed = 0;
     int vo2MaxPos = 0;
     int runLength = 0;
@@ -20,8 +20,8 @@ void recommend(double distance, double vo2Max, double heartRate, double time, re
     runValue = evaluateRun(vo2Max);
 
     // TODO: call metrics to improve and call print
-    metricsToImprove(vo2Max, a, distance, time, heartRate);
-    print(runValue, distance, time, heartRate, vo2Max, a);
+    metricsToImprove(vo2Max, a, distance, time, heartRate, rec);
+    print(runValue, distance, time, heartRate, vo2Max, a, rec);
 
 }
 
@@ -45,7 +45,7 @@ int evaluateRun(double vo2Max) {
     }
 
 // distance values to be given in KM
-void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate) {
+void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate, metrics rec) {
     // determine what user needs to be told about various metrics
 
 
@@ -54,30 +54,30 @@ void metricsToImprove(double vo2Max, regressionResult a, double distance, double
 
     // determine whether user ran fast enough
     if (speed < 9.1 ) {
-        metrics.runSPeed = 1;
+        rec.runSPeed = 1;
     } else if (speed < 13.1) {
-        metrics.runSPeed = 2;
+        rec.runSPeed = 2;
     }
 
     // determine whether user ran far enough 1 means above expected 2 means below expected
     if (11.1*time > (11.1*time)+2*time) {
-        metrics.runLength = 1;
+        rec.runLength = 1;
     } else if (11.1*time < (11.1*time)-2*time) {
-        metrics.runLength = 2;
+        rec.runLength = 2;
     }
 
    // determine where vo2Max is relative to the average
     if (a.slope * heartRate + a.intercept > vo2Max) {
-        metrics.vo2MaxPos = 2;
+        rec.vo2MaxPos = 2;
     } else if (a.slope * heartRate + a.intercept <= vo2Max) {
-        metrics.vo2MaxPos = 1;
+        rec.vo2MaxPos = 1;
     }
 
 }
 
 
 
-void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a) {
+void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a, metrics rec) {
     // TODO finish writing out the text output
     printf("************************************************************\n");
     printf("**                   Data on Your run:                    **\n");
@@ -115,7 +115,7 @@ void print(int runValue, double distance, double time, double heartRate, double 
     }
     printf("\n\n");
 
-    switch (metrics.runSPeed) {
+    switch (rec.runSPeed) {
         case 1:
             printf("info: you ran at speed of %.2lf which is below the expected. suggest running faster on your next run: ideal speed between 9.1 km/h and 13.1 km/h \n", distance/time);
             break;
@@ -128,7 +128,7 @@ void print(int runValue, double distance, double time, double heartRate, double 
     }
 
     // relevance ?? inherently tied to run speed so might not be that relevant
-    switch (metrics.runLength) {
+    switch (rec.runLength) {
         case 1:
             printf("info: you ran farther than the average person for the recorded run duration: suggest lowering the distance of your run slightly \n ");
             break;
@@ -139,7 +139,7 @@ void print(int runValue, double distance, double time, double heartRate, double 
             exit((EXIT_FAILURE));
     }
 
-    switch ( (metrics.vo2MaxPos)) {
+    switch ( (rec.vo2MaxPos)) {
         case 1:
             printf("your vo2Max was found to be below average: average for the recoder heart rate %.2lf your vo2Max %.2lf ", a.slope * heartRate + a.intercept, vo2Max);
             break;

@@ -2,7 +2,7 @@
 #include "linear_regression.h"
 #define RECOMMENDS_H
 
-struct metrics {
+typedef struct {
     int runSPeed;
     int runLength;
     int vo2MaxPos;

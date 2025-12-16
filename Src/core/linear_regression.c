@@ -96,7 +96,7 @@ double predict(dataLoad* x, regressionResult* result){
 }
 
 //call
-int regression(){
+int regression(regressionResult result){
     dataLoad data[MAX_DATA_POINTS];
     int count;
     int x_col_index, y_col_index;
@@ -142,7 +142,7 @@ int regression(){
     printf("\n");
 
     // Calculate linear regression
-    regressionResult result = calculate_regression(data, count);
+    result = calculate_regression(data, count);
 
     // Display results
     printf("Linear Regression Results:\n");
