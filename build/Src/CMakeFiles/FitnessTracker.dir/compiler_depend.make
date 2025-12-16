@@ -69,6 +69,8 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: /home/Ruben/Coding
 Src/CMakeFiles/FitnessTracker.dir/main.c.o: /home/Ruben/Coding/FitnessTracker/Src/main.c \
   /home/Ruben/Coding/FitnessTracker/Src/include/data.h \
   /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h \
+  /home/Ruben/Coding/FitnessTracker/Src/include/recommends.h \
+  /home/Ruben/Coding/FitnessTracker/Src/include/run_data.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
   /usr/include/bits/libc-header-start.h \
@@ -169,6 +171,8 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 
 /usr/include/bits/stdint-intn.h:
 
+/home/Ruben/Coding/FitnessTracker/Src/include/run_data.h:
+
 /usr/include/bits/struct_mutex.h:
 
 /usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
@@ -198,6 +202,8 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 /usr/include/bits/libc-header-start.h:
 
 /usr/include/strings.h:
+
+/home/Ruben/Coding/FitnessTracker/Src/include/recommends.h:
 
 /home/Ruben/Coding/FitnessTracker/Src/core/data.c:
 

@@ -88,7 +88,7 @@ int main (void)
 
 
 // main function that should be called
-void runData(int min, int max, int stepcount, Database *current) {
+void runData(int min, int max, Database *current) {
     //given in seconds
     double runTime = 0;
     // given in Km
@@ -101,7 +101,7 @@ void runData(int min, int max, int stepcount, Database *current) {
     double aerobScore = 0;
     double anerobScore = 0;
 
-
+    /*
     if (stepcount == 0) {
         runTime = runDuration(min, max);
         runDistance = generateDistance(runTime);
@@ -109,6 +109,10 @@ void runData(int min, int max, int stepcount, Database *current) {
         runDistance = stepsToDistance(stepcount);
         runTime = distanceToRunTime(runDistance);
     }
+    */
+
+    runTime = runDuration(min, max);
+    runDistance = generateDistance(runTime);
     // printRunDuration(runTime); option to write time of run to console
     generateHRData(runTime, zoneTimes);
 
