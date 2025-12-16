@@ -2,7 +2,7 @@
 #ifndef DATA_H
 #define DATA_H
 //creation of struct used to store run information
-typedef struct {
+typedef struct { //TODO: update metrics
     int HRrest,
         HRmax,
         HRaverage,

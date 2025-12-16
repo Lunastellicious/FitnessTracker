@@ -75,7 +75,6 @@ int generateVO2MAX(void)
     return VO2MinimumValue + rand() % (VO2MaximumValue - VO2MinimumValue + 1);
 }
 
-
 int runDurationSeconds(int minMinutes, int maxMinutes)
 {
     int minutes = minMinutes + rand() % (maxMinutes - minMinutes + 1);
@@ -110,7 +109,6 @@ double generatePaceMinPerKm(double run_minutes, double distance_km)
     }
     return run_minutes / distance_km; // min/km
 }
-
 
 double computePace(int total_seconds, double distance_km)
 {
@@ -147,7 +145,6 @@ double computeTotalTE(double aerobic, double anaerobic)
     if (total > 10.0) total = 10.0;
     return total;
 }
-
 
 double computeRecovery(double totalTE)
 {
