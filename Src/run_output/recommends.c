@@ -5,23 +5,23 @@
 #include <stdlib.h>
 #include "../include/data.h"
 
-void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate, metrics rec);
-void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a, metrics rec);
+void metricsToImprove(double vo2Max, regressionResult* a, double distance, double time, double heartRate, metrics rec);
+void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult* a, metrics rec);
 int evaluateRun(double vo2Max);
 
 // distance values to be given in KM
-void recommend(double distance, double vo2Max, double heartRate, double time, regressionResult a) {
+void recommend(Database* current, regressionResult* a) {
     metrics rec;
     int runSPeed = 0;
     int vo2MaxPos = 0;
     int runLength = 0;
 
     int runValue = 0; // determines the value of a run: 0 = bad: 1 = ok: 2 = good: 3 = excellent: 4 being perfect
-    runValue = evaluateRun(vo2Max);
+    runValue = evaluateRun(current->VO2max);
 
     // TODO: call metrics to improve and call print
-    metricsToImprove(vo2Max, a, distance, time, heartRate, rec);
-    print(runValue, distance, time, heartRate, vo2Max, a, rec);
+    metricsToImprove(current->VO2max, a, current->distance, current->duration, current->HRmax, rec);
+    print(runValue, current->distance, current->duration, current->HRmax, current->VO2max, a, rec);
 
 }
 
@@ -45,7 +45,7 @@ int evaluateRun(double vo2Max) {
     }
 
 // distance values to be given in KM
-void metricsToImprove(double vo2Max, regressionResult a, double distance, double time, double heartRate, metrics rec) {
+void metricsToImprove(double vo2Max, regressionResult* a, double distance, double time, double heartRate, metrics rec) {
     // determine what user needs to be told about various metrics
 
 
@@ -67,9 +67,9 @@ void metricsToImprove(double vo2Max, regressionResult a, double distance, double
     }
 
    // determine where vo2Max is relative to the average
-    if (a.slope * heartRate + a.intercept > vo2Max) {
+    if (a->slope * heartRate + a->intercept > vo2Max) {
         rec.vo2MaxPos = 2;
-    } else if (a.slope * heartRate + a.intercept <= vo2Max) {
+    } else if (a->slope * heartRate + a->intercept <= vo2Max) {
         rec.vo2MaxPos = 1;
     }
 
@@ -77,7 +77,7 @@ void metricsToImprove(double vo2Max, regressionResult a, double distance, double
 
 
 
-void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult a, metrics rec) {
+void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult* a, metrics rec) {
     // TODO finish writing out the text output
     printf("************************************************************\n");
     printf("**                   Data on Your run:                    **\n");
@@ -141,10 +141,10 @@ void print(int runValue, double distance, double time, double heartRate, double 
 
     switch ( (rec.vo2MaxPos)) {
         case 1:
-            printf("your vo2Max was found to be below average: average for the recoder heart rate %.2lf your vo2Max %.2lf ", a.slope * heartRate + a.intercept, vo2Max);
+            printf("your vo2Max was found to be below average: average for the recoder heart rate %.2lf your vo2Max %.2lf ", a->slope * heartRate + a->intercept, vo2Max);
             break;
         case 2:
-            printf("your vo2Max was found to be above average: average for the recoder heart rate %.2lf your vo2Max %.2lf  which is good sign", a.slope * heartRate + a.intercept, vo2Max);
+            printf("your vo2Max was found to be above average: average for the recoder heart rate %.2lf your vo2Max %.2lf  which is good sign", a->slope * heartRate + a->intercept, vo2Max);
             break;
         default:
             printf("print function failed");

@@ -11,9 +11,7 @@ int main(void)
     
     runData(30, 60, &current);
     regression(&result);
-    recommend(current.distance, current.VO2max, current.HRmax, current.duration, result);
+    recommend(&current, &result);
     
-
     return 0;
-
 }
