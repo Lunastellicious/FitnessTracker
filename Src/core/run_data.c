@@ -49,7 +49,6 @@ struct heartRateZone Zones[] = {
     {175, 190, "Zone 5 (I)", "High intensity interval training"}
 };
 
-
 //// ---------- PROTOTYPE FUNCTIONS ----------
 
 double runDuration (int minMinutes, int maxMinutes);
@@ -125,9 +124,6 @@ void runData(int min, int max, Database *current) {
 
 }
 
-
-
-
 // creates distance from an amount of steps
 double stepsToDistance(int stepCount) {
     double distance;
@@ -135,6 +131,7 @@ double stepsToDistance(int stepCount) {
     distance = stepCount*conversionStepsPrMeter;
     return distance;
 }
+
 // creates a run time from the given distance
 double distanceToRunTime(double runDistance) {
     int runTime = 0;
@@ -145,7 +142,7 @@ double distanceToRunTime(double runDistance) {
 
 // randomly generates a distance for the run based off the time of the run
 double generateDistance(double runTime) {
-    double distance = (averageHumanRunSPeed/3.6)*runTime;
+    double distance = (averageHumanRunSPeed)*runTime;
     
     return distance;
 }
