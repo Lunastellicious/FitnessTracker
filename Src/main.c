@@ -1,12 +1,14 @@
 #include <stdio.h>
 #include "./include/data.h"
 #include "./include/linear_regression.h"
+#include "./include/generate_run.h"
 
 int main(void)
 {
-    printf("Hello, World!\n");
+    printf("Hello, main!\n");
 
-    regression();
+    generateMain();
+    //regression();
 
     return 0;
 
