@@ -5,8 +5,6 @@ add_library(core
         core/data.c
         core/generate_run.c
         include/generate_run.h
-        core/Training_effect.c
-        include/Training_effect.h
 )
 
 #Add new c files to database
