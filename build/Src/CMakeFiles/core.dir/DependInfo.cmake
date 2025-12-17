@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/Ruben/Coding/FitnessTracker/Src/core/data.c" "Src/CMakeFiles/core.dir/core/data.c.o" "gcc" "Src/CMakeFiles/core.dir/core/data.c.o.d"
+  "/home/Ruben/Coding/FitnessTracker/Src/core/generate_run.c" "Src/CMakeFiles/core.dir/core/generate_run.c.o" "gcc" "Src/CMakeFiles/core.dir/core/generate_run.c.o.d"
   "/home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c" "Src/CMakeFiles/core.dir/core/linear_regression.c.o" "gcc" "Src/CMakeFiles/core.dir/core/linear_regression.c.o.d"
   "/home/Ruben/Coding/FitnessTracker/Src/core/run_data.c" "Src/CMakeFiles/core.dir/core/run_data.c.o" "gcc" "Src/CMakeFiles/core.dir/core/run_data.c.o.d"
   )

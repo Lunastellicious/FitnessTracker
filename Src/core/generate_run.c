@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include "../include/data.h"
 
 ////CONSTANTS
 const int VO2MaximumValue = 45;
@@ -29,7 +30,7 @@ double computeTotalTE(double aerobic_te, double anaerobic_te);
 double computeRecovery(double totalTE);
 
 ////MAIN
-int generateMain(void)
+int generateMain(Database* current)
 {
     // Seed RNG once
     srand((unsigned)time(NULL));
@@ -39,36 +40,37 @@ int generateMain(void)
     printRunDurationHMS(total_seconds);
 
     // Convert to minutes
-    double total_minutes = runTimeMinutes(total_seconds);
+    current->duration = runTimeMinutes(total_seconds);
 
     // Distance
-    double distance_km = generateDistanceKm(total_seconds, AVERAGE_HUMAN_RUN_SPEED_KMH);
+    current->distance = generateDistanceKm(total_seconds, AVERAGE_HUMAN_RUN_SPEED_KMH);
 
     // Pace (min/km)
-    double pace_min_per_km = generatePaceMinPerKm(total_minutes, distance_km);
+    current->pace = generatePaceMinPerKm(current->duration, current->distance);
 
     // VO2MAX  example
-    int vo2max = generateVO2MAX();
+    current->VO2max = (double) generateVO2MAX();
 
+    int hrMin = 0, hrAvg =0, hrMax = 0;
+
+    printf("Run total time: %d seconds (%.2f minutes)\n", total_seconds, current->duration);
+    printf("Distance: %.2f km at %.2f km/h\n", current->distance, AVERAGE_HUMAN_RUN_SPEED_KMH);
+    printf("Average pace: %.2f min/km\n", current->pace);
+    printf("Random VO2MAX: %d\n", current->VO2max);
     //HR
     int hrMin = 0, hrAvg =0, hrMax = 0;
 
 
-    printf("Run total time: %d seconds (%.2f minutes)\n", total_seconds, total_minutes);
-    printf("Distance: %.2f km at %.2f km/h\n", distance_km, AVERAGE_HUMAN_RUN_SPEED_KMH);
-    printf("Average pace: %.2f min/km\n", pace_min_per_km);
-    printf("Random VO2MAX: %d\n", vo2max);
-
     //TE and recovery based on the generated run
-    double aerobic   = computeAerobicTE(pace_min_per_km, total_seconds);
-    double anaerobic = computeAnaerobicTE(pace_min_per_km, total_seconds);
-    double totalTE   = computeTotalTE(aerobic, anaerobic);
-    double recovery  = computeRecovery(totalTE);
+    current->aerobic = computeAerobicTE(current->pace, total_seconds);
+    current->anaerobic = computeAnaerobicTE(current->pace, total_seconds);
+    current->totalTE = computeTotalTE(current->aerobic, current->anaerobic);
+    current->recovery = computeRecovery(current->totalTE);
 
-    printf("Aerobic TE: %.2f\n", aerobic);
-    printf("Anaerobic TE: %.2f\n", anaerobic);
-    printf("Total TE: %.2f\n", totalTE);
-    printf("Recovery: %.1f hours\n", recovery);
+    printf("Aerobic TE: %.2f\n", current->aerobic);
+    printf("Anaerobic TE: %.2f\n", current->anaerobic);
+    printf("Total TE: %.2f\n", current->totalTE);
+    printf("Recovery: %.1f hours\n", current->recovery);
 
     return 0;
 }
@@ -79,7 +81,6 @@ int generateVO2MAX(void)
 {
     return VO2MinimumValue + rand() % (VO2MaximumValue - VO2MinimumValue + 1);
 }
-
 
 int runDurationSeconds(int minMinutes, int maxMinutes)
 {
@@ -151,7 +152,6 @@ double computeAerobicTE(double pace, int total_seconds)
     return te;
 }
 
-
 double computeAnaerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
@@ -168,7 +168,6 @@ double computeTotalTE(double aerobic, double anaerobic)
     if (total > 10.0) total = 10.0;
     return total;
 }
-
 
 double computeRecovery(double totalTE)
 {

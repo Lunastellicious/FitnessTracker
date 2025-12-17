@@ -5,12 +5,15 @@
 typedef struct { //TODO: update metrics
     int HRrest,
         HRmax,
-        HRaverage,
-        pace,
-        tempo;
+        HRaverage;
     double duration,
            distance,
-           VO2max;
+           pace,
+           VO2max,
+           aerobic,
+           anaerobic,
+           totalTE,
+           recovery; 
 } Database;
 
 //preloads update functions
