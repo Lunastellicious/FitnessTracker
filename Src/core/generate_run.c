@@ -58,7 +58,7 @@ int generateMain(Database* current)
     printf("Average pace: %.2f min/km\n", current->pace);
     printf("Random VO2MAX: %d\n", current->VO2max);
     //HR
-    int hrMin = 0, hrAvg =0, hrMax = 0;
+    //int hrMin = 0, hrAvg =0, hrMax = 0;
 
 
     //TE and recovery based on the generated run
