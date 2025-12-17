@@ -54,7 +54,7 @@ struct heartRateZone Zones[] = {
 double runDuration (int minMinutes, int maxMinutes);
 void printRunDuration(double runTime);
 int generateRunDurations();
-int generateHRData (double totalSeconds, double *zoneTimes);
+int generateHRData (int* hrMin, int* hrAvg, int* hrMax);
 
 double stepsToDistance(int stepCount);
 double generateDistance(double runTime);
@@ -87,7 +87,7 @@ int main (void)
 
 
 // main function that should be called
-void runData(int min, int max, Database *current) {
+void runData(int min, int max, int stepcount, Database *current) {
     //given in seconds
     double runTime = 0;
     // given in Km
@@ -100,7 +100,10 @@ void runData(int min, int max, Database *current) {
     double aerobScore = 0;
     double anerobScore = 0;
 
-    /*
+    // HR vasriables
+    int hrMin = 0, hrAvg =0, hrMax = 0;
+
+
     if (stepcount == 0) {
         runTime = runDuration(min, max);
         runDistance = generateDistance(runTime);
@@ -108,18 +111,12 @@ void runData(int min, int max, Database *current) {
         runDistance = stepsToDistance(stepcount);
         runTime = distanceToRunTime(runDistance);
     }
-    */
-
-    runTime = runDuration(min, max);
-    runDistance = generateDistance(runTime);
     // printRunDuration(runTime); option to write time of run to console
-    generateHRData(runTime, zoneTimes);
+    generateHRData(&hrMin, &hrAvg, &hrMax);
 
     //sends data to struct
     set_distance(current, runDistance);
     set_duration(current, runTime);
-
-
 
 
 }
@@ -217,49 +214,19 @@ void printRunDuration (double runTime)
 
 
 //distributes run duration into zones
-int generateHRData (double totalSeconds, double *zoneTimes)
+int generateHRData (int* hrMin, int* hrAvg, int* hrMax)
 {
-
-    int totalMinutes = totalSeconds / 60;
-
-    //Rand interval
-    double Z1_time = (rand() % (20 - 5 + 1) + 5);
-    double Z2_time = (rand() % (50 - 5 + 1) + 5);
-    double Z3_time = (rand() % (10 - 5 + 1) + 5);
-    double Z4_time = (rand() % (10 - 5 + 1) + 5);
-    double Z5_time = (rand() % (10 - 5 + 1) + 5);
-
-    double distributionSum = Z1_time + Z2_time + Z3_time + Z4_time + Z5_time;
+    int variation1 = 0, variation2 = 0;
 
     // should not print to console during normal operations
     // printf("distribution %.02lf \n " , distributionSum);
 
-    //distribution in minutes
-    /*
-    double const Z1 = totalMinutes * (Z1_time / distributionSum);
-    double const Z2 = totalMinutes * (Z2_time / distributionSum);
+    variation1= (rand() % -5 - 5 +1);
+    variation2= (rand() % -10 - 10 +1);
 
-    double const Z3 = totalMinutes * (Z3_time / distributionSum); //lactate threshold
-
-    double const Z4 = totalMinutes * (Z4_time / distributionSum);
-    double const Z5 = totalMinutes * (Z5_time / distributionSum);
-    */
-        zoneTimes[0] = totalMinutes * (Z1_time / distributionSum);
-        zoneTimes[1] = totalMinutes * (Z2_time / distributionSum);
-
-        zoneTimes[2] = totalMinutes * (Z3_time / distributionSum); //lactate threshold
-
-        zoneTimes[3] = totalMinutes * (Z4_time / distributionSum);
-        zoneTimes[4] = totalMinutes * (Z5_time / distributionSum);
-
-    // should not print to console during normal operations
-    /*
-    printf("Z1 %.2lf \n", zoneTimes[0]);
-    printf("Z2 %.2lf \n", zoneTimes[1]);
-    printf("Z3 %.2lf \n", zoneTimes[2]);
-    printf("Z4 %.2lf \n", zoneTimes[3]);
-    printf("Z4 %.2lf \n", zoneTimes[4]);
-    */
+    *hrMin = 62+variation1;
+    *hrMax = 171+variation2;
+    * hrAvg = (*hrMin+*hrMax)/2;
 }
 
 

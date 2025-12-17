@@ -17,11 +17,12 @@ void printRunDurationHMS(int total_seconds);
 double runTimeMinutes(int total_seconds);
 double generateDistanceKm(int total_seconds, double speed_kmh);
 double generatePaceMinPerKm(double run_minutes, double distance_km);
+int generateHRData (int* hrMin, int* hrAvg, int* hrMax); //TODO: make HR work
 
-// pace helper
+// Simple pace helper (min/km) directly from seconds + km
 double computePace(int total_seconds, double distance_km);
 
-// Training Effect functions
+// Training Effect functions (simple linear models)
 double computeAerobicTE(double pace_min_per_km, int total_seconds);
 double computeAnaerobicTE(double pace_min_per_km, int total_seconds);
 double computeTotalTE(double aerobic_te, double anaerobic_te);
@@ -49,6 +50,10 @@ int generateMain(void)
     // VO2MAX  example
     int vo2max = generateVO2MAX();
 
+    //HR
+    int hrMin = 0, hrAvg =0, hrMax = 0;
+
+
     printf("Run total time: %d seconds (%.2f minutes)\n", total_seconds, total_minutes);
     printf("Distance: %.2f km at %.2f km/h\n", distance_km, AVERAGE_HUMAN_RUN_SPEED_KMH);
     printf("Average pace: %.2f min/km\n", pace_min_per_km);
@@ -74,6 +79,7 @@ int generateVO2MAX(void)
 {
     return VO2MinimumValue + rand() % (VO2MaximumValue - VO2MinimumValue + 1);
 }
+
 
 int runDurationSeconds(int minMinutes, int maxMinutes)
 {
@@ -110,6 +116,23 @@ double generatePaceMinPerKm(double run_minutes, double distance_km)
     return run_minutes / distance_km; // min/km
 }
 
+int generateHRData (int* hrMin, int* hrAvg, int* hrMax)
+{
+    int variation1 = 0, variation2 = 0;
+
+    // csv hrAVG average = 155
+    // csv hrMAX average = 171
+    // sourced hrMIn average for 20s woman 60-64: 62 used
+
+    variation1= (rand() % -5 - 5 +1);
+    variation2= (rand() % -10 - 10 +1);
+
+    *hrMin = 62+variation1;
+    *hrMax = 171+variation2;
+    * hrAvg = (*hrMin+*hrMax)/2;
+}
+
+
 double computePace(int total_seconds, double distance_km)
 {
     double minutes = total_seconds / 60.0;
@@ -128,6 +151,7 @@ double computeAerobicTE(double pace, int total_seconds)
     return te;
 }
 
+
 double computeAnaerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
@@ -144,6 +168,7 @@ double computeTotalTE(double aerobic, double anaerobic)
     if (total > 10.0) total = 10.0;
     return total;
 }
+
 
 double computeRecovery(double totalTE)
 {
