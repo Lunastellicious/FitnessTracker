@@ -192,6 +192,30 @@ core/data.c.s:
 	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/core/data.c.s
 .PHONY : core/data.c.s
 
+core/generate_run.o: core/generate_run.c.o
+.PHONY : core/generate_run.o
+
+# target to build an object file
+core/generate_run.c.o:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/generate_run.c.o
+.PHONY : core/generate_run.c.o
+
+core/generate_run.i: core/generate_run.c.i
+.PHONY : core/generate_run.i
+
+# target to preprocess a source file
+core/generate_run.c.i:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/generate_run.c.i
+.PHONY : core/generate_run.c.i
+
+core/generate_run.s: core/generate_run.c.s
+.PHONY : core/generate_run.s
+
+# target to generate assembly for a file
+core/generate_run.c.s:
+	cd /home/Ruben/Coding/FitnessTracker/build && $(MAKE) $(MAKESILENT) -f Src/CMakeFiles/core.dir/build.make Src/CMakeFiles/core.dir/core/generate_run.c.s
+.PHONY : core/generate_run.c.s
+
 core/linear_regression.o: core/linear_regression.c.o
 .PHONY : core/linear_regression.o
 
@@ -306,6 +330,9 @@ help:
 	@echo "... core/data.o"
 	@echo "... core/data.i"
 	@echo "... core/data.s"
+	@echo "... core/generate_run.o"
+	@echo "... core/generate_run.i"
+	@echo "... core/generate_run.s"
 	@echo "... core/linear_regression.o"
 	@echo "... core/linear_regression.i"
 	@echo "... core/linear_regression.s"
