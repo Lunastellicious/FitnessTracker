@@ -13,7 +13,7 @@ const int ACTIVEBPM_MAX = 195;
 // varies heavily based on an individuals height
 const double conversionStepsPrMeter = 1.3;
 // given in Km/t
-const double averageHumanRunSPeed = 11.1;
+const double averageHumanRunSPeed = 11;
 const double MStoKMT = 3.6;
 
 /*
@@ -148,7 +148,7 @@ double distanceToRunTime(double runDistance) {
 
 // randomly generates a distance for the run based off the time of the run
 double generateDistance(double runTime) {
-    double distance = (averageHumanRunSPeed/3.6)*runTime;
+    double distance = (averageHumanRunSPeed)*runTime;
     
     return distance;
 }
