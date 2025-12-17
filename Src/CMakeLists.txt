@@ -3,6 +3,8 @@ add_library(core
         core/linear_regression.c
         core/run_data.c
         core/data.c
+        core/generate_run.c
+        include/generate_run.h
 )
 
 #Add new c files to database
