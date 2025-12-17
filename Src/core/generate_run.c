@@ -18,7 +18,7 @@ void printRunDurationHMS(int total_seconds);
 double runTimeMinutes(int total_seconds);
 double generateDistanceKm(int total_seconds, double speed_kmh);
 double generatePaceMinPerKm(double run_minutes, double distance_km);
-int generateHRData (int* hrMin, int* hrAvg, int* hrMax); //TODO: make HR work
+int generateHRData(Database* current); //TODO: make HR work
 
 // Simple pace helper (min/km) directly from seconds + km
 double computePace(int total_seconds, double distance_km);
@@ -30,7 +30,7 @@ double computeTotalTE(double aerobic_te, double anaerobic_te);
 double computeRecovery(double totalTE);
 
 ////MAIN
-int generateMain(Database* current)
+int generateMain(Database *current)
 {
     // Seed RNG once
     srand((unsigned)time(NULL));
@@ -51,7 +51,7 @@ int generateMain(Database* current)
     // VO2MAX  example
     current->VO2max = (double) generateVO2MAX();
 
-    int hrMin = 0, hrAvg =0, hrMax = 0;
+    generateHRData(current);
 
     printf("Run total time: %d seconds (%.2f minutes)\n", total_seconds, current->duration);
     printf("Distance: %.2f km at %.2f km/h\n", current->distance, AVERAGE_HUMAN_RUN_SPEED_KMH);
@@ -117,7 +117,7 @@ double generatePaceMinPerKm(double run_minutes, double distance_km)
     return run_minutes / distance_km; // min/km
 }
 
-int generateHRData (int* hrMin, int* hrAvg, int* hrMax)
+int generateHRData (Database *current)
 {
     int variation1 = 0, variation2 = 0;
 
@@ -128,9 +128,9 @@ int generateHRData (int* hrMin, int* hrAvg, int* hrMax)
     variation1= (rand() % -5 - 5 +1);
     variation2= (rand() % -10 - 10 +1);
 
-    *hrMin = 62+variation1;
-    *hrMax = 171+variation2;
-    * hrAvg = (*hrMin+*hrMax)/2;
+    current->HRrest = 62+variation1;
+    current->HRmax = 171+variation2;
+    current->HRaverage = (current->HRrest+current->HRmax)/2;
 }
 
 
