@@ -3,8 +3,9 @@
 //
 
 #ifndef FITNESSTRACKER_GENERATE_RIN_H
+#include "data.h"
 #define FITNESSTRACKER_GENERATE_RIN_H
 
 #endif //FITNESSTRACKER_GENERATE_RIN_H
 
-int generateMain();
+int generateMain(Database* current);

@@ -19,6 +19,12 @@
 },
 {
   "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
+  "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/core.dir/core/generate_run.c.o -c /home/Ruben/Coding/FitnessTracker/Src/core/generate_run.c",
+  "file": "/home/Ruben/Coding/FitnessTracker/Src/core/generate_run.c",
+  "output": "Src/CMakeFiles/core.dir/core/generate_run.c.o"
+},
+{
+  "directory": "/home/Ruben/Coding/FitnessTracker/build/Src",
   "command": "/usr/bin/cc   -g -std=gnu11 -o CMakeFiles/run_output.dir/run_output/recommends.c.o -c /home/Ruben/Coding/FitnessTracker/Src/run_output/recommends.c",
   "file": "/home/Ruben/Coding/FitnessTracker/Src/run_output/recommends.c",
   "output": "Src/CMakeFiles/run_output.dir/run_output/recommends.c.o"

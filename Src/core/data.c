@@ -18,6 +18,3 @@ void set_duration(Database *a, double duration){
 void set_distance(Database *a, double distance){
     a->distance = distance;
 }
-void set_tempo(Database *a, int tempo){
-    a->tempo = tempo;
-}
