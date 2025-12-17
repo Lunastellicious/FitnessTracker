@@ -22,7 +22,6 @@ void recommend(double distance, double vo2Max, double heartRate, double time, re
     // TODO: call metrics to improve and call print
     metricsToImprove(vo2Max, a, distance, time, heartRate);
     print(runValue, distance, time, heartRate, vo2Max, a);
-
 }
 
 int evaluateRun(double vo2Max) {

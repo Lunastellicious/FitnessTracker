@@ -17,6 +17,7 @@ void printRunDurationHMS(int total_seconds);
 double runTimeMinutes(int total_seconds);
 double generateDistanceKm(int total_seconds, double speed_kmh);
 double generatePaceMinPerKm(double run_minutes, double distance_km);
+int generateHRData (int* hrMin, int* hrAvg, int* hrMax); //TODO: make HR work
 
 // Simple pace helper (min/km) directly from seconds + km
 double computePace(int total_seconds, double distance_km);
@@ -49,9 +50,13 @@ int generateMain(void)
     // VO2MAX  example
     int vo2max = generateVO2MAX();
 
+    //HR
+    int hrMin = 0, hrAvg =0, hrMax = 0;
+
+
     printf("Run total time: %d seconds (%.2f minutes)\n", total_seconds, total_minutes);
     printf("Distance: %.2f km at %.2f km/h\n", distance_km, AVERAGE_HUMAN_RUN_SPEED_KMH);
-    printf("Average pace: %.2f min/km\n", pace_min_per_km);
+    printf("Average pace: %.2f min/k\m\n", pace_min_per_km);
     printf("Random VO2MAX: %d\n", vo2max);
 
     //TE and recovery based on the generated run
@@ -109,6 +114,22 @@ double generatePaceMinPerKm(double run_minutes, double distance_km)
         return 0.0;
     }
     return run_minutes / distance_km; // min/km
+}
+
+int generateHRData (int* hrMin, int* hrAvg, int* hrMax)
+{
+    int variation1 = 0, variation2 = 0;
+
+    // csv hrAVG average = 155
+    // csv hrMAX average = 171
+    // sourced hrMIn average for 20s woman 60-64: 62 used
+
+    variation1= (rand() % -5 - 5 +1);
+    variation2= (rand() % -10 - 10 +1);
+
+    *hrMin = 62+variation1;
+    *hrMax = 171+variation2;
+    * hrAvg = (*hrMin+*hrMax)/2;
 }
 
 
