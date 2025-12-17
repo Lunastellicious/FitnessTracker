@@ -58,6 +58,7 @@ int generateHRData (double totalSeconds, double *zoneTimes);
 
 double stepsToDistance(int stepCount);
 double generateDistance(double runTime);
+
 // void generateElevation(double *elevation);
 double generateTempo(int time, double distance);
 double distanceToRunTime(double runDistance);
