@@ -5,11 +5,17 @@
 #include <stdlib.h>
 #include "../include/data.h"
 
+////CONSTANTS
+const char* classifyTE (double te);
+const char* classifyTotalTE(double totalTE);
+const char* recoveryNote(double hours);
+
+////PROTOTYPES
 void metricsToImprove(double vo2Max, regressionResult* a, double distance, double time, double heartRate, metrics rec);
 void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult* a, metrics rec);
 int evaluateRun(double vo2Max);
 
-// distance values to be given in KM
+// Main
 void recommend(Database* current, regressionResult* a) {
     metrics rec;
     int runSPeed = 0;
@@ -74,7 +80,6 @@ void metricsToImprove(double vo2Max, regressionResult* a, double distance, doubl
     }
 
 }
-
 
 
 void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult* a, metrics rec) {
@@ -150,6 +155,9 @@ void print(int runValue, double distance, double time, double heartRate, double 
             printf("print function failed");
             exit((EXIT_FAILURE));
     }
+
+
+
 
 }
 

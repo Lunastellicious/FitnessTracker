@@ -179,8 +179,6 @@ double computePace(int total_seconds, double distance_km)
     return minutes / distance_km; // min/km
 }
 
-
-
 double computeAerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
