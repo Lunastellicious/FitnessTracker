@@ -151,7 +151,7 @@ void print(int runValue, double distance, double time, double heartRate, double 
     printf("\n\n");
 
     switch (rec.runSPeed) {
-        case 1:
+       case 1:
             printf("info: you ran at speed of %.2lf which is below the expected. suggest running faster on your next run: ideal speed between 9.1 km/h and 13.1 km/h \n", distance/time);
             break;
         case 2:

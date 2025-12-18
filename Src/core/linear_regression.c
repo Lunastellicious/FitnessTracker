@@ -5,7 +5,7 @@
 
 #define MAX_LINE_LENGTH 1024
 #define MAX_DATA_POINTS 200
-#define MAX_COLUMNS 20
+#define MAX_COLUMNS 9
 
 //scv parsing
 int parse_csv_line(char* line, double* columns, int max_cols){
@@ -108,7 +108,7 @@ int regression(regressionResult result){
     printf("Y is set to column 18 for VO2max\nX is set to column 7 for km/h");
     //scanf("%d", &x_col_index);
     x_col_index = 3; // (km/h)
-    y_col_index = 6; // (VO2max)
+    y_col_index = 8; // (VO2max)
     
     /* variable y column
     printf("Enter the column index for Y variable (1-8): ");
@@ -118,14 +118,14 @@ int regression(regressionResult result){
     // Validate column indices
     if (x_col_index < 0 || x_col_index > MAX_COLUMNS || 
         y_col_index < 0 || y_col_index > MAX_COLUMNS) {
-        printf("Error: Column indices must be between 3 and %d\n", MAX_COLUMNS - 1);
+        printf("Error: Column indices must be between 1 and %d\n", MAX_COLUMNS -1);
         return 1;
     }
     printf("\n");
 
     // Read CSV file
-    printf("Reading CSV file 'syntetiske_loebedata.csv'...\n");
-    if (!read_csv("../../syntetiske_loebedata.csv", data, &count, x_col_index, y_col_index)) {
+    printf("Reading CSV file 'syntetiske_loebedata_ny_converted.csv'...\n");
+    if (!read_csv("../../syntetiske_loebedata_ny_converted.csv", data, &count, x_col_index, y_col_index)) {
         return 1;
     }
 
