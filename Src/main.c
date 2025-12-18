@@ -14,6 +14,6 @@ int main(void)
     // runData(30, 60, &current);
     regression(&result);
     recommend(&current, &result);
-    
+
     return 0;
 }
