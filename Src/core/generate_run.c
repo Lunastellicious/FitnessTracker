@@ -21,6 +21,11 @@ const double ANAEROBIC_PACE_FACTOR = 1.2; //højere tempo-følsomhed
 const double ANAEROBIC_TIME_DIVISOR = 30; //1.0 TE per 30 min (2.0/time)
 const double MAX_TE = 5.0;
 const double MIN_TE = 0.0;
+const double MAX_TOTAL_TE = 10; //samlet TE
+
+//Recovery
+const double RECOVERY_BASE_HOURS = 6.0; //minimum restitution time
+const double RECOVERY_FACTOR = 6.0; //Ekstra timer pr. TE point
 
 
 //// PROTOTYPES
@@ -169,22 +174,22 @@ double computeAnaerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
     double te = (ANAEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / ANAEROBIC_TIME_DIVISOR); //
-    if (te < 0.0) te = 0.0;
-    if (te > 5.0) te = 5.0;
+    if (te < MIN_TE) te = MIN_TE;
+    if (te > MAX_TE) te = MAX_TE;
     return te;
 }
 
 double computeTotalTE(double aerobic, double anaerobic)
 {
     double total = aerobic + anaerobic;
-    if (total < 0.0) total = 0.0;
-    if (total > 10.0) total = 10.0;
+    if (total < MIN_TE) total = MIN_TE;
+    if (total > MAX_TOTAL_TE) total = MAX_TOTAL_TE;
     return total;
 }
 
 double computeRecovery(double totalTE)
 {
-    return 12.0 + totalTE * 6.0; // base + factor
+    return RECOVERY_BASE_HOURS + totalTE * RECOVERY_FACTOR; // base + factor
 }
 
 
