@@ -11,6 +11,11 @@ const int VO2MinimumValue = 38;
 
 const double AVERAGE_HUMAN_RUN_SPEED_KMH = 11.0; // km/h
 
+//avg from dataset
+const double RESTING_HEARTRATE = 62;
+const double AVERAGE_HEARTRATE = 145;
+const double MAX_HEARTRATE = 170;
+
 
 // TE
 const double AEROBIC_BASE_PACE = 8.0; // Reference-pace
@@ -30,7 +35,7 @@ const double ANAEROBIC_RECOVERY_FACTOR = 8; //antal timer restitution pr. anaero
 
 
 //// PROTOTYPES
-int generateVO2MAX(void);
+double generateVO2MAX(void);
 int runDurationSeconds(int minMinutes, int maxMinutes);
 void printRunDurationHMS(int total_seconds);
 double runTimeMinutes(int total_seconds);
@@ -45,7 +50,7 @@ double computePace(int total_seconds, double distance_km);
 double computeAerobicTE(double pace_min_per_km, int total_seconds);
 double computeAnaerobicTE(double pace_min_per_km, int total_seconds);
 double computeTotalTE(double aerobic_te, double anaerobic_te);
-double computeRecovery(double aerobic_te, double anaerobic_te);
+double computeRecovery(double aerobic, double anaerobic);
 
 ////MAIN
 int generateMain(Database *current)
@@ -67,7 +72,7 @@ int generateMain(Database *current)
     current->pace = generatePaceMinPerKm(current->duration, current->distance);
 
     // VO2MAX  example
-    current->VO2max = (double) generateVO2MAX();
+    current->VO2max = generateVO2MAX();
 
     generateHRData(current);
 
@@ -95,7 +100,7 @@ int generateMain(Database *current)
 
 ////Functions
 
-int generateVO2MAX(void)
+double generateVO2MAX(void)
 {
     return VO2MinimumValue + rand() % (VO2MaximumValue - VO2MinimumValue + 1);
 }
@@ -135,7 +140,7 @@ double generatePaceMinPerKm(double run_minutes, double distance_km)
     return run_minutes / distance_km; // min/km
 }
 
-int generateHRData (Database *current)
+/*int generateHRData (Database *current)
 {
     int variation1 = 0, variation2 = 0;
 
@@ -149,8 +154,23 @@ int generateHRData (Database *current)
     current->HRrest = 62+variation1;
     current->HRmax = 171+variation2;
     current->HRaverage = (current->HRrest+current->HRmax)/2;
-}
+}*/
 
+
+int generateHRData (Database *current)
+{
+    int hrRest = RESTING_HEARTRATE + rand() % 6; // 60-65
+    int hrMax = MAX_HEARTRATE + rand() % 21; //165-185
+    int hrAvg = AVERAGE_HEARTRATE + rand() % 21; //145-165
+
+
+    current->HRrest = hrRest;
+    current->HRmax = hrMax;
+    current->HRaverage = hrAvg;
+
+    return 0;
+
+}
 
 double computePace(int total_seconds, double distance_km)
 {
