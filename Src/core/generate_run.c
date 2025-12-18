@@ -11,6 +11,18 @@ const int VO2MinimumValue = 38;
 
 const double AVERAGE_HUMAN_RUN_SPEED_KMH = 11.0; // km/h
 
+
+// TE
+const double AEROBIC_BASE_PACE = 8.0; // Reference-pace
+const double AEROBIC_PACE_FACTOR = 0.8; // Vægtning af tempo
+const double AEROBIC_TIME_FACTOR = 3.0; // TE-point pr. time (via minutes/60)
+const double ANAEROBIC_BASE_PACE = 6.0;
+const double ANAEROBIC_PACE_FACTOR = 1.2; //højere tempo-følsomhed
+const double ANAEROBIC_TIME_DIVISOR = 30; //1.0 TE per 30 min (2.0/time)
+const double MAX_TE = 5.0;
+const double MIN_TE = 0.0;
+
+
 //// PROTOTYPES
 int generateVO2MAX(void);
 int runDurationSeconds(int minMinutes, int maxMinutes);
@@ -142,20 +154,21 @@ double computePace(int total_seconds, double distance_km)
 }
 
 
+
 double computeAerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
 
-    double te = (7.0 - pace) * 0.8 + (minutes / 60.0) * 2.0;
-    if (te < 0.0) te = 0.0;
-    if (te > 5.0) te = 5.0;
+    double te = (AEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / 60.0) * AEROBIC_TIME_FACTOR;
+    if (te < MIN_TE) te = MIN_TE;
+    if (te > MAX_TE) te = MAX_TE;
     return te;
 }
 
 double computeAnaerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
-    double te = (6.0 - pace) * 1.2 + (minutes / 30.0);
+    double te = (ANAEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / ANAEROBIC_TIME_DIVISOR); //
     if (te < 0.0) te = 0.0;
     if (te > 5.0) te = 5.0;
     return te;
