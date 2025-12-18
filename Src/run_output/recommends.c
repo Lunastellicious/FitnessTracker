@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "../include/data.h"
 
-////CONSTANTS
+////CONSTANTS //TODO: make functions work with metrics from generaterun.c
 const char* classifyTE (double te);
 const char* classifyTotalTE(double totalTE);
 const char* recoveryNote(double hours);
@@ -30,6 +30,36 @@ void recommend(Database* current, regressionResult* a) {
     print(runValue, current->distance, current->duration, current->HRmax, current->VO2max, a, rec);
 
 }
+
+
+// TE Garmin scale (0-5)
+const char* classifyTE(double te) {
+    if (te < 1.0) return "No effect on fitness (0.0–0.9)";
+    if (te < 2.0) return "Some effect on fitness (1.0–1.9)";
+    if (te < 3.0) return "Maintenance of fitness (2.0–2.9)";
+    if (te < 4.0) return "Improving fitness (3.0–3.9)";
+    if (te < 5.0) return "Highly improving fitness (4.0–4.9)";
+    return "Overtraining (5.0)";
+}
+
+// Intensity assessment for total TE (0–10)
+const char* classifyTotalTE(double totalTE) {
+    if (totalTE < 3.0) return "Light training session";
+    if (totalTE < 6.0) return "Moderate training session";
+    if (totalTE < 8.0) return "Hard training session";
+    return "Very hard training session";
+}
+
+// Advice on recovery
+const char* recoveryNote(double hours) {
+    if (hours < 24.0)
+        return "Light mobility and good hydration are enough—enjoy your day! 💚";
+    if (24 < hours && hours <= 48.0)
+        return "Prioritize sleep and gentle activity—you’re recovering well. 🌿";
+    if (48 < hours && hours <= 72.0)
+    return "Take it easy, focus on sleep, and light movement. You’ve got this! ✨";
+}
+
 
 int evaluateRun(double vo2Max) {
     int runValue = 0;
@@ -155,10 +185,6 @@ void print(int runValue, double distance, double time, double heartRate, double 
             printf("print function failed");
             exit((EXIT_FAILURE));
     }
-
-
-
-
 }
 
 
