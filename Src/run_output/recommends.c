@@ -51,7 +51,7 @@ void metricsToImprove(double vo2Max, regressionResult* a, double distance, doubl
 
     double speed;
     speed = distance/time;
-
+    //TODO: lave intervals and change metric to min/km.
     // determine whether user ran fast enough
     if (speed < 9.1 ) {
         rec.runSPeed = 1;
@@ -124,7 +124,7 @@ void print(int runValue, double distance, double time, double heartRate, double 
             break;
         default:
             printf("print function failed");
-            exit((EXIT_FAILURE));
+            //exit((EXIT_FAILURE));
     }
 
     // relevance ?? inherently tied to run speed so might not be that relevant
@@ -136,7 +136,7 @@ void print(int runValue, double distance, double time, double heartRate, double 
             printf("info: you ran less than the average person for the recorded run duration: suggest increasing the distance of your run slightly \n ");
         default:
             printf("print function failed");
-            exit((EXIT_FAILURE));
+            //exit((EXIT_FAILURE));
     }
 
     switch ( (rec.vo2MaxPos)) {

@@ -25,7 +25,8 @@ const double MAX_TOTAL_TE = 10; //samlet TE
 
 //Recovery
 const double RECOVERY_BASE_HOURS = 6.0; //minimum restitution time
-const double RECOVERY_FACTOR = 6.0; //Ekstra timer pr. TE point
+const double AEROBIC_RECOVERY_FACTOR = 4; //antal timer restitution pr. aerob TE point
+const double ANAEROBIC_RECOVERY_FACTOR = 8; //antal timer restitution pr. anaerob TE point
 
 
 //// PROTOTYPES
@@ -44,7 +45,7 @@ double computePace(int total_seconds, double distance_km);
 double computeAerobicTE(double pace_min_per_km, int total_seconds);
 double computeAnaerobicTE(double pace_min_per_km, int total_seconds);
 double computeTotalTE(double aerobic_te, double anaerobic_te);
-double computeRecovery(double totalTE);
+double computeRecovery(double aerobic_te, double anaerobic_te);
 
 ////MAIN
 int generateMain(Database *current)
@@ -82,7 +83,7 @@ int generateMain(Database *current)
     current->aerobic = computeAerobicTE(current->pace, total_seconds);
     current->anaerobic = computeAnaerobicTE(current->pace, total_seconds);
     current->totalTE = computeTotalTE(current->aerobic, current->anaerobic);
-    current->recovery = computeRecovery(current->totalTE);
+    current->recovery = computeRecovery(current->aerobic, current->anaerobic);
 
     printf("Aerobic TE: %.2f\n", current->aerobic);
     printf("Anaerobic TE: %.2f\n", current->anaerobic);
@@ -164,32 +165,35 @@ double computeAerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
 
-    double te = (AEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / 60.0) * AEROBIC_TIME_FACTOR;
-    if (te < MIN_TE) te = MIN_TE;
-    if (te > MAX_TE) te = MAX_TE;
-    return te;
+    double aerobictTE = (AEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / 60.0) * AEROBIC_TIME_FACTOR;
+    if (aerobictTE < MIN_TE) aerobictTE = MIN_TE;
+    if (aerobictTE > MAX_TE) aerobictTE = MAX_TE;
+    return aerobictTE;
 }
 
 double computeAnaerobicTE(double pace, int total_seconds)
 {
     double minutes = total_seconds / 60.0;
-    double te = (ANAEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / ANAEROBIC_TIME_DIVISOR); //
-    if (te < MIN_TE) te = MIN_TE;
-    if (te > MAX_TE) te = MAX_TE;
-    return te;
+
+    double anaerobicTE = (ANAEROBIC_BASE_PACE - pace) * AEROBIC_PACE_FACTOR + (minutes / ANAEROBIC_TIME_DIVISOR); //
+    if (anaerobicTE < MIN_TE) anaerobicTE = MIN_TE;
+    if (anaerobicTE > MAX_TE) anaerobicTE = MAX_TE;
+    return anaerobicTE;
 }
 
 double computeTotalTE(double aerobic, double anaerobic)
 {
     double total = aerobic + anaerobic;
+
     if (total < MIN_TE) total = MIN_TE;
     if (total > MAX_TOTAL_TE) total = MAX_TOTAL_TE;
     return total;
 }
 
-double computeRecovery(double totalTE)
+double computeRecovery(double aerobic, double anaerobic)
 {
-    return RECOVERY_BASE_HOURS + totalTE * RECOVERY_FACTOR; // base + factor
+    double recoveryHours = RECOVERY_BASE_HOURS + (aerobic * 4) + (anaerobic * 8);
+    return recoveryHours;
 }
 
 
