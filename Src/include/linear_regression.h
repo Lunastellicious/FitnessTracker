@@ -12,6 +12,6 @@ typedef struct {
     double r_squared;
 } regressionResult;
 
-int regression(regressionResult result);
+int regression();
 
 #endif //FITNESSTRACKER_LINEAR_REGRESSION_H
