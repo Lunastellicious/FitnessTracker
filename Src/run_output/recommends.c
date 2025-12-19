@@ -8,6 +8,9 @@
 void metricsToImprove(regressionResult* a, metrics* rec, Database* current);
 void print(int runValue, regressionResult* a, metrics* rec, Database* current);
 int evaluateRun(double vo2Max);
+const char* classifyTE(double aerobicte, double anaerobicte);
+const char* classifyTotalTE(double totalTE);
+const char* recoveryNote(double hours);
 
 // Main
 void recommend(Database* current, regressionResult* a) {
@@ -19,36 +22,38 @@ void recommend(Database* current, regressionResult* a) {
     // TODO: call metrics to improve and call print
     metricsToImprove(a, &rec, current);
     print(runValue, a, &rec, current);
-
+    printf(classifyTE(current->aerobic, current->anaerobic));
+    printf(classifyTotalTE(current->totalTE));
+    printf(recoveryNote(current->recovery));
 }
 
 
 // TE Garmin scale (0-5)
-const char* classifyTE(double te) {
-    if (te < 1.0) return "No effect on fitness (0.0–0.9)";
-    if (te < 2.0) return "Some effect on fitness (1.0–1.9)";
-    if (te < 3.0) return "Maintenance of fitness (2.0–2.9)";
-    if (te < 4.0) return "Improving fitness (3.0–3.9)";
-    if (te < 5.0) return "Highly improving fitness (4.0–4.9)";
+const char* classifyTE(double aerobicte, double anaerobicte) {
+    if (aerobicte < 1.0) return "No effect on fitness (0.0–0.9)\n";
+    if (aerobicte < 2.0) return "Some effect on fitness (1.0–1.9)\n";
+    if (aerobicte < 3.0) return "Maintenance of fitness (2.0–2.9)\n";
+    if (aerobicte < 4.0) return "Improving fitness (3.0–3.9)\n";
+    if (aerobicte < 5.0) return "Highly improving fitness (4.0–4.9)\n";
     return "Overtraining (5.0)";
 }
 
 // Intensity assessment for total TE (0–10)
 const char* classifyTotalTE(double totalTE) {
-    if (totalTE < 3.0) return "Light training session";
-    if (totalTE < 6.0) return "Moderate training session";
-    if (totalTE < 8.0) return "Hard training session";
-    return "Very hard training session";
+    if (totalTE < 3.0) return "Light training session\n";
+    if (totalTE < 6.0) return "Moderate training session\n";
+    if (totalTE < 8.0) return "Hard training session\n";
+    return "Very hard training session\n";
 }
 
 // Advice on recovery
 const char* recoveryNote(double hours) {
     if (hours < 24.0)
-        return "Light mobility and good hydration are enough—enjoy your day! 💚";
+        return "Light mobility and good hydration are enough—enjoy your day! 💚\n";
     if (24 < hours && hours <= 48.0)
-        return "Prioritize sleep and gentle activity—you’re recovering well. 🌿";
+        return "Prioritize sleep and gentle activity—you’re recovering well. 🌿\n";
     if (48 < hours && hours <= 72.0)
-    return "Take it easy, focus on sleep, and light movement. You’ve got this! ✨";
+    return "Take it easy, focus on sleep, and light movement. You’ve got this! ✨\n";
 }
 
 

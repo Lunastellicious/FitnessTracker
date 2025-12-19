@@ -12,7 +12,7 @@ int main(void)
 
     generateMain(&current);
     // runData(30, 60, &current);
-    //regression(&result);
+    regression(&result);
     recommend(&current, &result);
 
     return 0;
