@@ -9,7 +9,7 @@ void metricsToImprove(regressionResult* a, metrics* rec, Database* current);
 void print(int runValue, regressionResult* a, metrics* rec, Database* current);
 int evaluateRun(double vo2Max);
 
-// distance values to be given in KM
+// Main
 void recommend(Database* current, regressionResult* a) {
     metrics rec;
     
@@ -21,6 +21,36 @@ void recommend(Database* current, regressionResult* a) {
     print(runValue, a, &rec, current);
 
 }
+
+
+// TE Garmin scale (0-5)
+const char* classifyTE(double te) {
+    if (te < 1.0) return "No effect on fitness (0.0–0.9)";
+    if (te < 2.0) return "Some effect on fitness (1.0–1.9)";
+    if (te < 3.0) return "Maintenance of fitness (2.0–2.9)";
+    if (te < 4.0) return "Improving fitness (3.0–3.9)";
+    if (te < 5.0) return "Highly improving fitness (4.0–4.9)";
+    return "Overtraining (5.0)";
+}
+
+// Intensity assessment for total TE (0–10)
+const char* classifyTotalTE(double totalTE) {
+    if (totalTE < 3.0) return "Light training session";
+    if (totalTE < 6.0) return "Moderate training session";
+    if (totalTE < 8.0) return "Hard training session";
+    return "Very hard training session";
+}
+
+// Advice on recovery
+const char* recoveryNote(double hours) {
+    if (hours < 24.0)
+        return "Light mobility and good hydration are enough—enjoy your day! 💚";
+    if (24 < hours && hours <= 48.0)
+        return "Prioritize sleep and gentle activity—you’re recovering well. 🌿";
+    if (48 < hours && hours <= 72.0)
+    return "Take it easy, focus on sleep, and light movement. You’ve got this! ✨";
+}
+
 
 int evaluateRun(double vo2Max) {
     int runValue = 0;
@@ -121,7 +151,7 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
             break;
         default:
             printf("print function failed");
-            exit((EXIT_FAILURE));
+            //exit((EXIT_FAILURE));
     }
 
     switch (rec->runLength) {
@@ -132,7 +162,7 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
             printf("info: you ran less than the average person for the recorded run duration: suggest increasing the distance of your run slightly \n");
         default:
             printf("print function failed");
-            exit((EXIT_FAILURE));
+            //exit((EXIT_FAILURE));
     }
 
     switch ( (rec->vo2MaxPos)) {
@@ -146,7 +176,6 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
             printf("print function failed");
             exit((EXIT_FAILURE));
     }
-
 }
 
 
