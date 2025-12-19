@@ -53,11 +53,11 @@ const char* classifyTotalTE(double totalTE) {
 // Advice on recovery
 const char* recoveryNote(double hours) {
     if (hours < 24.0)
-        return "Light mobility and good hydration are enough—enjoy your day! 💚";
+        return "Light mobility and good hydration are enough—enjoy your day!";
     if (24 < hours && hours <= 48.0)
-        return "Prioritize sleep and gentle activity—you’re recovering well. 🌿";
+        return "Prioritize sleep and gentle activity—you’re recovering well.";
     if (48 < hours && hours <= 72.0)
-    return "Take it easy, focus on sleep, and light movement. You’ve got this! ✨";
+    return "Take it easy, focus on sleep, and light movement. You’ve got this!";
 }
 
 
