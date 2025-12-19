@@ -1,7 +1,3 @@
-//
-// Created by lunas on 24-11-2025.
-//
-
 #ifndef FITNESSTRACKER_LINEAR_REGRESSION_H
 #define FITNESSTRACKER_LINEAR_REGRESSION_H
 
