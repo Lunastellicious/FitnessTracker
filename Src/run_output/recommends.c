@@ -194,20 +194,20 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
     printf("\n\n");
 
     switch (rec->runSPeed) {
-       case 1:
-            printf("info: you ran at speed of %.2lf min/km, which is below the expected. We suggest running faster on your next run: ideal speed between 6:35 min/km and 4:34 min/km \n", current->pace);
-            break;
-        case 2:
-            printf("info: you ran at speed of %.2lf min/km, which is above the recommended. We suggest running slower on your next run: ideal speed between 6:35 min/km and 4:34 min/km \n", current->pace);
-            break;
-        case 3:
-            printf("info: you ran at speed of %.2lf min/km, which is a good pace. It is suggested that pace is kept between 6:35 min/km and 4:34 min/km \n", current->pace);
-            break;
-        default:
-            printf("print function failed");
-            //exit((EXIT_FAILURE));
-    }
-
+        case 1:
+             printf("info: you ran at speed of %.2lf min/km, which is below the expected. We suggest running faster on your next run: ideal speed between 6:35 min/km and 4:34 min/km \n", current->pace);
+             break;
+         case 2:
+             printf("info: you ran at speed of %.2lf min/km, which is above the recommended. We suggest running slower on your next run: ideal speed between 6:35 min/km and 4:34 min/km \n", current->pace);
+             break;
+         case 3:
+             printf("info: you ran at speed of %.2lf min/km, which is a good pace. It is suggested that pace is kept between 6:35 min/km and 4:34 min/km \n", current->pace);
+             break;
+         default:
+             printf("print function failed");
+             //exit((EXIT_FAILURE));
+     }
+ 
     switch (rec->runLength) {
         case 1:
             printf("info: you ran farther than the average person for the recorded run duration: suggest lowering the distance of your run slightly \n");
