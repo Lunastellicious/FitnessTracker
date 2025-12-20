@@ -13,7 +13,7 @@ const char* recoveryNote(double hours);
 
 ////PROTOTYPES
 void metricsToImprove(regressionResult* a, metrics* rec, Database* current);
-void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult* a, metrics rec);
+void print(int runValue, regressionResult* a, metrics* rec, Database* current);
 int evaluateRun(double vo2Max);
 
 // Main
@@ -32,8 +32,8 @@ void recommend(Database* current, regressionResult* a) {
     recoveryNote(current->recovery);
 
     // TODO: call metrics to improve and call print
-    metricsToImprove(current->VO2max, a, current->distance, current->duration, current->HRmax, rec);
-    print(runValue, current->distance, current->duration, current->HRmax, current->VO2max, a, rec);
+    metricsToImprove(a, &rec, current);
+    print(runValue, a, &rec, current);
 
 
 
@@ -219,10 +219,10 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
 
     switch ( (rec->vo2MaxPos)) {
         case 1:
-            printf("Your vo2Max was found to be below average: average for the recoder heart rate %.2lf your vo2Max %.2lf\n", a->slope * current->pace + a->intercept, current->VO2max);
+            printf("Your vo2Max was found to be below average: average for the recorded pace %.2lf, your vo2Max %.2lf\n", a->slope * current->pace + a->intercept, current->VO2max);
             break;
         case 2:
-            printf("Your vo2Max was found to be above average: average for the recoder heart rate %.2lf your vo2Max %.2lf  which is good sign\n", a->slope * current->pace + a->intercept, current->VO2max);
+            printf("Your vo2Max was found to be above average: average for the recorded pace %.2lf, your vo2Max %.2lf  which is good sign\n", a->slope * current->pace + a->intercept, current->VO2max);
             break;
         default:
             printf("print function failed");
