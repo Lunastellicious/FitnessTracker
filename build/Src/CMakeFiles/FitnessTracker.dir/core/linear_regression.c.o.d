@@ -34,10 +34,4 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: \
  /usr/include/bits/stdlib-float.h /usr/include/string.h \
  /usr/include/bits/types/locale_t.h /usr/include/bits/types/__locale_t.h \
  /usr/include/strings.h \
- /home/Ruben/Coding/FitnessTracker/Src/core/../include/linear_regression.h \
- /usr/include/assert.h /usr/include/math.h \
- /usr/include/bits/math-vector.h /usr/include/bits/libm-simd-decl-stubs.h \
- /usr/include/bits/flt-eval-method.h /usr/include/bits/fp-logb.h \
- /usr/include/bits/fp-fast.h /usr/include/bits/mathcalls-macros.h \
- /usr/include/bits/mathcalls-helper-functions.h \
- /usr/include/bits/mathcalls.h
+ /home/Ruben/Coding/FitnessTracker/Src/core/../include/linear_regression.h
