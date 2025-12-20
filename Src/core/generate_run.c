@@ -163,7 +163,6 @@ int generateHRData (Database *current)
     int hrMax = MAX_HEARTRATE + rand() % 21; //165-185
     int hrAvg = AVERAGE_HEARTRATE + rand() % 21; //145-165
 
-
     current->HRrest = hrRest;
     current->HRmax = hrMax;
     current->HRaverage = hrAvg;
