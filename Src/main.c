@@ -11,8 +11,9 @@ int main(void)
     regressionResult result;
 
     generateMain(&current);
+    printf("heart rate: %d", current.HRmax);
     // runData(30, 60, &current);
-    //regression(&result);
+    regression(&result);
     recommend(&current, &result);
 
     return 0;
