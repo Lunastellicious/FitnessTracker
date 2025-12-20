@@ -8,14 +8,23 @@ Src/CMakeFiles/FitnessTracker.dir/core/data.c.o: /home/Ruben/Coding/FitnessTrack
 Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c \
   /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h \
   /usr/include/alloca.h \
+  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
+  /usr/include/bits/flt-eval-method.h \
+  /usr/include/bits/fp-fast.h \
+  /usr/include/bits/fp-logb.h \
   /usr/include/bits/libc-header-start.h \
+  /usr/include/bits/libm-simd-decl-stubs.h \
   /usr/include/bits/long-double.h \
+  /usr/include/bits/math-vector.h \
+  /usr/include/bits/mathcalls-helper-functions.h \
+  /usr/include/bits/mathcalls-macros.h \
+  /usr/include/bits/mathcalls.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/select.h \
@@ -55,6 +64,7 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o: /home/Ruben/Coding
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
+  /usr/include/math.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
@@ -134,8 +144,6 @@ Src/CMakeFiles/FitnessTracker.dir/core/data.c.o:
 
 /usr/lib/libgcc_s.so:
 
-/usr/lib/libc.so:
-
 /usr/lib/crtn.o:
 
 /usr/lib/crti.o:
@@ -148,23 +156,25 @@ Src/CMakeFiles/FitnessTracker.dir/core/data.c.o:
 
 /usr/include/sys/types.h:
 
-/usr/include/bits/types/FILE.h:
-
-/usr/lib/libc_nonshared.a:
-
-/usr/include/bits/types.h:
+/usr/include/sys/select.h:
 
 /usr/include/sys/cdefs.h:
 
-/usr/include/bits/byteswap.h:
+/home/Ruben/Coding/FitnessTracker/Src/include/generate_run.h:
 
-/usr/include/bits/thread-shared-types.h:
+/usr/include/strings.h:
 
-/usr/include/bits/types/__fpos64_t.h:
+/usr/include/stdlib.h:
 
-/usr/include/bits/select.h:
+/usr/include/math.h:
 
-/usr/include/features-time64.h:
+/usr/include/gnu/stubs.h:
+
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
+
+/usr/include/gnu/stubs-64.h:
+
+/usr/include/features.h:
 
 Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 
@@ -172,21 +182,41 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 
 /usr/include/bits/stdint-intn.h:
 
-/home/Ruben/Coding/FitnessTracker/Src/include/run_data.h:
+/usr/include/bits/select.h:
 
-/usr/include/bits/struct_mutex.h:
+/usr/include/bits/types/__fpos64_t.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/crtendS.o:
-
-/usr/include/gnu/stubs-64.h:
-
-/usr/include/stdc-predef.h:
-
-/usr/include/bits/pthreadtypes-arch.h:
+/usr/include/features-time64.h:
 
 /usr/include/bits/long-double.h:
 
+/usr/include/bits/fp-logb.h:
+
+/usr/include/bits/mathcalls-macros.h:
+
+/usr/include/bits/types/clock_t.h:
+
+/usr/include/bits/libc-header-start.h:
+
+/usr/lib/libc.so:
+
+/usr/include/bits/fp-fast.h:
+
+/usr/include/bits/waitstatus.h:
+
+/usr/include/bits/flt-eval-method.h:
+
+/usr/include/stdio.h:
+
+/usr/include/bits/types/timer_t.h:
+
+/home/Ruben/Coding/FitnessTracker/Src/include/data.h:
+
 /usr/include/bits/types/__locale_t.h:
+
+/usr/include/bits/pthreadtypes-arch.h:
+
+/usr/include/stdc-predef.h:
 
 /home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c:
 
@@ -200,12 +230,6 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 
 /usr/include/alloca.h:
 
-/usr/include/bits/libc-header-start.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/include/generate_run.h:
-
-/usr/include/strings.h:
-
 /home/Ruben/Coding/FitnessTracker/Src/include/recommends.h:
 
 /home/Ruben/Coding/FitnessTracker/Src/core/data.c:
@@ -214,11 +238,21 @@ Src/CMakeFiles/FitnessTracker.dir/main.c.o:
 
 /usr/include/bits/floatn.h:
 
+/usr/include/assert.h:
+
+/usr/include/bits/libm-simd-decl-stubs.h:
+
 /usr/include/bits/endianness.h:
 
-/usr/include/bits/types/__FILE.h:
+/usr/include/bits/byteswap.h:
 
-/usr/include/bits/stdlib-float.h:
+/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
+
+/usr/include/string.h:
+
+/usr/include/bits/time64.h:
+
+/usr/include/bits/mathcalls.h:
 
 /usr/include/bits/types/sigset_t.h:
 
@@ -226,33 +260,45 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o:
 
 /usr/include/bits/floatn-common.h:
 
+/home/Ruben/Coding/FitnessTracker/Src/include/run_data.h:
+
+/usr/include/bits/struct_mutex.h:
+
+/usr/include/bits/thread-shared-types.h:
+
+/usr/lib/libc_nonshared.a:
+
+/usr/include/bits/types.h:
+
+/usr/include/bits/types/FILE.h:
+
+/usr/include/bits/stdlib-float.h:
+
+/usr/include/bits/types/__FILE.h:
+
+/usr/include/bits/math-vector.h:
+
 /usr/include/bits/types/__fpos_t.h:
 
 /usr/include/bits/wordsize.h:
 
 /usr/include/bits/types/__mbstate_t.h:
 
-/usr/include/bits/types/clock_t.h:
-
 /usr/include/bits/atomic_wide_counter.h:
 
 /usr/include/bits/types/clockid_t.h:
+
+/usr/include/endian.h:
+
+/usr/include/bits/types/cookie_io_functions_t.h:
 
 /usr/include/bits/uintn-identity.h:
 
 /usr/include/bits/typesizes.h:
 
-/usr/lib/gcc/x86_64-pc-linux-gnu/15.1.1/include/stddef.h:
-
-/usr/include/bits/time64.h:
-
-/usr/include/string.h:
-
 /usr/include/bits/types/locale_t.h:
 
 /usr/include/bits/types/struct_FILE.h:
-
-/usr/include/sys/select.h:
 
 /usr/include/bits/types/struct_timespec.h:
 
@@ -260,26 +306,10 @@ Src/CMakeFiles/FitnessTracker.dir/core/linear_regression.c.o:
 
 /usr/include/bits/types/struct_timeval.h:
 
-/usr/include/bits/struct_rwlock.h:
+/usr/include/bits/mathcalls-helper-functions.h:
 
 /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h:
 
+/usr/include/bits/struct_rwlock.h:
+
 /usr/include/bits/types/time_t.h:
-
-/usr/include/stdlib.h:
-
-/usr/include/bits/types/cookie_io_functions_t.h:
-
-/usr/include/endian.h:
-
-/usr/include/bits/waitstatus.h:
-
-/usr/include/features.h:
-
-/usr/include/gnu/stubs.h:
-
-/home/Ruben/Coding/FitnessTracker/Src/include/data.h:
-
-/usr/include/bits/types/timer_t.h:
-
-/usr/include/stdio.h:
