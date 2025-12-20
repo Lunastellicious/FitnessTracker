@@ -116,7 +116,7 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
     printf("**                                                        **\n");
     printf("**                   distance:   %.2lf                    **\n", current->distance);
     printf("**                   time:       %.2lf                    **\n", current->duration);
-    printf("**                   heart rate: %.2lf                    **\n", current->HRmax);
+    printf("**                   heart rate: %d                    **\n", current->HRmax);
     printf("**                   vo2max:     %.2lf                    **\n", current->VO2max);
     printf("**                                                        **\n"); //
     switch (runValue) {
