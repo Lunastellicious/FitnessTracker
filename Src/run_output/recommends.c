@@ -12,7 +12,7 @@ const char* classifyTotalTE(double totalTE);
 const char* recoveryNote(double hours);
 
 ////PROTOTYPES
-void metricsToImprove(double vo2Max, regressionResult* a, double distance, double time, double heartRate, metrics rec);
+void metricsToImprove(regressionResult* a, metrics* rec, Database* current);
 void print(int runValue, double distance, double time, double heartRate, double vo2Max, regressionResult* a, metrics rec);
 int evaluateRun(double vo2Max);
 
