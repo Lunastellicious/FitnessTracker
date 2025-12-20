@@ -128,7 +128,7 @@ double runTimeMinutes(int total_seconds)
 double generateDistanceKm(int total_seconds, double speed_kmh)
 {
     // distance = speed(km/h) * time(h)
-    return speed_kmh * (total_seconds / 3600.0);
+    return speed_kmh*((double)(rand() % 100)/100 + 0.3) * (total_seconds / 3600.0);
 }
 
 double generatePaceMinPerKm(double run_minutes, double distance_km)

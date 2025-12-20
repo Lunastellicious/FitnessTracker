@@ -34,9 +34,6 @@ void recommend(Database* current, regressionResult* a) {
     // TODO: call metrics to improve and call print
     metricsToImprove(a, &rec, current);
     print(runValue, a, &rec, current);
-
-
-
 }
 
 
@@ -46,17 +43,17 @@ const char* classifyAnaerobicTE( double ANTE) {
     double anaerobicTE = ANTE;
 
     if (anaerobicTE < 1.0)
-        printf("\nAnaerobic score: %.1lf \n  No effect on anaerobic system and fitness (range: 0.0 to 0.9)\n", anaerobicTE);
+        printf("\nAnaerobic score: %.1lf \nNo effect on anaerobic system and fitness (range: 0.0 to 0.9)\n", anaerobicTE);
     else if (anaerobicTE < 2.0)
-        printf("\nAnaerobic score: %.1lf \n Some effect on anaerobic system and fitness (range 1.0 to 1.9)\n", anaerobicTE);
+        printf("\nAnaerobic score: %.1lf \nSome effect on anaerobic system and fitness (range 1.0 to 1.9)\n", anaerobicTE);
     else if (anaerobicTE < 3.0)
-        printf("\nAnaerobic score: %.1lf \n Maintenance of anaerobic system and fitness (range 2.0 to 2.9)\n", anaerobicTE);
+        printf("\nAnaerobic score: %.1lf \nMaintenance of anaerobic system and fitness (range 2.0 to 2.9)\n", anaerobicTE);
     else if (anaerobicTE < 4.0)
-        printf("\nAnaerobic score: %.1lf \n Improving anaerobic system and fitness (range 3.0 to 3.9)\n", anaerobicTE);
+        printf("\nAnaerobic score: %.1lf \nImproving anaerobic system and fitness (range 3.0 to 3.9)\n", anaerobicTE);
     else if (anaerobicTE < 5.0)
-        printf("\nAnaerobic score: %.1lf \n Highly improving anaerobic and fitness (range 4.0 to 4.9)\n", anaerobicTE);
+        printf("\nAnaerobic score: %.1lf \nHighly improving anaerobic and fitness (range 4.0 to 4.9)\n", anaerobicTE);
     else
-        printf("\nAnaerobic score: %.1lf \n Anaerobic system overload and Overtraining (5.0)\n", anaerobicTE);
+        printf("\nAnaerobic score: %.1lf \nAnaerobic system overload and Overtraining (5.0)\n", anaerobicTE);
 
 }
 
@@ -65,17 +62,17 @@ const char* classifyAerobicTE(double ATE)
     double aerobicTE = ATE;
 
     if (aerobicTE < 1.0)
-        printf("\nAerobic score: %.1lf \n  No effect on anaerobic system and fitness (range: 0.0 to 0.9)\n", aerobicTE);
+        printf("\nAerobic score: %.1lf \nNo effect on anaerobic system and fitness (range: 0.0 to 0.9)\n", aerobicTE);
     else if (aerobicTE < 2.0)
-        printf("\nAerobic score: %.1lf \n Some effect on anaerobic system and fitness (range 1.0 to 1.9)\n", aerobicTE);
+        printf("\nAerobic score: %.1lf \nSome effect on anaerobic system and fitness (range 1.0 to 1.9)\n", aerobicTE);
     else if (aerobicTE < 3.0)
-        printf("\nAerobic score: %.1lf \n Maintenance of anaerobic system and fitness (range 2.0 to 2.9)\n", aerobicTE);
+        printf("\nAerobic score: %.1lf \nMaintenance of anaerobic system and fitness (range 2.0 to 2.9)\n", aerobicTE);
     else if (aerobicTE < 4.0)
-        printf("\nAerobic score: %.1lf \n Improving anaerobic system and fitness (range 3.0 to 3.9)\n", aerobicTE);
+        printf("\nAerobic score: %.1lf \nImproving anaerobic system and fitness (range 3.0 to 3.9)\n", aerobicTE);
     else if (aerobicTE < 5.0)
-        printf("\nAerobic score: %.1lf \n Highly improving anaerobic and fitness (range 4.0 to 4.9)\n", aerobicTE);
+        printf("\nAerobic score: %.1lf \nHighly improving anaerobic and fitness (range 4.0 to 4.9)\n", aerobicTE);
     else
-        printf("\nAerobic score: %.1lf \n Anaerobic system overload and Overtraining (5.0)\n", aerobicTE);
+        printf("\nAerobic score: %.1lf \nAnaerobic system overload and Overtraining (5.0)\n", aerobicTE);
 }
 
 
@@ -96,11 +93,11 @@ const char* classifyTotalTE(double totalTE) {
 // Advice on recovery
 const char* recoveryNote(double hours) {
     if (hours < 24.0)
-        printf(" \nRecovery: %.0lf hours \n Light mobility and good hydration are enough. Enjoy your day! \n\n", hours ) ;
+        printf(" \nRecovery: %.0lf hours \nLight mobility and good hydration are enough. Enjoy your day! \n\n", hours ) ;
     if (24 < hours && hours <= 48.0)
-        printf("\nRecovery: %.0lf hours \n Prioritize sleep and gentle activity. You are recovering well. \n\n", hours);
+        printf("\nRecovery: %.0lf hours \nPrioritize sleep and gentle activity. You are recovering well. \n\n", hours);
     if (48 < hours && hours <= 72.0)
-    printf("\nRecovery: %.0lf hours \n Take it easy, focus on sleep, and light movement. You got this! \n\n", hours);
+    printf("\nRecovery: %.0lf hours \nTake it easy, focus on sleep, and light movement. You got this! \n\n", hours);
 }
 
 
@@ -132,10 +129,12 @@ void metricsToImprove(regressionResult* a, metrics* rec, Database* current) {
     speed = current->distance/(current->duration/60);
 
     // determine whether user ran fast enough
-    if (speed < 9.1 ) {
+    if (current->pace > 6.58 ) {
         rec->runSPeed = 1;
-    } else if (speed < 13.1) {
+    } else if (current->pace < 4.56) {
         rec->runSPeed = 2;
+    } else {
+        rec->runSPeed = 3;
     }
 
     // determine whether user ran far enough 1 means above expected 2 means below expected
@@ -196,10 +195,13 @@ void print(int runValue, regressionResult* a, metrics* rec, Database* current) {
 
     switch (rec->runSPeed) {
        case 1:
-            printf("info: you ran at speed of %.2lf which is below the expected. suggest running faster on your next run: ideal speed between 9.1 km/h and 13.1 km/h \n", current->distance/(current->duration/60));
+            printf("info: you ran at speed of %.2lf min/km, which is below the expected. We suggest running faster on your next run: ideal speed between 6:35 min/km and 4:34 min/km \n", current->pace);
             break;
         case 2:
-            printf("info: you ran at speed of %.2lf which is above the expected. suggest running slower on your next run: ideal speed between 9.1 km/h and 13.1 km/h \n", current->distance/(current->duration/60));
+            printf("info: you ran at speed of %.2lf min/km, which is above the recommended. We suggest running slower on your next run: ideal speed between 6:35 min/km and 4:34 min/km \n", current->pace);
+            break;
+        case 3:
+            printf("info: you ran at speed of %.2lf min/km, which is a good pace. It is suggested that pace is kept between 6:35 min/km and 4:34 min/km \n", current->pace);
             break;
         default:
             printf("print function failed");
