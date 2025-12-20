@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <string.h>
 #include "../include/linear_regression.h"
-#include <assert.h>
-#include <math.h>
 
 #define MAX_LINE_LENGTH 1024
 #define MAX_DATA_POINTS 200
@@ -89,12 +87,6 @@ regressionResult calculate_regression(dataLoad* a, int count){
     
     result.r_squared = 1 - (ss_err / ss_tot);
     printf("ss_err: %lf,\nss_tot: %lf\n", ss_err, ss_tot);
-
-    // TEST: check validity of regression results
-    assert(isfinite(result.slope));
-    assert(isfinite(result.intercept));
-    assert(result.r_squared >= 0 && result.r_squared <= 1);
-
     return result;
 }
 

@@ -71,23 +71,14 @@ Src/CMakeFiles/core.dir/core/generate_run.c.o: /home/Ruben/Coding/FitnessTracker
 Src/CMakeFiles/core.dir/core/linear_regression.c.o: /home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c \
   /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h \
   /usr/include/alloca.h \
-  /usr/include/assert.h \
   /usr/include/bits/atomic_wide_counter.h \
   /usr/include/bits/byteswap.h \
   /usr/include/bits/endian.h \
   /usr/include/bits/endianness.h \
   /usr/include/bits/floatn-common.h \
   /usr/include/bits/floatn.h \
-  /usr/include/bits/flt-eval-method.h \
-  /usr/include/bits/fp-fast.h \
-  /usr/include/bits/fp-logb.h \
   /usr/include/bits/libc-header-start.h \
-  /usr/include/bits/libm-simd-decl-stubs.h \
   /usr/include/bits/long-double.h \
-  /usr/include/bits/math-vector.h \
-  /usr/include/bits/mathcalls-helper-functions.h \
-  /usr/include/bits/mathcalls-macros.h \
-  /usr/include/bits/mathcalls.h \
   /usr/include/bits/pthreadtypes-arch.h \
   /usr/include/bits/pthreadtypes.h \
   /usr/include/bits/select.h \
@@ -127,7 +118,6 @@ Src/CMakeFiles/core.dir/core/linear_regression.c.o: /home/Ruben/Coding/FitnessTr
   /usr/include/features.h \
   /usr/include/gnu/stubs-64.h \
   /usr/include/gnu/stubs.h \
-  /usr/include/math.h \
   /usr/include/stdc-predef.h \
   /usr/include/stdio.h \
   /usr/include/stdlib.h \
@@ -221,20 +211,6 @@ Src/CMakeFiles/core.dir/core/run_data.c.o: /home/Ruben/Coding/FitnessTracker/Src
 
 /usr/include/strings.h:
 
-/usr/include/bits/mathcalls.h:
-
-/usr/include/bits/mathcalls-macros.h:
-
-/usr/include/bits/libm-simd-decl-stubs.h:
-
-/usr/include/bits/fp-logb.h:
-
-/usr/include/bits/fp-fast.h:
-
-/usr/include/bits/flt-eval-method.h:
-
-/usr/include/assert.h:
-
 /home/Ruben/Coding/FitnessTracker/Src/core/linear_regression.c:
 
 /usr/include/bits/unistd_ext.h:
@@ -319,8 +295,6 @@ Src/CMakeFiles/core.dir/core/run_data.c.o: /home/Ruben/Coding/FitnessTracker/Src
 
 /usr/include/bits/floatn.h:
 
-/usr/include/bits/math-vector.h:
-
 /usr/include/bits/types/__fpos_t.h:
 
 /usr/include/bits/wordsize.h:
@@ -353,8 +327,6 @@ Src/CMakeFiles/core.dir/core/run_data.c.o: /home/Ruben/Coding/FitnessTracker/Src
 
 /usr/include/bits/types/struct_tm.h:
 
-/usr/include/bits/mathcalls-helper-functions.h:
-
 /home/Ruben/Coding/FitnessTracker/Src/include/linear_regression.h:
 
 /usr/include/bits/struct_rwlock.h:
@@ -372,8 +344,6 @@ Src/CMakeFiles/core.dir/core/run_data.c.o: /home/Ruben/Coding/FitnessTracker/Src
 /usr/include/bits/waitstatus.h:
 
 /usr/include/features.h:
-
-/usr/include/math.h:
 
 /usr/include/gnu/stubs.h:
 
