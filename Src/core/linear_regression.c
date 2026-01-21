@@ -156,11 +156,11 @@ int regression(regressionResult result){
     // enough and then if not give an error code or something
     int access;
     double *predicted_y = malloc(10*(sizeof(double)));
-    //printf("Ready to test? Type 1:\n");
+    printf("Ready to test? Type 1:\n");
+    scanf("%d", &access);
     printf("Testing\n");
     printf("==========================\n");
-    //scanf("%d", &access);
-    access = 1;
+    //access = 1;
     if (access == 1){
         for(int i = 40; i < 50; i++){
             predicted_y[i-40] = predict(&data[i], &result);

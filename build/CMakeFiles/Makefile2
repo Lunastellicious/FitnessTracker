@@ -171,8 +171,8 @@ Src/CMakeFiles/run_output.dir/clean:
 # Target rules for target Src/CMakeFiles/FitnessTracker.dir
 
 # All Build rule for target.
-Src/CMakeFiles/FitnessTracker.dir/all: Src/CMakeFiles/run_output.dir/all
 Src/CMakeFiles/FitnessTracker.dir/all: Src/CMakeFiles/core.dir/all
+Src/CMakeFiles/FitnessTracker.dir/all: Src/CMakeFiles/run_output.dir/all
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/depend
 	$(MAKE) $(MAKESILENT) -f Src/CMakeFiles/FitnessTracker.dir/build.make Src/CMakeFiles/FitnessTracker.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --progress-dir=/home/Ruben/Coding/FitnessTracker/build/CMakeFiles --progress-num=1,2,3,4 "Built target FitnessTracker"
