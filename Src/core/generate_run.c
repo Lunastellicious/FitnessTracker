@@ -79,7 +79,7 @@ int generateMain(Database *current)
     printf("Run total time: %d seconds (%.2f minutes)\n", total_seconds, current->duration);
     printf("Distance: %.2f km at %.2f km/h\n", current->distance, AVERAGE_HUMAN_RUN_SPEED_KMH);
     printf("Average pace: %.2f min/km\n", current->pace);
-    printf("Random VO2MAX: %d\n", current->VO2max);
+    printf("Random VO2MAX: %lf\n", current->VO2max);
     //HR
     //int hrMin = 0, hrAvg =0, hrMax = 0;
 
