@@ -101,11 +101,10 @@ int regression(regressionResult result){
     int count;
     int x_col_index, y_col_index;
 
-    printf("CSV Linear Regression Tool\n");
+    printf("\n\nCSV Linear Regression Tool\n");
     printf("===========================\n\n");
 
     // Get column indices from user (0-indexed)
-    printf("Y is set to column 18 for VO2max\nX is set to column 7 for km/h");
     //scanf("%d", &x_col_index);
     x_col_index = 3; // (km/h)
     y_col_index = 8; // (VO2max)

@@ -167,6 +167,8 @@ int generateHRData (Database *current)
     current->HRmax = hrMax;
     current->HRaverage = hrAvg;
 
+    printf("Max Heart Rate: %d\n", current->HRmax);
+
     return 0;
 
 }
